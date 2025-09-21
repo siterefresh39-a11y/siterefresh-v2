@@ -240,7 +240,7 @@ const Contatti = () => {
                     </div>
                     <h3 className="text-lg font-semibold mb-2">Risposta Garantita</h3>
                     <p className="text-muted-foreground text-sm">
-                      Ti rispondiamo entro <strong>24 ore</strong> con una proposta personalizzata per il tuo progetto.
+                      Ti rispondiamo entro <strong>72 ore</strong> con una proposta personalizzata per il tuo progetto.
                     </p>
                   </div>
                 </CardContent>
