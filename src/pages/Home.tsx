@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Globe, Zap, Smartphone, Users, Target, TrendingUp } from 'lucide-react';
-import heroImage from '@/assets/hero-image.jpg';
+import heroVideo from '@/assets/hero-video.mov';
 
 const Home = () => {
   return (
@@ -10,9 +10,12 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="Modern tech workspace"
+          <video
+            src={heroVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
             className="w-full h-full object-cover hero-float"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-accent/80" />
