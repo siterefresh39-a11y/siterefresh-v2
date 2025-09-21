@@ -21,9 +21,9 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-2 left-4 right-4 z-50 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg shadow-black/5">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 relative">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <img 
@@ -72,7 +72,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in-up">
+          <div className="md:hidden py-4 border-t border-white/20 animate-fade-in-up backdrop-blur-xl bg-white/5 rounded-b-2xl -mx-6 px-6 mt-4">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
