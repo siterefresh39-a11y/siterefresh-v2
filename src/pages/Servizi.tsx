@@ -195,10 +195,10 @@ const Servizi = () => {
               Contattaci per una consulenza gratuita e scopri quale soluzione è perfetta per la tua azienda.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary" asChild>
+              <Button size="lg" variant="outline" className="text-primary border-primary bg-white hover:bg-primary hover:text-white" asChild>
                 <Link to="/contatti">Consulenza Gratuita</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary" asChild>
+              <Button size="lg" variant="outline" className="text-primary border-primary bg-white hover:bg-primary hover:text-white" asChild>
                 <Link to="/portfolio">Vedi i Nostri Lavori</Link>
               </Button>
             </div>
