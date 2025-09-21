@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Code, Smartphone, Mail, MessageCircle } from 'lucide-react';
+import { Mail, MessageCircle } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Footer = () => {
   return (
@@ -8,11 +9,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="relative">
-                <Code className="h-8 w-8 text-primary" />
-                <Smartphone className="h-4 w-4 text-accent absolute -bottom-1 -right-1" />
-              </div>
+            <Link to="/" className="flex items-center space-x-3">
+              <img 
+                src={logo} 
+                alt="SiteRefresh Logo" 
+                className="h-10 w-10"
+              />
               <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 SiteRefresh
               </span>
