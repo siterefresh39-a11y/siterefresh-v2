@@ -2,41 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* SiteRefresh Design System - Modern Tech-oriented Design */
 
 @layer base {
   :root {
+    /* Core Colors - Apple-inspired with Navy Tech Primary */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Navy Tech Primary */
+    --primary: 215 85% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 215 70% 40%;
+    --primary-lighter: 215 60% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Clean Secondary */
+    --secondary: 220 15% 96%;
+    --secondary-foreground: 215 25% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Subtle Muted */
+    --muted: 220 15% 96%;
+    --muted-foreground: 215 15% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Tech Accent */
+    --accent: 215 70% 40%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Minimal Borders */
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 215 85% 25%;
 
-    --radius: 0.5rem;
+    --radius: 12px;
+
+    /* Modern Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(215 85% 25%) 0%, hsl(215 70% 40%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(215 85% 25%) 0%, hsl(215 70% 30%) 50%, hsl(215 60% 40%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 15% 98%) 100%);
+    
+    /* Elegant Shadows */
+    --shadow-card: 0 4px 25px -4px hsl(215 85% 25% / 0.1);
+    --shadow-hero: 0 25px 50px -12px hsl(215 85% 25% / 0.25);
+    --shadow-button: 0 8px 25px -8px hsl(215 85% 25% / 0.3);
+    
+    /* Smooth Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +120,160 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Hero Section Animations */
+  .hero-float {
+    animation: heroFloat 6s ease-in-out infinite;
+  }
+  
+  .hero-glow {
+    box-shadow: var(--shadow-hero);
+    background: var(--gradient-hero);
+  }
+
+  /* Card Hover Effects */
+  .card-hover {
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hero);
+  }
+
+  /* Button Variants */
+  .btn-hero {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-button);
+    transition: var(--transition-bounce);
+  }
+  
+  .btn-hero:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 35px -10px hsl(215 85% 25% / 0.4);
+  }
+
+  /* Smooth Underline Animation */
+  .link-underline {
+    position: relative;
+    transition: var(--transition-smooth);
+  }
+  
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: var(--transition-smooth);
+  }
+  
+  .link-underline:hover::after {
+    width: 100%;
+  }
+
+  /* Timeline Steps */
+  .timeline-step {
+    position: relative;
+    padding-left: 3rem;
+  }
+  
+  .timeline-step::before {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    top: 0;
+    bottom: -2rem;
+    width: 2px;
+    background: linear-gradient(180deg, hsl(215 85% 25%), hsl(215 60% 85%));
+  }
+  
+  .timeline-step:last-child::before {
+    bottom: 50%;
+  }
+  
+  .timeline-step::after {
+    content: attr(data-step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-hero {
+    box-shadow: var(--shadow-hero);
+  }
+  
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
