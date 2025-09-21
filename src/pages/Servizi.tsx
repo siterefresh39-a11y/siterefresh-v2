@@ -32,13 +32,6 @@ const Servizi = () => {
       available: true
     },
     {
-      icon: Search,
-      title: 'Ottimizzazione SEO',
-      description: 'Miglioriamo la visibilità del tuo sito sui motori di ricerca con strategie mirate.',
-      features: ['Analisi SEO completa', 'Ottimizzazione contenuti', 'Link building', 'Monitoraggio costante'],
-      available: true
-    },
-    {
       icon: Bot,
       title: 'AI Agents',
       description: 'Integrazione di intelligenza artificiale per automatizzare processi e migliorare l\'esperienza utente.',
