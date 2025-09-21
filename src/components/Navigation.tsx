@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Code, Smartphone } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,11 +25,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="relative">
-              <Code className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
-              <Smartphone className="h-4 w-4 text-accent absolute -bottom-1 -right-1" />
-            </div>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <img 
+              src={logo} 
+              alt="SiteRefresh Logo" 
+              className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
+            />
             <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
               SiteRefresh
             </span>
