@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
@@ -6,7 +6,27 @@ import logo from '@/assets/logo.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOnHero, setIsOnHero] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      setIsOnHero(false);
+      return;
+    }
+
+    const handleScroll = () => {
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection) {
+        const heroRect = heroSection.getBoundingClientRect();
+        setIsOnHero(heroRect.bottom > 100);
+      }
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -21,7 +41,11 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-2 left-4 right-4 z-50 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg shadow-black/5">
+    <nav className={`fixed top-2 left-4 right-4 z-50 backdrop-blur-xl border rounded-2xl shadow-lg transition-all duration-300 ${
+      isOnHero 
+        ? 'bg-white/80 border-white/30 shadow-black/10' 
+        : 'bg-white/10 border-white/20 shadow-black/5'
+    }`}>
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 relative">
           {/* Logo */}

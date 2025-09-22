@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <video
             src={heroVideo}
@@ -16,7 +16,7 @@ const Home = () => {
             muted
             loop
             playsInline
-            className="w-full h-full object-cover hero-float"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-accent/80" />
         </div>
@@ -38,7 +38,7 @@ const Home = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary text-lg px-8 py-4" asChild>
+              <Button size="lg" variant="outline" className="text-primary border-primary bg-white/90 hover:bg-white hover:text-primary text-lg px-8 py-4" asChild>
                 <Link to="/portfolio">Vedi Portfolio</Link>
               </Button>
             </div>
@@ -116,44 +116,50 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="card-hover">
-                <CardContent className="p-6">
-                  <Globe className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Creazione Siti Web</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Siti web moderni, responsive e ottimizzati per le performance e la conversione.
-                  </p>
-                  <Link to="/servizi" className="text-primary font-medium link-underline">
-                    Scopri di più
-                  </Link>
-                </CardContent>
-              </Card>
+              <Link to="/servizi/creazione-siti-web" className="block">
+                <Card className="card-hover cursor-pointer">
+                  <CardContent className="p-6">
+                    <Globe className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-semibold mb-3">Creazione Siti Web</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Siti web moderni, responsive e ottimizzati per le performance e la conversione.
+                    </p>
+                    <span className="text-primary font-medium link-underline">
+                      Scopri di più
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
 
-              <Card className="card-hover">
-                <CardContent className="p-6">
-                  <Zap className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Restyling & Upgrade</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Rinnoviamo siti esistenti con design moderni e tecnologie all'avanguardia.
-                  </p>
-                  <Link to="/servizi" className="text-primary font-medium link-underline">
-                    Scopri di più
-                  </Link>
-                </CardContent>
-              </Card>
+              <Link to="/servizi/restyling-upgrade" className="block">
+                <Card className="card-hover cursor-pointer">
+                  <CardContent className="p-6">
+                    <Zap className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-semibold mb-3">Restyling & Upgrade</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Rinnoviamo siti esistenti con design moderni e tecnologie all'avanguardia.
+                    </p>
+                    <span className="text-primary font-medium link-underline">
+                      Scopri di più
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
 
-              <Card className="card-hover">
-                <CardContent className="p-6">
-                  <Smartphone className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Ottimizzazione SEO</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Miglioriamo la visibilità online con strategie SEO avanzate e content optimization.
-                  </p>
-                  <Link to="/servizi" className="text-primary font-medium link-underline">
-                    Scopri di più
-                  </Link>
-                </CardContent>
-              </Card>
+              <Link to="/servizi/ottimizzazione-seo" className="block">
+                <Card className="card-hover cursor-pointer">
+                  <CardContent className="p-6">
+                    <Smartphone className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-semibold mb-3">Ottimizzazione SEO</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Miglioriamo la visibilità online con strategie SEO avanzate e content optimization.
+                    </p>
+                    <span className="text-primary font-medium link-underline">
+                      Scopri di più
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
 
             <div className="text-center mt-12">
@@ -178,7 +184,7 @@ const Home = () => {
             <p className="text-xl text-white/90 mb-8">
               Richiedi una consulenza gratuita e scopri come possiamo aiutarti a raggiungere i tuoi obiettivi digitali.
             </p>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary text-lg px-8 py-4" asChild>
+            <Button size="lg" variant="outline" className="text-primary border-primary bg-white/90 hover:bg-white hover:text-primary text-lg px-8 py-4" asChild>
               <Link to="/contatti">Consulenza Gratuita</Link>
             </Button>
           </div>

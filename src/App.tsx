@@ -10,6 +10,9 @@ import Portfolio from "./pages/Portfolio";
 import Contatti from "./pages/Contatti";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
+import CreazioneSitiWeb from "./pages/servizi/CreazioneSitiWeb";
+import RestylingSitiWeb from "./pages/servizi/RestylingSitiWeb";
+import OttimizzazioneSEO from "./pages/servizi/OttimizzazioneSEO";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +26,9 @@ const App = () => (
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="servizi" element={<Servizi />} />
+            <Route path="servizi/creazione-siti-web" element={<CreazioneSitiWeb />} />
+            <Route path="servizi/restyling-upgrade" element={<RestylingSitiWeb />} />
+            <Route path="servizi/ottimizzazione-seo" element={<OttimizzazioneSEO />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contatti" element={<Contatti />} />
             <Route path="faq" element={<FAQ />} />
