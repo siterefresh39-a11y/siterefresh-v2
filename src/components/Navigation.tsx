@@ -10,17 +10,20 @@ const Navigation = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname !== '/') {
-      setIsOnHero(false);
-      return;
-    }
-
     const handleScroll = () => {
-      const heroSection = document.querySelector('.hero-section');
-      if (heroSection) {
-        const heroRect = heroSection.getBoundingClientRect();
-        setIsOnHero(heroRect.bottom > 100);
-      }
+      // Trova tutte le sezioni con sfondo blu (gradient-hero)
+      const heroSections = document.querySelectorAll('.bg-gradient-hero');
+      let isOverHero = false;
+
+      heroSections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        // Se la navbar (che è a circa 100px dall'alto) si trova sopra una sezione hero
+        if (rect.top < 100 && rect.bottom > 50) {
+          isOverHero = true;
+        }
+      });
+
+      setIsOnHero(isOverHero);
     };
 
     handleScroll();
