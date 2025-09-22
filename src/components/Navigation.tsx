@@ -11,10 +11,21 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Trova tutte le sezioni con sfondo blu (gradient-hero)
-      const heroSections = document.querySelectorAll('.bg-gradient-hero');
       let isOverHero = false;
 
+      // Per la home page, controlla se siamo sopra la sezione hero con il video
+      if (location.pathname === '/') {
+        const heroSection = document.querySelector('.hero-section');
+        if (heroSection) {
+          const heroRect = heroSection.getBoundingClientRect();
+          if (heroRect.bottom > 100) {
+            isOverHero = true;
+          }
+        }
+      }
+
+      // Per tutte le pagine, controlla le sezioni con sfondo blu
+      const heroSections = document.querySelectorAll('.bg-gradient-hero');
       heroSections.forEach(section => {
         const rect = section.getBoundingClientRect();
         // Se la navbar (che è a circa 100px dall'alto) si trova sopra una sezione hero
