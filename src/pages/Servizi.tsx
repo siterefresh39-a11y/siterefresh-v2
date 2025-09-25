@@ -22,14 +22,16 @@ const Servizi = () => {
       title: 'Creazione Siti Web',
       description: 'Siti web moderni, responsive e performanti realizzati con le tecnologie più avanzate.',
       features: ['Design responsive', 'Performance ottimali', 'SEO-friendly', 'CMS integrato'],
-      available: true
+      available: true,
+      route: '/servizi/creazione-siti-web'
     },
     {
       icon: Zap,
       title: 'Restyling Siti Esistenti',
       description: 'Trasformiamo il tuo sito obsoleto in una moderna piattaforma digitale.',
       features: ['Nuovo design', 'Migliori performance', 'Mobile optimization', 'Sicurezza avanzata'],
-      available: true
+      available: true,
+      route: '/servizi/restyling-upgrade'
     },
     {
       icon: Bot,
@@ -86,51 +88,62 @@ const Servizi = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {services.map((service, index) => (
-              <Card 
-                key={service.title} 
-                className={`card-hover relative ${!service.available ? 'opacity-90' : ''}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {service.comingSoon && (
-                  <Badge className="absolute top-4 right-4 bg-accent text-white">
-                    Coming Soon
-                  </Badge>
-                )}
-                <CardHeader>
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className={`p-3 rounded-lg ${service.available ? 'bg-primary' : 'bg-muted'}`}>
-                      <service.icon className={`h-6 w-6 ${service.available ? 'text-white' : 'text-muted-foreground'}`} />
-                    </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                  </div>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center space-x-2">
-                        <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {service.available ? (
-                    <Button className="w-full btn-hero" asChild>
-                      <Link to="/contatti">
-                        Richiedi Preventivo
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  ) : (
-                    <Button variant="outline" className="w-full" disabled>
-                      <Clock className="mr-2 h-4 w-4" />
-                      Presto Disponibile
-                    </Button>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
+            {services.map((service, index) => {
+              const CardComponent = service.available && service.route ? 
+                ({ children }: { children: React.ReactNode }) => (
+                  <Link to={service.route!} className="block">
+                    {children}
+                  </Link>
+                ) : 
+                ({ children }: { children: React.ReactNode }) => <>{children}</>;
+
+              return (
+                <CardComponent key={service.title}>
+                  <Card 
+                    className={`card-hover relative ${!service.available ? 'opacity-90' : 'hover:shadow-lg transition-all duration-300'}`}
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {service.comingSoon && (
+                      <Badge className="absolute top-4 right-4 bg-accent text-white">
+                        Coming Soon
+                      </Badge>
+                    )}
+                    <CardHeader>
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className={`p-3 rounded-lg ${service.available ? 'bg-primary' : 'bg-muted'}`}>
+                          <service.icon className={`h-6 w-6 ${service.available ? 'text-white' : 'text-muted-foreground'}`} />
+                        </div>
+                        <CardTitle className="text-xl">{service.title}</CardTitle>
+                      </div>
+                      <p className="text-muted-foreground">{service.description}</p>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 mb-6">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center space-x-2">
+                            <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {service.available ? (
+                        <Button className="w-full btn-hero" asChild>
+                          <Link to={service.route!}>
+                            Scopri di Più
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </Button>
+                      ) : (
+                        <Button variant="outline" className="w-full" disabled>
+                          <Clock className="mr-2 h-4 w-4" />
+                          Presto Disponibile
+                        </Button>
+                      )}
+                    </CardContent>
+                  </Card>
+                </CardComponent>
+              );
+            })}
           </div>
         </div>
       </section>
