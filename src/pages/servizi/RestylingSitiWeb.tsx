@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useInView } from '@/hooks/use-in-view';
 import { 
   Zap, 
   ArrowRight, 
@@ -201,28 +202,39 @@ const RestylingSitiWeb = () => {
             </div>
 
             <div className="space-y-8">
-              {processSteps.map((step, index) => (
-                <div 
-                  key={step.step}
-                  className="timeline-step animate-fade-in-up"
-                  data-step={step.step}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <Card className="card-hover ml-8">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="p-3 bg-primary-lighter rounded-lg">
-                          <step.icon className="h-6 w-6 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                          <p className="text-muted-foreground">{step.description}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
+              {processSteps.map((step, index) => {
+                const TimelineStep = () => {
+                  const { ref, isInView } = useInView();
+                  
+                  return (
+                    <div 
+                      ref={ref}
+                      key={step.step}
+                      className={`timeline-step timeline-step-animated ${isInView ? 'in-view' : ''}`}
+                      data-step={step.step}
+                      style={{ 
+                        transitionDelay: isInView ? `${index * 0.15}s` : '0s'
+                      }}
+                    >
+                      <Card className="card-hover ml-8">
+                        <CardContent className="p-6">
+                          <div className="flex items-start space-x-4">
+                            <div className="p-3 bg-primary-lighter rounded-lg">
+                              <step.icon className="h-6 w-6 text-primary" />
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                              <p className="text-muted-foreground">{step.description}</p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  );
+                };
+                
+                return <TimelineStep key={step.step} />;
+              })}
             </div>
           </div>
         </div>
