@@ -157,6 +157,28 @@ const CreazioneSitiWeb = () => {
                 </div>
               </CardContent>
             </Card>
+
+            <div className="mt-12 space-y-6 text-muted-foreground">
+              <p className="text-lg leading-relaxed">
+                <strong className="text-foreground">Il design moderno e responsive</strong> garantisce che il tuo sito funzioni perfettamente su qualsiasi dispositivo, 
+                dal desktop allo smartphone, offrendo un'esperienza ottimale a tutti i visitatori e migliorando il posizionamento sui motori di ricerca.
+              </p>
+              
+              <p className="text-lg leading-relaxed">
+                <strong className="text-foreground">L'ottimizzazione SEO integrata</strong> include la strutturazione del codice, meta tag ottimizzati, 
+                velocità di caricamento elevate e contenuti ottimizzati per aiutare il tuo sito a posizionarsi meglio su Google e generare più visite organiche.
+              </p>
+              
+              <p className="text-lg leading-relaxed">
+                <strong className="text-foreground">Il sistema di gestione contenuti (CMS)</strong> ti permette di aggiornare facilmente testi, immagini e pagine 
+                senza conoscenze tecniche, mantenendo il tuo sito sempre aggiornato e pertinente per i tuoi clienti.
+              </p>
+              
+              <p className="text-lg leading-relaxed">
+                <strong className="text-foreground">La sicurezza SSL/HTTPS e i backup automatici</strong> proteggono il tuo sito da minacce informatiche 
+                e perdite di dati, garantendo la fiducia dei visitatori e la continuità del tuo business online.
+              </p>
+            </div>
           </div>
         </div>
       </section>
