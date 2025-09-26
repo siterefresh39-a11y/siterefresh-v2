@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import CreazioneSitiWeb from "./pages/servizi/CreazioneSitiWeb";
 import RestylingSitiWeb from "./pages/servizi/RestylingSitiWeb";
 import OttimizzazioneSEO from "./pages/servizi/OttimizzazioneSEO";
+import Prezzi from "./pages/Prezzi";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="servizi/creazione-siti-web" element={<CreazioneSitiWeb />} />
             <Route path="servizi/restyling-upgrade" element={<RestylingSitiWeb />} />
             <Route path="servizi/ottimizzazione-seo" element={<OttimizzazioneSEO />} />
+            <Route path="prezzi" element={<Prezzi />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contatti" element={<Contatti />} />
             <Route path="faq" element={<FAQ />} />
