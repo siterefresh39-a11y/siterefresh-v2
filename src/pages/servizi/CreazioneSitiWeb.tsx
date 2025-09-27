@@ -298,11 +298,6 @@ const CreazioneSitiWeb = () => {
                 }
               ].map((fascia, index) => (
                 <Card key={fascia.nome} className={`card-hover ${fascia.recommended ? 'border-primary shadow-lg ring-2 ring-primary' : ''}`}>
-                  {fascia.recommended && (
-                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white">
-                      Più Richiesto
-                    </Badge>
-                  )}
                   <CardHeader>
                     <CardTitle className="text-2xl">{fascia.nome}</CardTitle>
                     <div className="space-y-2 text-sm text-muted-foreground">
