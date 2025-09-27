@@ -12,7 +12,8 @@ import {
   Search,
   Shield,
   Zap,
-  Users
+  Users,
+  Clock
 } from 'lucide-react';
 
 const CreazioneSitiWeb = () => {
@@ -340,6 +341,289 @@ const CreazioneSitiWeb = () => {
         </div>
       </section>
 
+      {/* Garanzie e Supporto Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Le Nostre Garanzie
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Lavoriamo con fiducia e trasparenza, garantendo risultati concreti.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card className="card-hover">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <CheckCircle className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl font-semibold">Soddisfatti o Rifacciamo</h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Se il risultato finale non rispecchia quanto concordato, rifacciamo il lavoro senza costi aggiuntivi.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <Clock className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl font-semibold">Tempi Garantiti</h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Consegniamo il tuo sito nei tempi concordati o ricevi un sconto del 10% sul totale.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <Shield className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl font-semibold">Supporto 12 Mesi</h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Un anno di supporto tecnico gratuito per piccole modifiche e assistenza.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <Zap className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl font-semibold">Performance Garantite</h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Il tuo sito avrà un punteggio Google PageSpeed di almeno 90/100 o miglioriamo gratis.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Domande Frequenti
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Le risposte alle domande più comuni sulla creazione di siti web.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <Card className="card-hover">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold mb-3">Quanto tempo serve per creare un sito web?</h3>
+                  <p className="text-muted-foreground">
+                    I tempi variano in base alla complessità: un sito vetrina richiede 2-3 settimane, 
+                    mentre progetti più complessi possono richiedere 4-8 settimane. Ti forniremo una timeline dettagliata dopo l'analisi iniziale.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold mb-3">Posso gestire i contenuti autonomamente?</h3>
+                  <p className="text-muted-foreground">
+                    Sì! Tutti i nostri siti includono un CMS intuitivo che ti permette di aggiornare testi, immagini e pagine 
+                    senza conoscenze tecniche. Inoltre, ti formiamo gratuitamente sull'utilizzo.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold mb-3">Il sito sarà ottimizzato per i motori di ricerca?</h3>
+                  <p className="text-muted-foreground">
+                    Assolutamente! Ogni sito include ottimizzazione SEO on-page: struttura del codice, meta tag, 
+                    velocità di caricamento e contenuti ottimizzati per migliorare il posizionamento su Google.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold mb-3">Cosa include il supporto post-lancio?</h3>
+                  <p className="text-muted-foreground">
+                    Offriamo 12 mesi di supporto gratuito per piccole modifiche, aggiornamenti di sicurezza, 
+                    backup automatici e assistenza tecnica. Per modifiche importanti, forniamo preventivi dedicati.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Form Contatto Avanzato */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Richiedi il Tuo Preventivo Personalizzato
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Compila il form in 60 secondi e ricevi una proposta dettagliata entro 48 ore.
+              </p>
+            </div>
+
+            <Card className="card-hover">
+              <CardContent className="p-8">
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="nome" className="block text-sm font-medium mb-2">
+                        Nome e Cognome *
+                      </label>
+                      <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="Il tuo nome completo"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="azienda" className="block text-sm font-medium mb-2">
+                        Azienda
+                      </label>
+                      <input
+                        type="text"
+                        id="azienda"
+                        name="azienda"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="Nome dell'azienda"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium mb-2">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="tua@email.com"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="telefono" className="block text-sm font-medium mb-2">
+                        Telefono *
+                      </label>
+                      <input
+                        type="tel"
+                        id="telefono"
+                        name="telefono"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="+39 123 456 7890"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="obiettivo" className="block text-sm font-medium mb-3">
+                      Obiettivo Principale *
+                    </label>
+                    <div className="space-y-2">
+                      {[
+                        'Aumentare la visibilità online',
+                        'Generare più contatti/lead',
+                        'Vendere prodotti online',
+                        'Presentare servizi professionalmente',
+                        'Sostituire un sito obsoleto'
+                      ].map((option) => (
+                        <label key={option} className="flex items-center">
+                          <input
+                            type="radio"
+                            name="obiettivo"
+                            value={option}
+                            className="mr-3 text-primary focus:ring-primary"
+                            required
+                          />
+                          <span>{option}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="budget" className="block text-sm font-medium mb-2">
+                      Fascia di Budget
+                    </label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                    >
+                      <option value="">Seleziona una fascia</option>
+                      <option value="economica">Economica (€1.000 - €2.000)</option>
+                      <option value="intermedia">Intermedia (€2.000 - €4.000)</option>
+                      <option value="investimento">Investimento significativo (€4.000+)</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="descrizione" className="block text-sm font-medium mb-2">
+                      Descrivi il Tuo Progetto *
+                    </label>
+                    <textarea
+                      id="descrizione"
+                      name="descrizione"
+                      rows={4}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                      placeholder="Raccontaci del tuo business, che tipo di sito ti serve, funzionalità desiderate..."
+                    ></textarea>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <input
+                      type="checkbox"
+                      id="consenso"
+                      name="consenso"
+                      required
+                      className="mt-1 text-primary focus:ring-primary"
+                    />
+                    <label htmlFor="consenso" className="text-sm text-muted-foreground">
+                      Acconsento al trattamento dei dati personali secondo la{' '}
+                      <Link to="/privacy" className="text-primary underline">Privacy Policy</Link> 
+                      {' '}per ricevere informazioni sui servizi richiesti. *
+                    </label>
+                  </div>
+
+                  <Button type="submit" size="lg" className="w-full btn-hero">
+                    Ricevi Preventivo Gratuito
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+
+                  <p className="text-sm text-muted-foreground text-center">
+                    ✅ Risposta garantita entro 48 ore • 🔒 Dati protetti • 📞 Consulenza telefonica gratuita
+                  </p>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4 lg:px-8 text-center">
@@ -348,14 +632,14 @@ const CreazioneSitiWeb = () => {
               Pronto a Creare il Tuo Sito Web?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Contattaci per una consulenza gratuita e scopri come possiamo aiutarti a raggiungere i tuoi obiettivi online.
+              Unisciti alle centinaia di aziende che hanno trasformato la loro presenza online con noi.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="outline" className="text-primary border-primary bg-white hover:bg-primary hover:text-white" asChild>
                 <Link to="/contatti">Consulenza Gratuita</Link>
               </Button>
               <Button size="lg" variant="outline" className="text-primary border-primary bg-white hover:bg-primary hover:text-white" asChild>
-                <Link to="/servizi">Altri Servizi</Link>
+                <Link to="/portfolio">Vedi Altri Progetti</Link>
               </Button>
             </div>
           </div>
