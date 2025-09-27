@@ -10,19 +10,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
-import { 
-  Mail, 
-  MessageCircle, 
-  MapPin, 
-  Phone, 
-  Send, 
-  Clock, 
-  Globe, 
-  Zap,
-  CheckCircle,
-  ArrowRight,
-  Upload
-} from 'lucide-react';
+import { Mail, MessageCircle, MapPin, Phone, Send, Clock, Globe, Zap, CheckCircle, ArrowRight, Upload } from 'lucide-react';
 
 // Schema di validazione con zod
 const contactSchema = z.object({
@@ -40,11 +28,11 @@ const contactSchema = z.object({
   sitoEsistente: z.string().trim().optional(),
   consenso: z.boolean().refine(val => val === true, "Devi accettare il trattamento dati")
 });
-
 type FormData = z.infer<typeof contactSchema>;
-
 const Contatti = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState<Partial<FormData>>({
     nome: '',
     cognome: '',
@@ -62,38 +50,45 @@ const Contatti = () => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const piani = {
-    creazione: [
-      { value: 'starter', label: 'Starter', description: 'Sito fino a 5 pagine, ideale per professionisti' },
-      { value: 'growth', label: 'Growth', description: 'Sito completo con CMS e funzionalità avanzate', recommended: true },
-      { value: 'scale', label: 'Scale', description: 'Soluzione enterprise con e-commerce e integrazioni' }
-    ],
-    restyling: [
-      { value: 'refresh', label: 'Refresh', description: 'Aggiornamento design e ottimizzazioni base' },
-      { value: 'transform', label: 'Transform', description: 'Restyling completo con nuove funzionalità', recommended: true },
-      { value: 'revolution', label: 'Revolution', description: 'Ricostruzione totale con architettura moderna' }
-    ]
+    creazione: [{
+      value: 'starter',
+      label: 'Starter',
+      description: 'Sito fino a 5 pagine, ideale per professionisti'
+    }, {
+      value: 'growth',
+      label: 'Growth',
+      description: 'Sito completo con CMS e funzionalità avanzate',
+      recommended: true
+    }, {
+      value: 'scale',
+      label: 'Scale',
+      description: 'Soluzione enterprise con e-commerce e integrazioni'
+    }],
+    restyling: [{
+      value: 'refresh',
+      label: 'Refresh',
+      description: 'Aggiornamento design e ottimizzazioni base'
+    }, {
+      value: 'transform',
+      label: 'Transform',
+      description: 'Restyling completo con nuove funzionalità',
+      recommended: true
+    }, {
+      value: 'revolution',
+      label: 'Revolution',
+      description: 'Ricostruzione totale con architettura moderna'
+    }]
   };
-
-  const obiettivi = [
-    'Aumentare la visibilità online',
-    'Generare più contatti e lead',
-    'Vendere prodotti online',
-    'Migliorare l\'immagine aziendale',
-    'Ottimizzare le performance',
-    'Integrazione con sistemi esistenti'
-  ];
-
+  const obiettivi = ['Aumentare la visibilità online', 'Generare più contatti e lead', 'Vendere prodotti online', 'Migliorare l\'immagine aziendale', 'Ottimizzare le performance', 'Integrazione con sistemi esistenti'];
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setErrors({});
-
     try {
       // Validazione con zod
       const validatedData = contactSchema.parse(formData);
-      
+
       // Simulazione invio form con dati validati
       await new Promise(resolve => setTimeout(resolve, 2000));
 
@@ -105,29 +100,36 @@ const Contatti = () => {
           value: 1
         });
       }
-
       toast({
         title: "Richiesta Inviata con Successo!",
-        description: "Riceverai la tua proposta personalizzata entro 48 ore. Ti contatteremo presto!",
+        description: "Riceverai la tua proposta personalizzata entro 48 ore. Ti contatteremo presto!"
       });
 
       // Reset form
       setFormData({
-        nome: '', cognome: '', email: '', telefono: '', azienda: '',
-        tipoServizio: undefined, piano: '', urgenza: undefined, budget: '',
-        descrizione: '', obiettivi: [], sitoEsistente: '', consenso: false
+        nome: '',
+        cognome: '',
+        email: '',
+        telefono: '',
+        azienda: '',
+        tipoServizio: undefined,
+        piano: '',
+        urgenza: undefined,
+        budget: '',
+        descrizione: '',
+        obiettivi: [],
+        sitoEsistente: '',
+        consenso: false
       });
-
     } catch (error) {
       if (error instanceof z.ZodError) {
         const errorMap: Record<string, string> = {};
-        error.issues.forEach((err) => {
+        error.issues.forEach(err => {
           if (err.path[0]) {
             errorMap[err.path[0] as string] = err.message;
           }
         });
         setErrors(errorMap);
-        
         toast({
           title: "Errori nel Form",
           description: "Correggi gli errori evidenziati e riprova.",
@@ -141,17 +143,20 @@ const Contatti = () => {
         });
       }
     }
-    
     setIsSubmitting(false);
   };
-
   const handleInputChange = (field: keyof FormData, value: any) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
     if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: '' }));
+      setErrors(prev => ({
+        ...prev,
+        [field]: ''
+      }));
     }
   };
-
   const handleObiettiviChange = (obiettivo: string, checked: boolean) => {
     const currentObiettivi = formData.obiettivi || [];
     if (checked) {
@@ -160,13 +165,10 @@ const Contatti = () => {
       handleInputChange('obiettivi', currentObiettivi.filter(o => o !== obiettivo));
     }
   };
-
   const getCurrentPiani = () => {
     return formData.tipoServizio ? piani[formData.tipoServizio] : [];
   };
-
-  return (
-    <div className="min-h-screen pt-16">
+  return <div className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4 lg:px-8 text-center">
@@ -219,28 +221,12 @@ const Contatti = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="nome">Nome *</Label>
-                          <Input
-                            id="nome"
-                            type="text"
-                            placeholder="Il tuo nome"
-                            value={formData.nome}
-                            onChange={(e) => handleInputChange('nome', e.target.value)}
-                            className={errors.nome ? 'border-destructive' : 'focus:ring-primary'}
-                            aria-describedby={errors.nome ? 'nome-error' : undefined}
-                          />
+                          <Input id="nome" type="text" placeholder="Il tuo nome" value={formData.nome} onChange={e => handleInputChange('nome', e.target.value)} className={errors.nome ? 'border-destructive' : 'focus:ring-primary'} aria-describedby={errors.nome ? 'nome-error' : undefined} />
                           {errors.nome && <p id="nome-error" className="text-sm text-destructive">{errors.nome}</p>}
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="cognome">Cognome *</Label>
-                          <Input
-                            id="cognome"
-                            type="text"
-                            placeholder="Il tuo cognome"
-                            value={formData.cognome}
-                            onChange={(e) => handleInputChange('cognome', e.target.value)}
-                            className={errors.cognome ? 'border-destructive' : 'focus:ring-primary'}
-                            aria-describedby={errors.cognome ? 'cognome-error' : undefined}
-                          />
+                          <Input id="cognome" type="text" placeholder="Il tuo cognome" value={formData.cognome} onChange={e => handleInputChange('cognome', e.target.value)} className={errors.cognome ? 'border-destructive' : 'focus:ring-primary'} aria-describedby={errors.cognome ? 'cognome-error' : undefined} />
                           {errors.cognome && <p id="cognome-error" className="text-sm text-destructive">{errors.cognome}</p>}
                         </div>
                       </div>
@@ -248,42 +234,19 @@ const Contatti = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="email">Email *</Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            placeholder="tua@email.com"
-                            value={formData.email}
-                            onChange={(e) => handleInputChange('email', e.target.value)}
-                            className={errors.email ? 'border-destructive' : 'focus:ring-primary'}
-                            aria-describedby={errors.email ? 'email-error' : undefined}
-                          />
+                          <Input id="email" type="email" placeholder="tua@email.com" value={formData.email} onChange={e => handleInputChange('email', e.target.value)} className={errors.email ? 'border-destructive' : 'focus:ring-primary'} aria-describedby={errors.email ? 'email-error' : undefined} />
                           {errors.email && <p id="email-error" className="text-sm text-destructive">{errors.email}</p>}
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="telefono">Telefono *</Label>
-                          <Input
-                            id="telefono"
-                            type="tel"
-                            placeholder="+39 123 456 7890"
-                            value={formData.telefono}
-                            onChange={(e) => handleInputChange('telefono', e.target.value)}
-                            className={errors.telefono ? 'border-destructive' : 'focus:ring-primary'}
-                            aria-describedby={errors.telefono ? 'telefono-error' : undefined}
-                          />
+                          <Input id="telefono" type="tel" placeholder="+39 123 456 7890" value={formData.telefono} onChange={e => handleInputChange('telefono', e.target.value)} className={errors.telefono ? 'border-destructive' : 'focus:ring-primary'} aria-describedby={errors.telefono ? 'telefono-error' : undefined} />
                           {errors.telefono && <p id="telefono-error" className="text-sm text-destructive">{errors.telefono}</p>}
                         </div>
                       </div>
 
                       <div className="space-y-2">
                         <Label htmlFor="azienda">Azienda</Label>
-                        <Input
-                          id="azienda"
-                          type="text"
-                          placeholder="Nome della tua azienda (opzionale)"
-                          value={formData.azienda}
-                          onChange={(e) => handleInputChange('azienda', e.target.value)}
-                          className="focus:ring-primary"
-                        />
+                        <Input id="azienda" type="text" placeholder="Nome della tua azienda (opzionale)" value={formData.azienda} onChange={e => handleInputChange('azienda', e.target.value)} className="focus:ring-primary" />
                       </div>
                     </div>
 
@@ -291,14 +254,10 @@ const Contatti = () => {
                     <div className="space-y-4">
                       <h3 className="text-xl font-semibold border-b pb-2">🎯 Tipo di Servizio</h3>
                       <Label>Di cosa hai bisogno? *</Label>
-                      <RadioGroup
-                        value={formData.tipoServizio}
-                        onValueChange={(value: string) => {
-                          handleInputChange('tipoServizio', value);
-                          handleInputChange('piano', ''); // Reset piano quando cambia servizio
-                        }}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                      >
+                      <RadioGroup value={formData.tipoServizio} onValueChange={(value: string) => {
+                      handleInputChange('tipoServizio', value);
+                      handleInputChange('piano', ''); // Reset piano quando cambia servizio
+                    }} className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <div className="flex items-center space-x-2 p-4 border rounded-lg hover:bg-secondary cursor-pointer">
                             <RadioGroupItem value="creazione" id="creazione" />
@@ -332,17 +291,11 @@ const Contatti = () => {
                     </div>
 
                     {/* Piano */}
-                    {formData.tipoServizio && (
-                      <div className="space-y-4">
+                    {formData.tipoServizio && <div className="space-y-4">
                         <h3 className="text-xl font-semibold border-b pb-2">📦 Piano Desiderato</h3>
                         <Label>Quale piano ti interessa? *</Label>
-                        <RadioGroup
-                          value={formData.piano}
-                          onValueChange={(value) => handleInputChange('piano', value)}
-                          className="space-y-3"
-                        >
-                          {getCurrentPiani().map((piano) => (
-                            <div key={piano.value} className="relative">
+                        <RadioGroup value={formData.piano} onValueChange={value => handleInputChange('piano', value)} className="space-y-3">
+                          {getCurrentPiani().map(piano => <div key={piano.value} className="relative">
                               <div className="flex items-center space-x-2 p-4 border rounded-lg hover:bg-secondary cursor-pointer">
                                 <RadioGroupItem value={piano.value} id={piano.value} />
                                 <Label htmlFor={piano.value} className="cursor-pointer flex-1">
@@ -350,39 +303,26 @@ const Contatti = () => {
                                     <div>
                                       <div className="font-medium flex items-center gap-2">
                                         {piano.label}
-                                        {piano.recommended && (
-                                          <Badge className="text-xs">Consigliato</Badge>
-                                        )}
+                                        {piano.recommended && <Badge className="text-xs">Consigliato</Badge>}
                                       </div>
                                       <div className="text-sm text-muted-foreground">{piano.description}</div>
                                     </div>
                                   </div>
                                 </Label>
                               </div>
-                            </div>
-                          ))}
+                            </div>)}
                         </RadioGroup>
                         {errors.piano && <p className="text-sm text-destructive">{errors.piano}</p>}
-                      </div>
-                    )}
+                      </div>}
 
                     {/* Sito Esistente (solo per restyling) */}
-                    {formData.tipoServizio === 'restyling' && (
-                      <div className="space-y-2">
+                    {formData.tipoServizio === 'restyling' && <div className="space-y-2">
                         <Label htmlFor="sitoEsistente">URL Sito Attuale</Label>
-                        <Input
-                          id="sitoEsistente"
-                          type="url"
-                          placeholder="https://tuosito.it"
-                          value={formData.sitoEsistente}
-                          onChange={(e) => handleInputChange('sitoEsistente', e.target.value)}
-                          className="focus:ring-primary"
-                        />
+                        <Input id="sitoEsistente" type="url" placeholder="https://tuosito.it" value={formData.sitoEsistente} onChange={e => handleInputChange('sitoEsistente', e.target.value)} className="focus:ring-primary" />
                         <p className="text-sm text-muted-foreground">
                           Ci aiuta a valutare la situazione attuale
                         </p>
-                      </div>
-                    )}
+                      </div>}
 
                     {/* Urgenza e Budget */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -402,23 +342,7 @@ const Contatti = () => {
                         {errors.urgenza && <p className="text-sm text-destructive">{errors.urgenza}</p>}
                       </div>
 
-                      <div className="space-y-4">
-                        <h3 className="text-xl font-semibold border-b pb-2">💰 Budget</h3>
-                        <Label>Fascia di investimento *</Label>
-                        <Select value={formData.budget} onValueChange={(value) => handleInputChange('budget', value)}>
-                          <SelectTrigger className={errors.budget ? 'border-destructive' : ''}>
-                            <SelectValue placeholder="Seleziona budget" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="800-1500">€800 - €1.500 (Base)</SelectItem>
-                            <SelectItem value="1500-3000">€1.500 - €3.000 (Intermedio)</SelectItem>
-                            <SelectItem value="3000-6000">€3.000 - €6.000 (Avanzato)</SelectItem>
-                            <SelectItem value="6000+">€6.000+ (Premium)</SelectItem>
-                            <SelectItem value="da-valutare">Da valutare insieme</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        {errors.budget && <p className="text-sm text-destructive">{errors.budget}</p>}
-                      </div>
+                      
                     </div>
 
                     {/* Obiettivi */}
@@ -426,18 +350,12 @@ const Contatti = () => {
                       <h3 className="text-xl font-semibold border-b pb-2">🎯 Obiettivi del Progetto</h3>
                       <Label>Cosa vuoi ottenere con il tuo sito? (Seleziona tutti quelli che ti interessano) *</Label>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {obiettivi.map((obiettivo) => (
-                          <div key={obiettivo} className="flex items-center space-x-2">
-                            <Checkbox
-                              id={obiettivo}
-                              checked={formData.obiettivi?.includes(obiettivo) || false}
-                              onCheckedChange={(checked) => handleObiettiviChange(obiettivo, checked as boolean)}
-                            />
+                        {obiettivi.map(obiettivo => <div key={obiettivo} className="flex items-center space-x-2">
+                            <Checkbox id={obiettivo} checked={formData.obiettivi?.includes(obiettivo) || false} onCheckedChange={checked => handleObiettiviChange(obiettivo, checked as boolean)} />
                             <Label htmlFor={obiettivo} className="text-sm cursor-pointer">
                               {obiettivo}
                             </Label>
-                          </div>
-                        ))}
+                          </div>)}
                       </div>
                       {errors.obiettivi && <p className="text-sm text-destructive">{errors.obiettivi}</p>}
                     </div>
@@ -446,15 +364,7 @@ const Contatti = () => {
                     <div className="space-y-4">
                       <h3 className="text-xl font-semibold border-b pb-2">📝 Descrizione del Progetto</h3>
                       <Label htmlFor="descrizione">Raccontaci di più sul tuo progetto *</Label>
-                      <Textarea
-                        id="descrizione"
-                        placeholder="Descrivi il tuo business, il target di riferimento, le funzionalità desiderate, esempi di siti che ti piacciono, requisiti specifici..."
-                        value={formData.descrizione}
-                        onChange={(e) => handleInputChange('descrizione', e.target.value)}
-                        rows={6}
-                        className={`resize-none ${errors.descrizione ? 'border-destructive' : 'focus:ring-primary'}`}
-                        aria-describedby={errors.descrizione ? 'descrizione-error' : undefined}
-                      />
+                      <Textarea id="descrizione" placeholder="Descrivi il tuo business, il target di riferimento, le funzionalità desiderate, esempi di siti che ti piacciono, requisiti specifici..." value={formData.descrizione} onChange={e => handleInputChange('descrizione', e.target.value)} rows={6} className={`resize-none ${errors.descrizione ? 'border-destructive' : 'focus:ring-primary'}`} aria-describedby={errors.descrizione ? 'descrizione-error' : undefined} />
                       <div className="flex justify-between text-sm text-muted-foreground">
                         <span>Minimo 20 caratteri per una valutazione accurata</span>
                         <span>{formData.descrizione?.length || 0}/1500</span>
@@ -465,12 +375,7 @@ const Contatti = () => {
                     {/* Consenso */}
                     <div className="space-y-4">
                       <div className="flex items-start space-x-3 p-4 border rounded-lg bg-muted/30">
-                        <Checkbox
-                          id="consenso"
-                          checked={formData.consenso || false}
-                          onCheckedChange={(checked) => handleInputChange('consenso', checked as boolean)}
-                          className={errors.consenso ? 'border-destructive' : ''}
-                        />
+                        <Checkbox id="consenso" checked={formData.consenso || false} onCheckedChange={checked => handleInputChange('consenso', checked as boolean)} className={errors.consenso ? 'border-destructive' : ''} />
                         <Label htmlFor="consenso" className="text-sm cursor-pointer leading-relaxed">
                           Acconsento al trattamento dei miei dati personali secondo la{' '}
                           <a href="/privacy" className="text-primary underline" target="_blank">Privacy Policy</a>{' '}
@@ -480,24 +385,15 @@ const Contatti = () => {
                       {errors.consenso && <p className="text-sm text-destructive">{errors.consenso}</p>}
                     </div>
                     
-                    <Button 
-                      type="submit" 
-                      className="w-full btn-hero text-lg py-4"
-                      disabled={isSubmitting}
-                      size="lg"
-                    >
-                      {isSubmitting ? (
-                        <>
+                    <Button type="submit" className="w-full btn-hero text-lg py-4" disabled={isSubmitting} size="lg">
+                      {isSubmitting ? <>
                           <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
                           Invio in corso...
-                        </>
-                      ) : (
-                        <>
+                        </> : <>
                           <Send className="mr-3 h-5 w-5" />
                           Invia Richiesta Preventivo
                           <ArrowRight className="ml-3 h-5 w-5" />
-                        </>
-                      )}
+                        </>}
                     </Button>
 
                     <p className="text-center text-sm text-muted-foreground">
@@ -546,10 +442,7 @@ const Contatti = () => {
                   <p className="text-sm text-muted-foreground">Preferisci parlare direttamente con noi?</p>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <a
-                    href="mailto:info@siterefresh.it"
-                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors group"
-                  >
+                  <a href="mailto:info@siterefresh.it" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors group">
                     <div className="p-2 bg-primary-lighter rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
                       <Mail className="h-4 w-4 text-primary group-hover:text-white" />
                     </div>
@@ -559,12 +452,7 @@ const Contatti = () => {
                     </div>
                   </a>
 
-                  <a
-                    href={`https://wa.me/393001234567?text=${encodeURIComponent('Ciao, vorrei ricevere informazioni sui vostri servizi di creazione siti web.')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors group"
-                  >
+                  <a href={`https://wa.me/393001234567?text=${encodeURIComponent('Ciao, vorrei ricevere informazioni sui vostri servizi di creazione siti web.')}`} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors group">
                     <div className="p-2 bg-primary-lighter rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
                       <MessageCircle className="h-4 w-4 text-primary group-hover:text-white" />
                     </div>
@@ -574,10 +462,7 @@ const Contatti = () => {
                     </div>
                   </a>
 
-                  <a
-                    href="tel:+393001234567"
-                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors group"
-                  >
+                  <a href="tel:+393001234567" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors group">
                     <div className="p-2 bg-primary-lighter rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
                       <Phone className="h-4 w-4 text-primary group-hover:text-white" />
                     </div>
@@ -631,8 +516,6 @@ const Contatti = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Contatti;
