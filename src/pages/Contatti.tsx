@@ -188,10 +188,7 @@ const Contatti = () => {
               <Clock className="h-4 w-4" />
               <span>Risposta in 72h</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              <span>Chiamata inclusa</span>
-            </div>
+            
           </div>
         </div>
       </section>
