@@ -396,9 +396,7 @@ const Contatti = () => {
                         </>}
                     </Button>
 
-                    <p className="text-center text-sm text-muted-foreground">
-                      📞 <strong>Riceverai anche una chiamata gratuita</strong> per chiarire tutti i dettagli del progetto
-                    </p>
+                    
                   </form>
                 </CardContent>
               </Card>
@@ -428,10 +426,7 @@ const Contatti = () => {
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                     <span><strong>Preventivo dettagliato</strong> e trasparente</span>
                   </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span><strong>Soddisfatti o rifacciamo</strong></span>
-                  </div>
+                  
                 </CardContent>
               </Card>
 
@@ -495,13 +490,7 @@ const Contatti = () => {
                         <div className="text-muted-foreground">Studiamo le tue esigenze</div>
                       </div>
                     </div>
-                    <div className="flex gap-3">
-                      <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</div>
-                      <div>
-                        <div className="font-medium">Ti chiamiamo</div>
-                        <div className="text-muted-foreground">Consulenza gratuita</div>
-                      </div>
-                    </div>
+                    
                     <div className="flex gap-3">
                       <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</div>
                       <div>
