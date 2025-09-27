@@ -102,7 +102,7 @@ const Contatti = () => {
       }
       toast({
         title: "Richiesta Inviata con Successo!",
-        description: "Riceverai la tua proposta personalizzata entro 48 ore. Ti contatteremo presto!"
+        description: "Riceverai la tua proposta personalizzata entro 72 ore. Ti contatteremo presto!"
       });
 
       // Reset form
@@ -177,7 +177,7 @@ const Contatti = () => {
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
             Compila il form dettagliato per ricevere una proposta su misura per il tuo progetto. 
-            <strong> Risposta garantita entro 48 ore.</strong>
+            <strong> Risposta garantita entro 72 ore.</strong>
           </p>
           <div className="flex flex-wrap justify-center items-center gap-6 text-white/80 text-sm">
             <div className="flex items-center gap-2">
@@ -186,7 +186,7 @@ const Contatti = () => {
             </div>
             <div className="flex items-center gap-2">
               <Clock className="h-4 w-4" />
-              <span>Risposta in 48h</span>
+              <span>Risposta in 72h</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
@@ -416,7 +416,7 @@ const Contatti = () => {
                 <CardContent className="space-y-4">
                   <div className="flex items-center gap-3 text-sm">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span><strong>Risposta in 48h</strong> o sconto 10%</span>
+                    <span><strong>Risposta in 72h</strong></span>
                   </div>
                   <div className="flex items-center gap-3 text-sm">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -495,7 +495,7 @@ const Contatti = () => {
                       <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</div>
                       <div>
                         <div className="font-medium">Proposta dettagliata</div>
-                        <div className="text-muted-foreground">Entro 48 ore</div>
+                        <div className="text-muted-foreground">Entro 72 ore</div>
                       </div>
                     </div>
                   </div>
