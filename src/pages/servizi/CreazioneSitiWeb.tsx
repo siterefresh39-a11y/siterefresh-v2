@@ -237,60 +237,179 @@ const CreazioneSitiWeb = () => {
         </div>
       </section>
 
-      {/* Pacchetti Section */}
+      {/* Le Nostre Soluzioni Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Pacchetti e Prezzi
+                Le Nostre Soluzioni
               </h2>
-              <p className="text-lg text-muted-foreground">
-                Scegli il pacchetto più adatto alle esigenze della tua azienda.
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Tre livelli di servizio progettati per accompagnare la crescita del tuo business, 
+                dal lancio online alla scalabilità aziendale.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {packages.map((pkg, index) => (
-                <Card 
-                  key={pkg.name} 
-                  className={`card-hover relative ${pkg.recommended ? 'ring-2 ring-primary' : ''}`}
-                >
-                  {pkg.recommended && (
+              {[
+                {
+                  nome: "Starter",
+                  include: [
+                    "Sito web responsive fino a 5 pagine",
+                    "Design personalizzato su misura",
+                    "Ottimizzazione SEO di base",
+                    "Hosting incluso per il primo anno",
+                    "Certificato SSL gratuito",
+                    "Assistenza email per 3 mesi"
+                  ],
+                  tempoConsegna: "10-15 giorni lavorativi",
+                  clienteIdeale: "Professionisti, artigiani, piccole attività locali",
+                  pagamento: "Pagamento mensile senza anticipo o soluzione unica"
+                },
+                {
+                  nome: "Growth", 
+                  include: [
+                    "Sito web fino a 15 pagine + blog",
+                    "Sistema di gestione contenuti (CMS)",
+                    "E-commerce base (fino a 50 prodotti)",
+                    "Integrazione social e newsletter",
+                    "Analytics e monitoraggio performance", 
+                    "Assistenza prioritaria per 6 mesi"
+                  ],
+                  tempoConsegna: "15-25 giorni lavorativi",
+                  clienteIdeale: "PMI in crescita, negozi online, aziende di servizi",
+                  pagamento: "Rateizzazione personalizzata o abbonamento mensile",
+                  recommended: true
+                },
+                {
+                  nome: "Scale",
+                  include: [
+                    "Sito web completo + e-commerce avanzato",
+                    "Automazioni marketing e CRM",
+                    "Integrazioni ERP e gestionali",
+                    "Performance ottimizzate e CDN",
+                    "Backup automatici e sicurezza avanzata",
+                    "Assistenza dedicata 12 mesi"
+                  ],
+                  tempoConsegna: "25-40 giorni lavorativi", 
+                  clienteIdeale: "Aziende strutturate, e-commerce consolidati, franchise",
+                  pagamento: "Piani di pagamento flessibili su misura"
+                }
+              ].map((fascia, index) => (
+                <Card key={fascia.nome} className={`card-hover ${fascia.recommended ? 'border-primary shadow-lg ring-2 ring-primary' : ''}`}>
+                  {fascia.recommended && (
                     <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white">
-                      Consigliato
+                      Più Richiesto
                     </Badge>
                   )}
-                  
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-2xl">{pkg.name}</CardTitle>
-                    <div className="text-3xl font-bold text-primary mb-2">{pkg.price}</div>
-                    <p className="text-muted-foreground">{pkg.description}</p>
+                  <CardHeader>
+                    <CardTitle className="text-2xl">{fascia.nome}</CardTitle>
+                    <div className="space-y-2 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-4 w-4" />
+                        <span>{fascia.tempoConsegna}</span>
+                      </div>
+                      <p className="font-medium">{fascia.clienteIdeale}</p>
+                    </div>
                   </CardHeader>
-                  
-                  <CardContent className="space-y-4">
-                    <ul className="space-y-3">
-                      {pkg.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                          <span className="text-sm">{feature}</span>
+                  <CardContent>
+                    <ul className="space-y-3 mb-6">
+                      {fascia.include.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm">{item}</span>
                         </li>
                       ))}
                     </ul>
-                    
-                    <Button 
-                      className={`w-full ${pkg.recommended ? 'btn-hero' : ''}`} 
-                      variant={pkg.recommended ? 'default' : 'outline'}
-                      asChild
-                    >
-                      <Link to="/contatti">
-                        Scegli {pkg.name}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
+                    <div className="border-t pt-4">
+                      <p className="text-xs text-muted-foreground mb-4">
+                        <strong>Pagamento:</strong> {fascia.pagamento}
+                      </p>
+                      <Button className="w-full" variant={fascia.recommended ? "default" : "outline"} asChild>
+                        <Link to="/contatti">
+                          Richiedi Preventivo
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Esempi Indicativi - Blocco Opzionale */}
+      <section className="py-16 bg-muted/30 border-y-2 border-dashed border-muted">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge variant="outline" className="mb-4 text-sm font-medium">
+                ESEMPI NON VINCOLANTI
+              </Badge>
+              <h3 className="text-2xl font-bold mb-4">Preventivi Tipici Indicativi</h3>
+              <p className="text-muted-foreground">
+                <strong>Attenzione:</strong> Questi sono <u>esempi puramente indicativi e NON vincolanti</u>. 
+                Ogni preventivo viene calcolato sui requisiti specifici del progetto.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="border-dashed">
+                <CardHeader>
+                  <CardTitle className="text-lg">Landing Page</CardTitle>
+                  <div className="text-2xl font-bold text-primary">€800 - €1.200</div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    <strong>Cliente tipo:</strong> Professionista, servizio locale
+                  </p>
+                  <p className="text-sm mb-3">
+                    Pagina singola ottimizzata per conversioni con modulo contatti e integrazione analytics.
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    <strong>Risultato atteso:</strong> +200% contatti qualificati
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-dashed">
+                <CardHeader>
+                  <CardTitle className="text-lg">Sito Aziendale</CardTitle>
+                  <div className="text-2xl font-bold text-primary">€1.800 - €3.500</div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    <strong>Cliente tipo:</strong> PMI, azienda di servizi
+                  </p>
+                  <p className="text-sm mb-3">
+                    Sito multipage con CMS, blog integrato e area download per cataloghi.
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    <strong>Risultato atteso:</strong> Presenza professionale online
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-dashed">
+                <CardHeader>
+                  <CardTitle className="text-lg">E-commerce</CardTitle>
+                  <div className="text-2xl font-bold text-primary">€3.200 - €8.000</div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    <strong>Cliente tipo:</strong> Negozio online, retail
+                  </p>
+                  <p className="text-sm mb-3">
+                    Shop completo con gestione prodotti, pagamenti e spedizioni automatizzate.
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    <strong>Risultato atteso:</strong> Nuovo canale di vendita
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

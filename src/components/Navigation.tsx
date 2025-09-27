@@ -45,7 +45,6 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Servizi', path: '/servizi' },
-    { name: 'Prezzi', path: '/prezzi' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Contatti', path: '/contatti' },

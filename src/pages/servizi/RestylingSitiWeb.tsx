@@ -240,60 +240,182 @@ const RestylingSitiWeb = () => {
         </div>
       </section>
 
-      {/* Pacchetti Section */}
+      {/* Le Nostre Soluzioni Restyling */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Pacchetti Restyling
+                Le Nostre Soluzioni di Restyling
               </h2>
-              <p className="text-lg text-muted-foreground">
-                Scegli il livello di trasformazione più adatto al tuo progetto.
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Tre livelli di trasformazione progettati per rinnovare la tua presenza online, 
+                dall'aggiornamento estetico alla rivoluzione digitale completa.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {packages.map((pkg, index) => (
-                <Card 
-                  key={pkg.name} 
-                  className={`card-hover relative ${pkg.recommended ? 'ring-2 ring-primary' : ''}`}
-                >
-                  {pkg.recommended && (
+              {[
+                {
+                  nome: "Refresh",
+                  include: [
+                    "Nuovo design moderno e responsive",
+                    "Ottimizzazione velocità di caricamento",
+                    "Miglioramento UX e navigazione",
+                    "Aggiornamento contenuti esistenti",
+                    "SEO on-page ottimizzato",
+                    "Test compatibilità browser"
+                  ],
+                  tempoConsegna: "7-14 giorni lavorativi",
+                  clienteIdeale: "Siti con buona struttura ma design datato",
+                  pagamento: "Pagamento in 2 rate o soluzione unica"
+                },
+                {
+                  nome: "Transform", 
+                  include: [
+                    "Redesign completo dell'interfaccia",
+                    "Nuove funzionalità e sezioni",
+                    "CMS moderno per gestione contenuti",
+                    "Ottimizzazione SEO avanzata",
+                    "Integrazione social media",
+                    "Analytics e monitoraggio avanzato",
+                    "Migrazione sicura dei contenuti"
+                  ],
+                  tempoConsegna: "15-25 giorni lavorativi",
+                  clienteIdeale: "Siti che necessitano rinnovamento completo",
+                  pagamento: "Rateizzazione flessibile disponibile",
+                  recommended: true
+                },
+                {
+                  nome: "Revolution",
+                  include: [
+                    "Ricostruzione completa da zero",
+                    "Architettura moderna e scalabile",
+                    "E-commerce o portale avanzato",
+                    "Automazioni e integrazioni personalizzate",
+                    "Area clienti e dashboard",
+                    "Supporto multilingua",
+                    "Training completo del team",
+                    "Assistenza prioritaria 12 mesi"
+                  ],
+                  tempoConsegna: "25-40 giorni lavorativi", 
+                  clienteIdeale: "Aziende che vogliono una trasformazione digitale completa",
+                  pagamento: "Piani di pagamento personalizzati"
+                }
+              ].map((fascia, index) => (
+                <Card key={fascia.nome} className={`card-hover ${fascia.recommended ? 'border-primary shadow-lg ring-2 ring-primary' : ''}`}>
+                  {fascia.recommended && (
                     <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white">
                       Più Scelto
                     </Badge>
                   )}
-                  
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-2xl">{pkg.name}</CardTitle>
-                    <div className="text-3xl font-bold text-primary mb-2">{pkg.price}</div>
-                    <p className="text-muted-foreground">{pkg.description}</p>
+                  <CardHeader>
+                    <CardTitle className="text-2xl">{fascia.nome}</CardTitle>
+                    <div className="space-y-2 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-4 w-4" />
+                        <span>{fascia.tempoConsegna}</span>
+                      </div>
+                      <p className="font-medium">{fascia.clienteIdeale}</p>
+                    </div>
                   </CardHeader>
-                  
-                  <CardContent className="space-y-4">
-                    <ul className="space-y-3">
-                      {pkg.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                          <span className="text-sm">{feature}</span>
+                  <CardContent>
+                    <ul className="space-y-3 mb-6">
+                      {fascia.include.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm">{item}</span>
                         </li>
                       ))}
                     </ul>
-                    
-                    <Button 
-                      className={`w-full ${pkg.recommended ? 'btn-hero' : ''}`} 
-                      variant={pkg.recommended ? 'default' : 'outline'}
-                      asChild
-                    >
-                      <Link to="/contatti">
-                        Scegli {pkg.name}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
+                    <div className="border-t pt-4">
+                      <p className="text-xs text-muted-foreground mb-4">
+                        <strong>Pagamento:</strong> {fascia.pagamento}
+                      </p>
+                      <Button className="w-full" variant={fascia.recommended ? "default" : "outline"} asChild>
+                        <Link to="/contatti">
+                          Richiedi Analisi
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Esempi Restyling - Blocco Opzionale */}
+      <section className="py-16 bg-muted/30 border-y-2 border-dashed border-muted">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge variant="outline" className="mb-4 text-sm font-medium">
+                ESEMPI RESTYLING NON VINCOLANTI
+              </Badge>
+              <h3 className="text-2xl font-bold mb-4">Investimenti Tipici per Restyling</h3>
+              <p className="text-muted-foreground">
+                <strong>Attenzione:</strong> Questi sono <u>esempi puramente indicativi e NON vincolanti</u>. 
+                Il preventivo finale dipende dalla complessità del sito esistente e dalle nuove funzionalità richieste.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="border-dashed">
+                <CardHeader>
+                  <CardTitle className="text-lg">Restyling Semplice</CardTitle>
+                  <div className="text-2xl font-bold text-primary">€600 - €1.000</div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    <strong>Cliente tipo:</strong> Sito vetrina con poche pagine
+                  </p>
+                  <p className="text-sm mb-3">
+                    Aggiornamento design, ottimizzazione mobile e miglioramento performance.
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    <strong>Risultato atteso:</strong> Aspetto moderno e professionale
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-dashed">
+                <CardHeader>
+                  <CardTitle className="text-lg">Restyling Completo</CardTitle>
+                  <div className="text-2xl font-bold text-primary">€1.200 - €2.800</div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    <strong>Cliente tipo:</strong> Sito aziendale multi-page
+                  </p>
+                  <p className="text-sm mb-3">
+                    Redesign totale, nuovo CMS, ottimizzazione SEO e nuove funzionalità.
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    <strong>Risultato atteso:</strong> +300% performance e usabilità
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-dashed">
+                <CardHeader>
+                  <CardTitle className="text-lg">Trasformazione Digitale</CardTitle>
+                  <div className="text-2xl font-bold text-primary">€2.800 - €6.000</div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    <strong>Cliente tipo:</strong> E-commerce o portale complesso
+                  </p>
+                  <p className="text-sm mb-3">
+                    Ricostruzione completa con nuove tecnologie, automazioni e integrazioni.
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    <strong>Risultato atteso:</strong> Piattaforma digitale all'avanguardia
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
