@@ -206,7 +206,7 @@ const Contatti = () => {
                 <CardHeader>
                   <CardTitle className="text-3xl mb-2 flex items-center gap-2">
                     <Send className="h-8 w-8 text-primary" />
-                    Preventivo Dettagliato
+                    Richiesta Preventivo
                   </CardTitle>
                   <p className="text-muted-foreground">
                     Più informazioni ci fornisci, più precisa sarà la nostra proposta per il tuo progetto.
