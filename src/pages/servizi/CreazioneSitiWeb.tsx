@@ -158,23 +158,23 @@ const CreazioneSitiWeb = () => {
 
             <div className="mt-12 space-y-6 text-muted-foreground">
               <p className="text-lg leading-relaxed">
-                <strong className="text-foreground">Il design moderno e responsive</strong> garantisce che il tuo sito funzioni perfettamente su qualsiasi dispositivo, 
-                dal desktop allo smartphone, offrendo un'esperienza ottimale a tutti i visitatori e migliorando il posizionamento sui motori di ricerca.
+                <strong className="text-foreground">Design unico e responsive</strong> - Creiamo siti su misura, non template standard. Ogni progetto è personalizzato sull'identità della tua azienda e ottimizzato per funzionare perfettamente su desktop, tablet e smartphone.
               </p>
               
               <p className="text-lg leading-relaxed">
-                <strong className="text-foreground">L'ottimizzazione SEO integrata</strong> include la strutturazione del codice, meta tag ottimizzati, 
-                velocità di caricamento elevate e contenuti ottimizzati per aiutare il tuo sito a posizionarsi meglio su Google e generare più visite organiche.
+                <strong className="text-foreground">Dominio e hosting inclusi</strong> - Se non hai già un tuo dominio, ci occupiamo noi di registrarlo e configurare l'hosting: tutto è compreso nel prezzo finale, senza pensieri aggiuntivi.
               </p>
               
               <p className="text-lg leading-relaxed">
-                <strong className="text-foreground">Il sistema di gestione contenuti (CMS)</strong> ti permette di aggiornare facilmente testi, immagini e pagine 
-                senza conoscenze tecniche, mantenendo il tuo sito sempre aggiornato e pertinente per i tuoi clienti.
+                <strong className="text-foreground">Performance elevate e sicurezza SSL/HTTPS</strong> - Il tuo sito sarà veloce, affidabile e sicuro: tempi di caricamento ridotti e certificato SSL per trasmettere fiducia ai tuoi clienti.
               </p>
               
               <p className="text-lg leading-relaxed">
-                <strong className="text-foreground">La sicurezza SSL/HTTPS e i backup automatici</strong> proteggono il tuo sito da minacce informatiche 
-                e perdite di dati, garantendo la fiducia dei visitatori e la continuità del tuo business online.
+                <strong className="text-foreground">Integrazione social e contatti immediati</strong> - Colleghiamo i tuoi profili social e aggiungiamo canali di contatto diretti (email, telefono, WhatsApp), così i clienti possono raggiungerti facilmente.
+              </p>
+
+              <p className="text-lg leading-relaxed">
+                <strong className="text-foreground">Supporto iniziale incluso</strong> - Nei primi mesi ti guidiamo passo dopo passo: ti aiutiamo a gestire il sito e a fare eventuali piccole modifiche, così sei subito operativo online.
               </p>
             </div>
           </div>
