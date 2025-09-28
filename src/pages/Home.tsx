@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, Globe, Zap, Smartphone, Settings, Lightbulb } from 'lucide-react';
+import { ArrowRight, Zap, Settings, Lightbulb } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mov';
 const Home = () => {
   return <div className="min-h-screen">
@@ -95,78 +95,6 @@ La nostra missione è aiutare le PMI a portare la loro attività online senza co
         </div>
       </section>
 
-      {/* Cosa Facciamo Section */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Cosa Facciamo
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Offriamo soluzioni complete per la trasformazione digitale della tua azienda, 
-                dal design alla tecnologia più avanzata.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Link to="/servizi/creazione-siti-web" className="block">
-                <Card className="card-hover cursor-pointer">
-                  <CardContent className="p-6">
-                    <Globe className="h-12 w-12 text-primary mb-4" />
-                    <h3 className="text-xl font-semibold mb-3">Creazione Siti Web</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Siti web moderni, responsive e ottimizzati per le performance e la conversione.
-                    </p>
-                    <span className="text-primary font-medium link-underline">
-                      Scopri di più
-                    </span>
-                  </CardContent>
-                </Card>
-              </Link>
-
-              <Link to="/servizi/restyling-upgrade" className="block">
-                <Card className="card-hover cursor-pointer">
-                  <CardContent className="p-6">
-                    <Zap className="h-12 w-12 text-primary mb-4" />
-                    <h3 className="text-xl font-semibold mb-3">Restyling & Upgrade</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Rinnoviamo siti esistenti con design moderni e tecnologie all'avanguardia.
-                    </p>
-                    <span className="text-primary font-medium link-underline">
-                      Scopri di più
-                    </span>
-                  </CardContent>
-                </Card>
-              </Link>
-
-              <Link to="/servizi/ottimizzazione-seo" className="block">
-                <Card className="card-hover cursor-pointer">
-                  <CardContent className="p-6">
-                    <Smartphone className="h-12 w-12 text-primary mb-4" />
-                    <h3 className="text-xl font-semibold mb-3">Ottimizzazione SEO</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Miglioriamo la visibilità online con strategie SEO avanzate e content optimization.
-                    </p>
-                    <span className="text-primary font-medium link-underline">
-                      Scopri di più
-                    </span>
-                  </CardContent>
-                </Card>
-              </Link>
-            </div>
-
-            <div className="text-center mt-12">
-              <Button size="lg" className="btn-hero" asChild>
-                <Link to="/servizi">
-                  Vedi Tutti i Servizi
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-hero">
