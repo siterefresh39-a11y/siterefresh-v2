@@ -3,21 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Globe, Zap, Smartphone, Users, Target, TrendingUp } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mov';
-
 const Home = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <video
-            src={heroVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-          />
+          <video src={heroVideo} autoPlay muted loop playsInline className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-accent/80" />
         </div>
         
@@ -28,9 +19,7 @@ const Home = () => {
               <br />
               Siti Web per PMI
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Creiamo esperienze digitali innovative che trasformano le PMI in leader del loro settore
-            </p>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">Aiutiamo le PMI a farsi trovare online con esperienze digitali su misura.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" className="btn-hero text-lg px-8 py-4" asChild>
                 <Link to="/servizi">
@@ -60,14 +49,18 @@ const Home = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in-up">
               Chi Siamo
             </h2>
-            <p className="text-lg text-muted-foreground mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <p className="text-lg text-muted-foreground mb-12 animate-fade-in-up" style={{
+            animationDelay: '0.1s'
+          }}>
               Siamo un team di sviluppatori e designer appassionati, specializzati nella creazione di soluzioni digitali 
               innovative per piccole e medie imprese. La nostra missione è rendere la tecnologia accessibile e trasformativa 
               per ogni business, indipendentemente dalle dimensioni.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-              <Card className="card-hover animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <Card className="card-hover animate-fade-in-up" style={{
+              animationDelay: '0.2s'
+            }}>
                 <CardContent className="p-6 text-center">
                   <Users className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Team Esperto</h3>
@@ -77,7 +70,9 @@ const Home = () => {
                 </CardContent>
               </Card>
               
-              <Card className="card-hover animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <Card className="card-hover animate-fade-in-up" style={{
+              animationDelay: '0.3s'
+            }}>
                 <CardContent className="p-6 text-center">
                   <Target className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Focus PMI</h3>
@@ -87,7 +82,9 @@ const Home = () => {
                 </CardContent>
               </Card>
               
-              <Card className="card-hover animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <Card className="card-hover animate-fade-in-up" style={{
+              animationDelay: '0.4s'
+            }}>
                 <CardContent className="p-6 text-center">
                   <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Risultati Misurabili</h3>
@@ -190,8 +187,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
