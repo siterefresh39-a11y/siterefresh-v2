@@ -18,16 +18,12 @@ import {
 
 const CreazioneSitiWeb = () => {
   const features = [
-    'Design moderno e professionale',
-    'Responsive design per tutti i dispositivi',
-    'Ottimizzazione SEO integrata',
-    'Performance elevate (Google PageSpeed 90+)',
-    'CMS intuitivo per la gestione contenuti',
-    'Sicurezza avanzata SSL/HTTPS',
-    'Integrazione social media',
-    'Analytics e monitoraggio',
-    'Backup automatici',
-    'Supporto tecnico 24/7'
+    'Design unico e professionale (niente template preconfezionati)',
+    'Ottimizzato per ogni dispositivo (PC, tablet e smartphone)',
+    'Dominio e hosting inclusi se non hai già il tuo',
+    'Sicurezza SSL/HTTPS per trasmettere fiducia ai clienti',
+    'Integrazione social e contatti immediati (email, WhatsApp, telefono)',
+    'Supporto iniziale per guidarti nei primi passi online'
   ];
 
   const processSteps = [
