@@ -51,11 +51,8 @@ const Home = () => {
             </h2>
             <p className="text-lg text-muted-foreground mb-12 animate-fade-in-up" style={{
             animationDelay: '0.1s'
-          }}>
-              Siamo un team di sviluppatori e designer appassionati, specializzati nella creazione di soluzioni digitali 
-              innovative per piccole e medie imprese. La nostra missione è rendere la tecnologia accessibile e trasformativa 
-              per ogni business, indipendentemente dalle dimensioni.
-            </p>
+          }}>Siamo due ragazzi universitari con la passione per il digitale: uniamo competenze di programmazione e intelligenza artificiale per creare siti web personalizzati, veloci e accessibili.
+La nostra missione è aiutare le PMI a portare la loro attività online senza costi esagerati, offrendo soluzioni moderne e su misura che fanno davvero la differenza.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
               <Card className="card-hover animate-fade-in-up" style={{
