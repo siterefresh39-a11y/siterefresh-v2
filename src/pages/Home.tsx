@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, Globe, Zap, Smartphone, Users, Target, TrendingUp } from 'lucide-react';
+import { ArrowRight, Globe, Zap, Smartphone, Settings, Lightbulb } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mov';
 const Home = () => {
   return <div className="min-h-screen">
@@ -59,10 +59,10 @@ La nostra missione è aiutare le PMI a portare la loro attività online senza co
               animationDelay: '0.2s'
             }}>
                 <CardContent className="p-6 text-center">
-                  <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Team Esperto</h3>
+                  <Settings className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">Massima Personalizzazione</h3>
                   <p className="text-muted-foreground">
-                    Anni di esperienza nello sviluppo web e design UI/UX
+                    Ogni sito è progettato sulle esigenze del cliente, non un template standard.
                   </p>
                 </CardContent>
               </Card>
@@ -71,10 +71,10 @@ La nostra missione è aiutare le PMI a portare la loro attività online senza co
               animationDelay: '0.3s'
             }}>
                 <CardContent className="p-6 text-center">
-                  <Target className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Focus PMI</h3>
+                  <Zap className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">Velocità e Semplicità</h3>
                   <p className="text-muted-foreground">
-                    Comprendiamo le esigenze specifiche delle piccole e medie imprese
+                    Realizziamo e consegniamo in tempi rapidi, rendendo il processo facile e senza stress.
                   </p>
                 </CardContent>
               </Card>
@@ -83,10 +83,10 @@ La nostra missione è aiutare le PMI a portare la loro attività online senza co
               animationDelay: '0.4s'
             }}>
                 <CardContent className="p-6 text-center">
-                  <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Risultati Misurabili</h3>
+                  <Lightbulb className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">Supporto Creativo</h3>
                   <p className="text-muted-foreground">
-                    Ogni progetto è orientato al ROI e al successo del cliente
+                    Se non sai cosa inserire nel tuo sito, ti guidiamo noi con idee, testi e struttura adatte alla tua attività.
                   </p>
                 </CardContent>
               </Card>
