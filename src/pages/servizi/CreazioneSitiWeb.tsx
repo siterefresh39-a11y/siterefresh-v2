@@ -258,8 +258,8 @@ const CreazioneSitiWeb = () => {
                 Le Nostre Soluzioni
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Tre livelli di servizio progettati per accompagnare la crescita del tuo business, 
-                dal lancio online alla scalabilità aziendale.
+                Tre livelli di servizio pensati per accompagnarti nella creazione del tuo sito web,
+                dal primo passo online fino a una presenza digitale completa e professionale.
               </p>
             </div>
 
@@ -267,57 +267,57 @@ const CreazioneSitiWeb = () => {
               {[
                 {
                   nome: "Starter",
+                  descrizione: "💡 Landing page per farsi conoscere e attrarre nuovi clienti",
                   include: [
-                    "Sito web responsive fino a 5 pagine",
+                    "Landing page responsive e veloce",
                     "Design personalizzato su misura",
                     "Ottimizzazione SEO di base",
                     "Hosting incluso per il primo anno",
                     "Certificato SSL gratuito",
-                    "Assistenza email per 3 mesi"
+                    "Modulo richiesta preventivo e contatti",
+                    "Pulsante WhatsApp integrato"
                   ],
-                  tempoConsegna: "10-15 giorni lavorativi",
-                  clienteIdeale: "Professionisti, artigiani, piccole attività locali",
-                  pagamento: "Pagamento mensile senza anticipo o soluzione unica"
+                  tempoConsegna: "⏱️ 10–20 giorni lavorativi",
+                  pagamento: "30% all'avvio, saldo alla conferma dell'anteprima"
                 },
                 {
                   nome: "Growth", 
+                  descrizione: "🚀 Sito strutturato per valorizzare la tua attività e i tuoi progetti",
                   include: [
-                    "Sito web fino a 15 pagine + blog",
-                    "Sistema di gestione contenuti (CMS)",
-                    "E-commerce base (fino a 50 prodotti)",
-                    "Integrazione social e newsletter",
-                    "Analytics e monitoraggio performance", 
-                    "Assistenza prioritaria per 6 mesi"
+                    "Sito web completo e organizzato in più pagine",
+                    "Sezione dedicata ai tuoi progetti o lavori",
+                    "Integrazione con i tuoi social",
+                    "Modulo richiesta preventivo con servizio mail dedicato",
+                    "Pulsante WhatsApp e pagina contatti",
+                    "Immagini personalizzate",
+                    "Animazioni dinamiche e fluide"
                   ],
-                  tempoConsegna: "15-25 giorni lavorativi",
-                  clienteIdeale: "PMI in crescita, negozi online, aziende di servizi",
-                  pagamento: "Rateizzazione personalizzata o abbonamento mensile",
+                  tempoConsegna: "⏱️ 15–30 giorni lavorativi",
+                  pagamento: "30% all'avvio, saldo alla conferma dell'anteprima",
                   recommended: true
                 },
                 {
                   nome: "Scale",
+                  descrizione: "🏆 Sito web definito in ogni dettaglio, per un'immagine professionale impeccabile",
                   include: [
-                    "Sito web completo + e-commerce avanzato",
-                    "Automazioni marketing e CRM",
-                    "Integrazioni ERP e gestionali",
-                    "Performance ottimizzate e CDN",
-                    "Backup automatici e sicurezza avanzata",
-                    "Assistenza dedicata 12 mesi"
+                    "Sito web completo in ogni sua parte",
+                    "Home page, servizi, progetti e contatti",
+                    "Modulo preventivo e pulsante WhatsApp",
+                    "Animazioni avanzate e microinterazioni",
+                    "Immagini personalizzate e create con AI",
+                    "Struttura ottimizzata per performance e SEO",
+                    "Possibilità di funzionalità extra su richiesta"
                   ],
-                  tempoConsegna: "25-40 giorni lavorativi", 
-                  clienteIdeale: "Aziende strutturate, e-commerce consolidati, franchise",
-                  pagamento: "Piani di pagamento flessibili su misura"
+                  tempoConsegna: "⏱️ 25–40 giorni lavorativi",
+                  pagamento: "30% all'avvio, saldo alla conferma dell'anteprima"
                 }
               ].map((fascia, index) => (
                 <Card key={fascia.nome} className={`card-hover ${fascia.recommended ? 'border-primary shadow-lg ring-2 ring-primary' : ''}`}>
                   <CardHeader>
                     <CardTitle className="text-2xl">{fascia.nome}</CardTitle>
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4" />
-                        <span>{fascia.tempoConsegna}</span>
-                      </div>
-                      <p className="font-medium">{fascia.clienteIdeale}</p>
+                    <div className="space-y-2 text-sm">
+                      <p className="text-muted-foreground">{fascia.tempoConsegna}</p>
+                      <p className="font-medium text-foreground">{fascia.descrizione}</p>
                     </div>
                   </CardHeader>
                   <CardContent>
