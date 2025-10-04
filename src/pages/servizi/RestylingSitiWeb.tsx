@@ -13,7 +13,10 @@ import {
   Smartphone,
   Users,
   Clock,
-  Search
+  Search,
+  FileText,
+  Eye,
+  Rocket
 } from 'lucide-react';
 
 const RestylingSitiWeb = () => {
@@ -40,27 +43,39 @@ const RestylingSitiWeb = () => {
   const processSteps = [
     {
       step: '1',
-      title: 'Analisi Sito Esistente',
-      description: 'Analizziamo il tuo sito attuale identificando problemi e opportunità di miglioramento.',
-      icon: Search
+      title: 'Conoscenza delle tue esigenze',
+      description: 'Ti contattiamo per capire i tuoi obiettivi e ciò che desideri dal tuo sito: stile, funzionalità e target.',
+      icon: Users
     },
     {
       step: '2',
-      title: 'Strategia di Restyling',
-      description: 'Definiamo una strategia personalizzata mantenendo ciò che funziona e migliorando il resto.',
-      icon: TrendingUp
+      title: 'Preventivo personalizzato',
+      description: 'Prepariamo un\'offerta chiara e su misura, senza sorprese o costi nascosti.',
+      icon: FileText
     },
     {
       step: '3',
-      title: 'Redesign & Sviluppo',
-      description: 'Creiamo il nuovo design e sviluppiamo le nuove funzionalità mantenendo i tuoi contenuti.',
-      icon: RefreshCw
+      title: 'Acconto iniziale',
+      description: 'Confermato il preventivo, si procede al pagamento della prima parte per avviare il progetto.',
+      icon: CheckCircle
     },
     {
       step: '4',
-      title: 'Migrazione & Test',
-      description: 'Migriamo tutto in sicurezza e testiamo ogni funzionalità prima del lancio.',
-      icon: Shield
+      title: 'Anteprima del sito',
+      description: 'Entro i tempi stabiliti ti presentiamo una prima versione del sito da visionare e valutare.',
+      icon: Eye
+    },
+    {
+      step: '5',
+      title: 'Revisioni finali',
+      description: 'Apportiamo insieme eventuali modifiche o aggiustamenti per rendere il risultato perfetto.',
+      icon: RefreshCw
+    },
+    {
+      step: '6',
+      title: 'Consegna e pubblicazione',
+      description: 'Dopo il saldo finale, il sito viene messo online e ti spieghiamo come gestirlo in autonomia.',
+      icon: Rocket
     }
   ];
 

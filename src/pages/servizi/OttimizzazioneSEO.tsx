@@ -13,7 +13,10 @@ import {
   FileText,
   Link as LinkIcon,
   Eye,
-  Globe
+  Globe,
+  Users,
+  RefreshCw,
+  Rocket
 } from 'lucide-react';
 
 const OttimizzazioneSEO = () => {
@@ -33,27 +36,39 @@ const OttimizzazioneSEO = () => {
   const processSteps = [
     {
       step: '1',
-      title: 'Audit SEO Completo',
-      description: 'Analizziamo il tuo sito per identificare problemi tecnici e opportunità di miglioramento.',
-      icon: Search
+      title: 'Conoscenza delle tue esigenze',
+      description: 'Ti contattiamo per capire i tuoi obiettivi e ciò che desideri dal tuo sito: stile, funzionalità e target.',
+      icon: Users
     },
     {
       step: '2',
-      title: 'Strategia Keywords',
-      description: 'Ricerchiamo le parole chiave più efficaci per il tuo business e il tuo mercato.',
-      icon: Target
-    },
-    {
-      step: '3',
-      title: 'Ottimizzazione On-Page',
-      description: 'Ottimizziamo contenuti, meta tag, struttura e aspetti tecnici del sito.',
+      title: 'Preventivo personalizzato',
+      description: 'Prepariamo un\'offerta chiara e su misura, senza sorprese o costi nascosti.',
       icon: FileText
     },
     {
+      step: '3',
+      title: 'Acconto iniziale',
+      description: 'Confermato il preventivo, si procede al pagamento della prima parte per avviare il progetto.',
+      icon: CheckCircle
+    },
+    {
       step: '4',
-      title: 'Link Building & Monitoring',
-      description: 'Costruiamo autorità del dominio e monitoriamo costantemente i risultati.',
-      icon: LinkIcon
+      title: 'Anteprima del sito',
+      description: 'Entro i tempi stabiliti ti presentiamo una prima versione del sito da visionare e valutare.',
+      icon: Eye
+    },
+    {
+      step: '5',
+      title: 'Revisioni finali',
+      description: 'Apportiamo insieme eventuali modifiche o aggiustamenti per rendere il risultato perfetto.',
+      icon: RefreshCw
+    },
+    {
+      step: '6',
+      title: 'Consegna e pubblicazione',
+      description: 'Dopo il saldo finale, il sito viene messo online e ti spieghiamo come gestirlo in autonomia.',
+      icon: Rocket
     }
   ];
 

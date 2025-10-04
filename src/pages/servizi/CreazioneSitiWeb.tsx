@@ -13,7 +13,11 @@ import {
   Shield,
   Zap,
   Users,
-  Clock
+  Clock,
+  FileText,
+  Eye,
+  RefreshCw,
+  Rocket
 } from 'lucide-react';
 
 const CreazioneSitiWeb = () => {
@@ -29,27 +33,39 @@ const CreazioneSitiWeb = () => {
   const processSteps = [
     {
       step: '1',
-      title: 'Analisi e Strategia',
-      description: 'Studiamo il tuo business, target e obiettivi per definire la strategia digitale ottimale.',
+      title: 'Conoscenza delle tue esigenze',
+      description: 'Ti contattiamo per capire i tuoi obiettivi e ciò che desideri dal tuo sito: stile, funzionalità e target.',
       icon: Users
     },
     {
       step: '2',
-      title: 'Design & UX',
-      description: 'Creiamo wireframe e mockup del tuo sito, focalizzandoci su usabilità e conversioni.',
-      icon: Palette
+      title: 'Preventivo personalizzato',
+      description: 'Prepariamo un\'offerta chiara e su misura, senza sorprese o costi nascosti.',
+      icon: FileText
     },
     {
       step: '3',
-      title: 'Sviluppo Tecnico',
-      description: 'Sviluppiamo il sito con le tecnologie più moderne, garantendo performance eccellenti.',
-      icon: Globe
+      title: 'Acconto iniziale',
+      description: 'Confermato il preventivo, si procede al pagamento della prima parte per avviare il progetto.',
+      icon: CheckCircle
     },
     {
       step: '4',
-      title: 'Test & Launch',
-      description: 'Testiamo ogni funzionalità e ottimizziamo prima del lancio ufficiale.',
-      icon: Zap
+      title: 'Anteprima del sito',
+      description: 'Entro i tempi stabiliti ti presentiamo una prima versione del sito da visionare e valutare.',
+      icon: Eye
+    },
+    {
+      step: '5',
+      title: 'Revisioni finali',
+      description: 'Apportiamo insieme eventuali modifiche o aggiustamenti per rendere il risultato perfetto.',
+      icon: RefreshCw
+    },
+    {
+      step: '6',
+      title: 'Consegna e pubblicazione',
+      description: 'Dopo il saldo finale, il sito viene messo online e ti spieghiamo come gestirlo in autonomia.',
+      icon: Rocket
     }
   ];
 

@@ -13,7 +13,11 @@ import {
   Clock,
   MessageSquare,
   Palette,
-  Rocket
+  Rocket,
+  Users,
+  FileText,
+  Eye,
+  RefreshCw
 } from 'lucide-react';
 
 const Servizi = () => {
@@ -47,26 +51,38 @@ const Servizi = () => {
   const processSteps = [
     {
       step: '1',
-      title: 'Consulenza Iniziale',
-      description: 'Analizziamo le tue esigenze e definiamo gli obiettivi del progetto.',
-      icon: MessageSquare
+      title: 'Conoscenza delle tue esigenze',
+      description: 'Ti contattiamo per capire i tuoi obiettivi e ciò che desideri dal tuo sito: stile, funzionalità e target.',
+      icon: Users
     },
     {
-      step: '2', 
-      title: 'Progettazione',
-      description: 'Creiamo wireframe, mockup e definiamo l\'architettura del sito.',
-      icon: Palette
+      step: '2',
+      title: 'Preventivo personalizzato',
+      description: 'Prepariamo un\'offerta chiara e su misura, senza sorprese o costi nascosti.',
+      icon: FileText
     },
     {
       step: '3',
-      title: 'Sviluppo',
-      description: 'Realizziamo il sito con le migliori tecnologie e pratiche di sviluppo.',
-      icon: Globe
+      title: 'Acconto iniziale',
+      description: 'Confermato il preventivo, si procede al pagamento della prima parte per avviare il progetto.',
+      icon: CheckCircle
     },
     {
       step: '4',
-      title: 'Test & Launch',
-      description: 'Testiamo tutto accuratamente e lanciamo il sito online.',
+      title: 'Anteprima del sito',
+      description: 'Entro i tempi stabiliti ti presentiamo una prima versione del sito da visionare e valutare.',
+      icon: Eye
+    },
+    {
+      step: '5',
+      title: 'Revisioni finali',
+      description: 'Apportiamo insieme eventuali modifiche o aggiustamenti per rendere il risultato perfetto.',
+      icon: RefreshCw
+    },
+    {
+      step: '6',
+      title: 'Consegna e pubblicazione',
+      description: 'Dopo il saldo finale, il sito viene messo online e ti spieghiamo come gestirlo in autonomia.',
       icon: Rocket
     }
   ];
