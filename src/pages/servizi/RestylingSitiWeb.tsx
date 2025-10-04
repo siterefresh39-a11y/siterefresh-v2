@@ -33,9 +33,7 @@ const RestylingSitiWeb = () => {
   const solutions = [
     'Design moderno e professionale',
     'Responsive design per tutti i dispositivi',
-    'Ottimizzazione performance (90+ PageSpeed)',
     'Miglioriamo il posizionamento SEO',
-    'CMS intuitivo per aggiornamenti facili',
     'Sicurezza avanzata e backup automatici',
     'UX ottimizzata per aumentare le conversioni'
   ];
@@ -264,69 +262,75 @@ const RestylingSitiWeb = () => {
                 Le Nostre Soluzioni di Restyling
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Tre livelli di trasformazione progettati per rinnovare la tua presenza online, 
-                dall'aggiornamento estetico alla rivoluzione digitale completa.
+                Valutiamo attentamente il tuo sito esistente e ci ispiriamo alla sua struttura per crearne uno più performante, moderno e funzionale. Se hai già un dominio registrato, il costo del restyling sarà inferiore.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  nome: "Refresh",
+                  nome: "Landing Page",
+                  prezzo: "€300 - €400",
+                  descrizione: "Sito web essenziale di una pagina per presentare la tua attività in modo chiaro e professionale.",
                   include: [
-                    "Nuovo design moderno e responsive",
-                    "Ottimizzazione velocità di caricamento",
-                    "Miglioramento UX e navigazione",
-                    "Aggiornamento contenuti esistenti",
-                    "SEO on-page ottimizzato",
-                    "Test compatibilità browser"
+                    "Design responsive moderno",
+                    "Sezione servizi/prodotti",
+                    "Form contatto integrato",
+                    "Ottimizzazione SEO base",
+                    "Integrazione Google Maps",
+                    "Certificato SSL incluso"
                   ],
-                  tempoConsegna: "7-14 giorni lavorativi",
-                  clienteIdeale: "Siti con buona struttura ma design datato",
-                  pagamento: "Pagamento in 2 rate o soluzione unica"
+                  tempoConsegna: "3-5 giorni lavorativi",
+                  clienteIdeale: "Professionista, servizio locale",
+                  pagamento: "30% all'avvio, saldo alla conferma dell'anteprima"
                 },
                 {
-                  nome: "Transform", 
+                  nome: "Sito Aziendale", 
+                  prezzo: "€450 - €700",
+                  descrizione: "Sito web multi-pagina completo per aziende che vogliono una presenza online strutturata.",
                   include: [
-                    "Redesign completo dell'interfaccia",
-                    "Nuove funzionalità e sezioni",
-                    "CMS moderno per gestione contenuti",
-                    "Ottimizzazione SEO avanzata",
-                    "Integrazione social media",
-                    "Analytics e monitoraggio avanzato",
-                    "Migrazione sicura dei contenuti"
+                    "Design professionale personalizzato",
+                    "Fino a 5-7 pagine",
+                    "Portfolio/galleria progetti",
+                    "Blog integrato",
+                    "Form contatto avanzato",
+                    "Ottimizzazione SEO completa"
                   ],
-                  tempoConsegna: "15-25 giorni lavorativi",
-                  clienteIdeale: "Siti che necessitano rinnovamento completo",
-                  pagamento: "Rateizzazione flessibile disponibile",
+                  tempoConsegna: "7-12 giorni lavorativi",
+                  clienteIdeale: "PMI",
+                  pagamento: "30% all'avvio, saldo alla conferma dell'anteprima",
                   recommended: true
                 },
                 {
-                  nome: "Revolution",
+                  nome: "Sito Aziendale Definitivo",
+                  prezzo: "€750 - €1.000",
+                  descrizione: "Sito web completo e strutturato con sezioni dedicate a servizi, portfolio, team e contatti. Include form di preventivo personalizzato e area riservata clienti.",
                   include: [
-                    "Ricostruzione completa da zero",
-                    "Architettura moderna e scalabile",
-                    "E-commerce o portale avanzato",
-                    "Automazioni e integrazioni personalizzate",
-                    "Area clienti e dashboard",
-                    "Supporto multilingua",
-                    "Training completo del team",
-                    "Assistenza prioritaria 12 mesi"
+                    "Architettura completa e scalabile",
+                    "Sezioni dedicate (servizi, portfolio, team, contatti)",
+                    "Form preventivo personalizzato",
+                    "Area riservata clienti",
+                    "Blog/news integrato",
+                    "Ottimizzazione SEO avanzata",
+                    "Integrazioni social media",
+                    "Analytics e monitoraggio"
                   ],
-                  tempoConsegna: "25-40 giorni lavorativi", 
-                  clienteIdeale: "Aziende che vogliono una trasformazione digitale completa",
-                  pagamento: "Piani di pagamento personalizzati"
+                  tempoConsegna: "15-20 giorni lavorativi", 
+                  clienteIdeale: "Azienda di servizi",
+                  pagamento: "30% all'avvio, saldo alla conferma dell'anteprima"
                 }
               ].map((fascia, index) => (
                 <Card key={fascia.nome} className={`card-hover ${fascia.recommended ? 'border-primary shadow-lg ring-2 ring-primary' : ''}`}>
                   <CardHeader>
                     <CardTitle className="text-2xl">{fascia.nome}</CardTitle>
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
+                    <div className="text-2xl font-bold text-primary mb-2">{fascia.prezzo}</div>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center gap-2 text-muted-foreground">
                         <Clock className="h-4 w-4" />
                         <span>{fascia.tempoConsegna}</span>
                       </div>
-                      <p className="font-medium">{fascia.clienteIdeale}</p>
+                      <p className="font-medium text-muted-foreground">{fascia.clienteIdeale}</p>
+                      <p className="text-sm text-foreground">{fascia.descrizione}</p>
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -376,7 +380,7 @@ const RestylingSitiWeb = () => {
               <Card className="border-dashed">
                 <CardHeader>
                   <CardTitle className="text-lg">Restyling Semplice</CardTitle>
-                  <div className="text-2xl font-bold text-primary">€600 - €1.000</div>
+                  <div className="text-2xl font-bold text-primary">€300 - €400</div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-3">
@@ -385,44 +389,35 @@ const RestylingSitiWeb = () => {
                   <p className="text-sm mb-3">
                     Aggiornamento design, ottimizzazione mobile e miglioramento performance.
                   </p>
-                  <p className="text-xs text-muted-foreground">
-                    <strong>Risultato atteso:</strong> Aspetto moderno e professionale
-                  </p>
                 </CardContent>
               </Card>
 
               <Card className="border-dashed">
                 <CardHeader>
                   <CardTitle className="text-lg">Restyling Completo</CardTitle>
-                  <div className="text-2xl font-bold text-primary">€1.200 - €2.800</div>
+                  <div className="text-2xl font-bold text-primary">€450 - €700</div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-3">
                     <strong>Cliente tipo:</strong> Sito aziendale multi-page
                   </p>
                   <p className="text-sm mb-3">
-                    Redesign totale, nuovo CMS, ottimizzazione SEO e nuove funzionalità.
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    <strong>Risultato atteso:</strong> +300% performance e usabilità
+                    Redesign totale, ottimizzazione SEO e nuove funzionalità.
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="border-dashed">
                 <CardHeader>
-                  <CardTitle className="text-lg">Trasformazione Digitale</CardTitle>
-                  <div className="text-2xl font-bold text-primary">€2.800 - €6.000</div>
+                  <CardTitle className="text-lg">Sito Aziendale Definitivo</CardTitle>
+                  <div className="text-2xl font-bold text-primary">€750 - €1.000</div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-3">
-                    <strong>Cliente tipo:</strong> E-commerce o portale complesso
+                    <strong>Cliente tipo:</strong> Azienda di servizi
                   </p>
                   <p className="text-sm mb-3">
-                    Ricostruzione completa con nuove tecnologie, automazioni e integrazioni.
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    <strong>Risultato atteso:</strong> Piattaforma digitale all'avanguardia
+                    Sito web completo con sezioni dedicate, form preventivo personalizzato e area riservata clienti.
                   </p>
                 </CardContent>
               </Card>
