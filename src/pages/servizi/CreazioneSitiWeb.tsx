@@ -367,7 +367,7 @@ const CreazioneSitiWeb = () => {
               <Card className="border-dashed">
                 <CardHeader>
                   <CardTitle className="text-lg">Landing Page</CardTitle>
-                  <div className="text-2xl font-bold text-primary">€800 - €1.200</div>
+                  <div className="text-2xl font-bold text-primary">€300 - €450</div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-3">
@@ -376,44 +376,35 @@ const CreazioneSitiWeb = () => {
                   <p className="text-sm mb-3">
                     Pagina singola ottimizzata per conversioni con modulo contatti e integrazione analytics.
                   </p>
-                  <p className="text-xs text-muted-foreground">
-                    <strong>Risultato atteso:</strong> +200% contatti qualificati
-                  </p>
                 </CardContent>
               </Card>
 
               <Card className="border-dashed">
                 <CardHeader>
                   <CardTitle className="text-lg">Sito Aziendale</CardTitle>
-                  <div className="text-2xl font-bold text-primary">€1.800 - €3.500</div>
+                  <div className="text-2xl font-bold text-primary">€500 - €750</div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-3">
-                    <strong>Cliente tipo:</strong> PMI, azienda di servizi
+                    <strong>Cliente tipo:</strong> PMI
                   </p>
                   <p className="text-sm mb-3">
                     Sito multipage con CMS, blog integrato e area download per cataloghi.
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    <strong>Risultato atteso:</strong> Presenza professionale online
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="border-dashed">
                 <CardHeader>
-                  <CardTitle className="text-lg">E-commerce</CardTitle>
-                  <div className="text-2xl font-bold text-primary">€3.200 - €8.000</div>
+                  <CardTitle className="text-lg">Sito Aziendale Definitivo</CardTitle>
+                  <div className="text-2xl font-bold text-primary">€850 - €1.200</div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-3">
-                    <strong>Cliente tipo:</strong> Negozio online, retail
+                    <strong>Cliente tipo:</strong> Azienda di servizi
                   </p>
                   <p className="text-sm mb-3">
-                    Shop completo con gestione prodotti, pagamenti e spedizioni automatizzate.
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    <strong>Risultato atteso:</strong> Nuovo canale di vendita
+                    Sito web completo e strutturato con sezioni dedicate a servizi, portfolio, team e contatti. Include form di preventivo personalizzato e area riservata clienti.
                   </p>
                 </CardContent>
               </Card>
