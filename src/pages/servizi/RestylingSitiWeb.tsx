@@ -3,131 +3,61 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useInView } from '@/hooks/use-in-view';
-import { 
-  Zap, 
-  ArrowRight, 
-  CheckCircle,
-  RefreshCw,
-  TrendingUp,
-  Shield,
-  Smartphone,
-  Users,
-  Clock,
-  Search,
-  FileText,
-  Eye,
-  Rocket
-} from 'lucide-react';
-
+import { Zap, ArrowRight, CheckCircle, RefreshCw, TrendingUp, Shield, Smartphone, Users, Clock, Search, FileText, Eye, Rocket } from 'lucide-react';
 const RestylingSitiWeb = () => {
-  const problems = [
-    'Design obsoleto che danneggia la credibilità',
-    'Sito non ottimizzato per mobile',
-    'Velocità di caricamento lenta',
-    'Posizionamento SEO scarso',
-    'Difficoltà nella gestione contenuti',
-    'Vulnerabilità di sicurezza',
-    'Scarsa conversione visitatori'
-  ];
-
-  const solutions = [
-    'Design moderno e professionale',
-    'Responsive design per tutti i dispositivi',
-    'Miglioriamo il posizionamento SEO',
-    'Sicurezza avanzata e backup automatici',
-    'UX ottimizzata per aumentare le conversioni'
-  ];
-
-  const processSteps = [
-    {
-      step: '1',
-      title: 'Conoscenza delle tue esigenze',
-      description: 'Ti contattiamo per capire i tuoi obiettivi e ciò che desideri dal tuo sito: stile, funzionalità e target.',
-      icon: Users
-    },
-    {
-      step: '2',
-      title: 'Preventivo personalizzato',
-      description: 'Prepariamo un\'offerta chiara e su misura, senza sorprese o costi nascosti.',
-      icon: FileText
-    },
-    {
-      step: '3',
-      title: 'Acconto iniziale',
-      description: 'Confermato il preventivo, si procede al pagamento della prima parte per avviare il progetto.',
-      icon: CheckCircle
-    },
-    {
-      step: '4',
-      title: 'Anteprima del sito',
-      description: 'Entro i tempi stabiliti ti presentiamo una prima versione del sito da visionare e valutare.',
-      icon: Eye
-    },
-    {
-      step: '5',
-      title: 'Revisioni finali',
-      description: 'Apportiamo insieme eventuali modifiche o aggiustamenti per rendere il risultato perfetto.',
-      icon: RefreshCw
-    },
-    {
-      step: '6',
-      title: 'Consegna e pubblicazione',
-      description: 'Dopo il saldo finale, il sito viene messo online e ti spieghiamo come gestirlo in autonomia.',
-      icon: Rocket
-    }
-  ];
-
-  const packages = [
-    {
-      name: 'Refresh',
-      price: 'Da €800',
-      description: 'Aggiornamento estetico e funzionale',
-      features: [
-        'Nuovo design moderno',
-        'Ottimizzazione mobile',
-        'Miglioramento velocità',
-        'Aggiornamento contenuti',
-        'SEO base',
-        '2 revisioni incluse'
-      ],
-      recommended: false
-    },
-    {
-      name: 'Transform',
-      price: 'Da €1.800',
-      description: 'Trasformazione completa del sito',
-      features: [
-        'Redesign completo',
-        'Nuove funzionalità',
-        'CMS moderno',
-        'Ottimizzazione SEO avanzata',
-        'Integrazione social',
-        'Analytics avanzato',
-        'Sicurezza potenziata',
-        '4 revisioni incluse'
-      ],
-      recommended: true
-    },
-    {
-      name: 'Revolution',
-      price: 'Da €3.200',
-      description: 'Rivoluzione totale della presenza online',
-      features: [
-        'Ricostruzione completa',
-        'Architettura moderna',
-        'E-commerce integrato',
-        'Area clienti personalizzata',
-        'Automazione marketing',
-        'Supporto multilingua',
-        'Training completo team',
-        'Revisioni illimitate'
-      ],
-      recommended: false
-    }
-  ];
-
-  return (
-    <div className="min-h-screen pt-16">
+  const problems = ['Design obsoleto che danneggia la credibilità', 'Sito non ottimizzato per mobile', 'Velocità di caricamento lenta', 'Posizionamento SEO scarso', 'Difficoltà nella gestione contenuti', 'Vulnerabilità di sicurezza', 'Scarsa conversione visitatori'];
+  const solutions = ['Design moderno e professionale', 'Responsive design per tutti i dispositivi', 'Miglioriamo il posizionamento SEO', 'Sicurezza avanzata e backup automatici', 'UX ottimizzata per aumentare le conversioni'];
+  const processSteps = [{
+    step: '1',
+    title: 'Conoscenza delle tue esigenze',
+    description: 'Ti contattiamo per capire i tuoi obiettivi e ciò che desideri dal tuo sito: stile, funzionalità e target.',
+    icon: Users
+  }, {
+    step: '2',
+    title: 'Preventivo personalizzato',
+    description: 'Prepariamo un\'offerta chiara e su misura, senza sorprese o costi nascosti.',
+    icon: FileText
+  }, {
+    step: '3',
+    title: 'Acconto iniziale',
+    description: 'Confermato il preventivo, si procede al pagamento della prima parte per avviare il progetto.',
+    icon: CheckCircle
+  }, {
+    step: '4',
+    title: 'Anteprima del sito',
+    description: 'Entro i tempi stabiliti ti presentiamo una prima versione del sito da visionare e valutare.',
+    icon: Eye
+  }, {
+    step: '5',
+    title: 'Revisioni finali',
+    description: 'Apportiamo insieme eventuali modifiche o aggiustamenti per rendere il risultato perfetto.',
+    icon: RefreshCw
+  }, {
+    step: '6',
+    title: 'Consegna e pubblicazione',
+    description: 'Dopo il saldo finale, il sito viene messo online e ti spieghiamo come gestirlo in autonomia.',
+    icon: Rocket
+  }];
+  const packages = [{
+    name: 'Refresh',
+    price: 'Da €800',
+    description: 'Aggiornamento estetico e funzionale',
+    features: ['Nuovo design moderno', 'Ottimizzazione mobile', 'Miglioramento velocità', 'Aggiornamento contenuti', 'SEO base', '2 revisioni incluse'],
+    recommended: false
+  }, {
+    name: 'Transform',
+    price: 'Da €1.800',
+    description: 'Trasformazione completa del sito',
+    features: ['Redesign completo', 'Nuove funzionalità', 'CMS moderno', 'Ottimizzazione SEO avanzata', 'Integrazione social', 'Analytics avanzato', 'Sicurezza potenziata', '4 revisioni incluse'],
+    recommended: true
+  }, {
+    name: 'Revolution',
+    price: 'Da €3.200',
+    description: 'Rivoluzione totale della presenza online',
+    features: ['Ricostruzione completa', 'Architettura moderna', 'E-commerce integrato', 'Area clienti personalizzata', 'Automazione marketing', 'Supporto multilingua', 'Training completo team', 'Revisioni illimitate'],
+    recommended: false
+  }];
+  return <div className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4 lg:px-8">
@@ -173,12 +103,10 @@ const RestylingSitiWeb = () => {
                   <CardTitle className="text-2xl text-destructive">❌ Prima del Restyling</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {problems.map((problem, index) => (
-                    <div key={index} className="flex items-start space-x-3">
+                  {problems.map((problem, index) => <div key={index} className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-muted-foreground">{problem}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </CardContent>
               </Card>
 
@@ -188,12 +116,10 @@ const RestylingSitiWeb = () => {
                   <CardTitle className="text-2xl text-primary">✅ Dopo il Restyling</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {solutions.map((solution, index) => (
-                    <div key={index} className="flex items-start space-x-3">
+                  {solutions.map((solution, index) => <div key={index} className="flex items-start space-x-3">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <span>{solution}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </CardContent>
               </Card>
             </div>
@@ -216,19 +142,14 @@ const RestylingSitiWeb = () => {
 
             <div className="space-y-8">
               {processSteps.map((step, index) => {
-                const TimelineStep = () => {
-                  const { ref, isInView } = useInView();
-                  
-                  return (
-                    <div 
-                      ref={ref}
-                      key={step.step}
-                      className={`timeline-step timeline-step-animated ${isInView ? 'in-view' : ''}`}
-                      data-step={step.step}
-                      style={{ 
-                        transitionDelay: isInView ? `${index * 0.15}s` : '0s'
-                      }}
-                    >
+              const TimelineStep = () => {
+                const {
+                  ref,
+                  isInView
+                } = useInView();
+                return <div ref={ref} key={step.step} className={`timeline-step timeline-step-animated ${isInView ? 'in-view' : ''}`} data-step={step.step} style={{
+                  transitionDelay: isInView ? `${index * 0.15}s` : '0s'
+                }}>
                       <Card className="card-hover ml-8">
                         <CardContent className="p-6">
                           <div className="flex items-start space-x-4">
@@ -242,12 +163,10 @@ const RestylingSitiWeb = () => {
                           </div>
                         </CardContent>
                       </Card>
-                    </div>
-                  );
-                };
-                
-                return <TimelineStep key={step.step} />;
-              })}
+                    </div>;
+              };
+              return <TimelineStep key={step.step} />;
+            })}
             </div>
           </div>
         </div>
@@ -267,55 +186,26 @@ const RestylingSitiWeb = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  nome: "Starter",
-                  descrizione: "💡 Landing page per farsi conoscere e attrarre nuovi clienti",
-                  include: [
-                    "Landing page responsive e veloce",
-                    "Design personalizzato su misura",
-                    "Ottimizzazione SEO di base",
-                    "Hosting incluso per il primo anno",
-                    "Certificato SSL gratuito",
-                    "Modulo richiesta preventivo e contatti",
-                    "Pulsante WhatsApp integrato"
-                  ],
-                  tempoConsegna: "⏱️ 10–20 giorni lavorativi",
-                  pagamento: "30% all'avvio, saldo alla conferma dell'anteprima"
-                },
-                {
-                  nome: "Growth", 
-                  descrizione: "🚀 Sito strutturato per valorizzare la tua attività e i tuoi progetti",
-                  include: [
-                    "Sito web completo e organizzato in più pagine",
-                    "Sezione dedicata ai tuoi progetti o lavori",
-                    "Integrazione con i tuoi social",
-                    "Modulo richiesta preventivo con servizio mail dedicato",
-                    "Pulsante WhatsApp e pagina contatti",
-                    "Immagini personalizzate",
-                    "Animazioni dinamiche e fluide"
-                  ],
-                  tempoConsegna: "⏱️ 15–30 giorni lavorativi",
-                  pagamento: "30% all'avvio, saldo alla conferma dell'anteprima",
-                  recommended: true
-                },
-                {
-                  nome: "Scale",
-                  descrizione: "🏆 Sito web definito in ogni dettaglio, per un'immagine professionale impeccabile",
-                  include: [
-                    "Sito web completo in ogni sua parte",
-                    "Home page, servizi, progetti e contatti",
-                    "Modulo preventivo e pulsante WhatsApp",
-                    "Animazioni avanzate e microinterazioni",
-                    "Immagini personalizzate e create con AI",
-                    "Struttura ottimizzata per performance e SEO",
-                    "Possibilità di funzionalità extra su richiesta"
-                  ],
-                  tempoConsegna: "⏱️ 25–40 giorni lavorativi",
-                  pagamento: "30% all'avvio, saldo alla conferma dell'anteprima"
-                }
-              ].map((fascia, index) => (
-                <Card key={fascia.nome} className={`card-hover ${fascia.recommended ? 'border-primary shadow-lg ring-2 ring-primary' : ''}`}>
+              {[{
+              nome: "Starter",
+              descrizione: "💡 Landing page per farsi conoscere e attrarre nuovi clienti",
+              include: ["Landing page responsive e veloce", "Design personalizzato su misura", "Ottimizzazione SEO di base", "Hosting incluso per il primo anno", "Certificato SSL gratuito", "Modulo richiesta preventivo e contatti", "Pulsante WhatsApp integrato"],
+              tempoConsegna: "⏱️ 10–20 giorni lavorativi",
+              pagamento: "30% all'avvio, saldo alla conferma dell'anteprima"
+            }, {
+              nome: "Growth",
+              descrizione: "🚀 Sito strutturato per valorizzare la tua attività e i tuoi progetti",
+              include: ["Sito web completo e organizzato in più pagine", "Sezione dedicata ai tuoi progetti o lavori", "Integrazione con i tuoi social", "Modulo richiesta preventivo con servizio mail dedicato", "Pulsante WhatsApp e pagina contatti", "Immagini personalizzate", "Animazioni dinamiche e fluide"],
+              tempoConsegna: "⏱️ 15–30 giorni lavorativi",
+              pagamento: "30% all'avvio, saldo alla conferma dell'anteprima",
+              recommended: true
+            }, {
+              nome: "Scale",
+              descrizione: "🏆 Sito web definito in ogni dettaglio, per un'immagine professionale impeccabile",
+              include: ["Sito web completo in ogni sua parte", "Home page, servizi, progetti e contatti", "Modulo preventivo e pulsante WhatsApp", "Animazioni avanzate e microinterazioni", "Immagini personalizzate e create con AI", "Struttura ottimizzata per performance e SEO", "Possibilità di funzionalità extra su richiesta"],
+              tempoConsegna: "⏱️ 25–40 giorni lavorativi",
+              pagamento: "30% all'avvio, saldo alla conferma dell'anteprima"
+            }].map((fascia, index) => <Card key={fascia.nome} className={`card-hover ${fascia.recommended ? 'border-primary shadow-lg ring-2 ring-primary' : ''}`}>
                   <CardHeader>
                     <CardTitle className="text-2xl">{fascia.nome}</CardTitle>
                     <div className="space-y-2 text-sm">
@@ -325,12 +215,10 @@ const RestylingSitiWeb = () => {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3 mb-6">
-                      {fascia.include.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
+                      {fascia.include.map((item, idx) => <li key={idx} className="flex items-start gap-2">
                           <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-sm">{item}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                     <div className="border-t pt-4">
                       <p className="text-xs text-muted-foreground mb-4">
@@ -344,8 +232,7 @@ const RestylingSitiWeb = () => {
                       </Button>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -412,9 +299,7 @@ const RestylingSitiWeb = () => {
                   <p className="text-sm text-muted-foreground mb-3">
                     <strong>Cliente tipo:</strong> Azienda di servizi
                   </p>
-                  <p className="text-sm mb-3 text-foreground">
-                    Sito web completo e strutturato con sezioni dedicate a servizi, portfolio, team e contatti. Include form di preventivo personalizzato e area riservata clienti.
-                  </p>
+                  <p className="text-sm mb-3 text-foreground">Sito web completo e strutturato con sezioni dedicate a servizi, portfolio, team e contatti. Include form di preventivo personalizzato.</p>
                   <p className="text-sm text-muted-foreground">
                     Sito web completo con sezioni dedicate, form preventivo personalizzato e area riservata clienti.
                   </p>
@@ -491,8 +376,6 @@ const RestylingSitiWeb = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default RestylingSitiWeb;
