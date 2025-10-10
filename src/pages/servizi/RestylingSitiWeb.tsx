@@ -270,8 +270,6 @@ const RestylingSitiWeb = () => {
               {[
                 {
                   nome: "Landing Page",
-                  prezzo: "€300 - €400",
-                  descrizione: "Sito web essenziale di una pagina per presentare la tua attività in modo chiaro e professionale.",
                   include: [
                     "Design responsive moderno",
                     "Sezione servizi/prodotti",
@@ -286,8 +284,6 @@ const RestylingSitiWeb = () => {
                 },
                 {
                   nome: "Sito Aziendale", 
-                  prezzo: "€450 - €700",
-                  descrizione: "Sito web multi-pagina completo per aziende che vogliono una presenza online strutturata.",
                   include: [
                     "Design professionale personalizzato",
                     "Fino a 5-7 pagine",
@@ -303,8 +299,6 @@ const RestylingSitiWeb = () => {
                 },
                 {
                   nome: "Sito Aziendale Definitivo",
-                  prezzo: "€750 - €1.000",
-                  descrizione: "Sito web completo e strutturato con sezioni dedicate a servizi, portfolio, team e contatti. Include form di preventivo personalizzato e area riservata clienti.",
                   include: [
                     "Architettura completa e scalabile",
                     "Sezioni dedicate (servizi, portfolio, team, contatti)",
@@ -323,14 +317,12 @@ const RestylingSitiWeb = () => {
                 <Card key={fascia.nome} className={`card-hover ${fascia.recommended ? 'border-primary shadow-lg ring-2 ring-primary' : ''}`}>
                   <CardHeader>
                     <CardTitle className="text-2xl">{fascia.nome}</CardTitle>
-                    <div className="text-2xl font-bold text-primary mb-2">{fascia.prezzo}</div>
                     <div className="space-y-2 text-sm">
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <Clock className="h-4 w-4" />
                         <span>{fascia.tempoConsegna}</span>
                       </div>
                       <p className="font-medium text-muted-foreground">{fascia.clienteIdeale}</p>
-                      <p className="text-sm text-foreground">{fascia.descrizione}</p>
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -386,7 +378,10 @@ const RestylingSitiWeb = () => {
                   <p className="text-sm text-muted-foreground mb-3">
                     <strong>Cliente tipo:</strong> Sito vetrina con poche pagine
                   </p>
-                  <p className="text-sm mb-3">
+                  <p className="text-sm mb-3 text-foreground">
+                    Sito web essenziale di una pagina per presentare la tua attività in modo chiaro e professionale.
+                  </p>
+                  <p className="text-sm text-muted-foreground">
                     Aggiornamento design, ottimizzazione mobile e miglioramento performance.
                   </p>
                 </CardContent>
@@ -401,7 +396,10 @@ const RestylingSitiWeb = () => {
                   <p className="text-sm text-muted-foreground mb-3">
                     <strong>Cliente tipo:</strong> Sito aziendale multi-page
                   </p>
-                  <p className="text-sm mb-3">
+                  <p className="text-sm mb-3 text-foreground">
+                    Sito web multi-pagina completo per aziende che vogliono una presenza online strutturata.
+                  </p>
+                  <p className="text-sm text-muted-foreground">
                     Redesign totale, ottimizzazione SEO e nuove funzionalità.
                   </p>
                 </CardContent>
@@ -416,7 +414,10 @@ const RestylingSitiWeb = () => {
                   <p className="text-sm text-muted-foreground mb-3">
                     <strong>Cliente tipo:</strong> Azienda di servizi
                   </p>
-                  <p className="text-sm mb-3">
+                  <p className="text-sm mb-3 text-foreground">
+                    Sito web completo e strutturato con sezioni dedicate a servizi, portfolio, team e contatti. Include form di preventivo personalizzato e area riservata clienti.
+                  </p>
+                  <p className="text-sm text-muted-foreground">
                     Sito web completo con sezioni dedicate, form preventivo personalizzato e area riservata clienti.
                   </p>
                 </CardContent>
