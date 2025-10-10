@@ -269,48 +269,49 @@ const RestylingSitiWeb = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  nome: "Landing Page",
+                  nome: "Starter",
+                  descrizione: "💡 Landing page per farsi conoscere e attrarre nuovi clienti",
                   include: [
-                    "Design responsive moderno",
-                    "Sezione servizi/prodotti",
-                    "Form contatto integrato",
-                    "Ottimizzazione SEO base",
-                    "Integrazione Google Maps",
-                    "Certificato SSL incluso"
+                    "Landing page responsive e veloce",
+                    "Design personalizzato su misura",
+                    "Ottimizzazione SEO di base",
+                    "Hosting incluso per il primo anno",
+                    "Certificato SSL gratuito",
+                    "Modulo richiesta preventivo e contatti",
+                    "Pulsante WhatsApp integrato"
                   ],
-                  tempoConsegna: "3-5 giorni lavorativi",
-                  clienteIdeale: "Professionista, servizio locale",
+                  tempoConsegna: "⏱️ 10–20 giorni lavorativi",
                   pagamento: "30% all'avvio, saldo alla conferma dell'anteprima"
                 },
                 {
-                  nome: "Sito Aziendale", 
+                  nome: "Growth", 
+                  descrizione: "🚀 Sito strutturato per valorizzare la tua attività e i tuoi progetti",
                   include: [
-                    "Design professionale personalizzato",
-                    "Fino a 5-7 pagine",
-                    "Portfolio/galleria progetti",
-                    "Blog integrato",
-                    "Form contatto avanzato",
-                    "Ottimizzazione SEO completa"
+                    "Sito web completo e organizzato in più pagine",
+                    "Sezione dedicata ai tuoi progetti o lavori",
+                    "Integrazione con i tuoi social",
+                    "Modulo richiesta preventivo con servizio mail dedicato",
+                    "Pulsante WhatsApp e pagina contatti",
+                    "Immagini personalizzate",
+                    "Animazioni dinamiche e fluide"
                   ],
-                  tempoConsegna: "7-12 giorni lavorativi",
-                  clienteIdeale: "PMI",
+                  tempoConsegna: "⏱️ 15–30 giorni lavorativi",
                   pagamento: "30% all'avvio, saldo alla conferma dell'anteprima",
                   recommended: true
                 },
                 {
-                  nome: "Sito Aziendale Definitivo",
+                  nome: "Scale",
+                  descrizione: "🏆 Sito web definito in ogni dettaglio, per un'immagine professionale impeccabile",
                   include: [
-                    "Architettura completa e scalabile",
-                    "Sezioni dedicate (servizi, portfolio, team, contatti)",
-                    "Form preventivo personalizzato",
-                    "Area riservata clienti",
-                    "Blog/news integrato",
-                    "Ottimizzazione SEO avanzata",
-                    "Integrazioni social media",
-                    "Analytics e monitoraggio"
+                    "Sito web completo in ogni sua parte",
+                    "Home page, servizi, progetti e contatti",
+                    "Modulo preventivo e pulsante WhatsApp",
+                    "Animazioni avanzate e microinterazioni",
+                    "Immagini personalizzate e create con AI",
+                    "Struttura ottimizzata per performance e SEO",
+                    "Possibilità di funzionalità extra su richiesta"
                   ],
-                  tempoConsegna: "15-20 giorni lavorativi", 
-                  clienteIdeale: "Azienda di servizi",
+                  tempoConsegna: "⏱️ 25–40 giorni lavorativi",
                   pagamento: "30% all'avvio, saldo alla conferma dell'anteprima"
                 }
               ].map((fascia, index) => (
@@ -318,11 +319,8 @@ const RestylingSitiWeb = () => {
                   <CardHeader>
                     <CardTitle className="text-2xl">{fascia.nome}</CardTitle>
                     <div className="space-y-2 text-sm">
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <Clock className="h-4 w-4" />
-                        <span>{fascia.tempoConsegna}</span>
-                      </div>
-                      <p className="font-medium text-muted-foreground">{fascia.clienteIdeale}</p>
+                      <p className="text-muted-foreground">{fascia.tempoConsegna}</p>
+                      <p className="font-medium text-foreground">{fascia.descrizione}</p>
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -340,7 +338,7 @@ const RestylingSitiWeb = () => {
                       </p>
                       <Button className="w-full" variant={fascia.recommended ? "default" : "outline"} asChild>
                         <Link to="/contatti">
-                          Richiedi Analisi
+                          Richiedi Preventivo
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>
