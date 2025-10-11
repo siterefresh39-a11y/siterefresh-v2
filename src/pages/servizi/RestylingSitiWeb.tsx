@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useInView } from '@/hooks/use-in-view';
 import { Zap, ArrowRight, CheckCircle, RefreshCw, TrendingUp, Shield, Smartphone, Users, Clock, Search, FileText, Eye, Rocket } from 'lucide-react';
+import BackButton from '@/components/BackButton';
 const RestylingSitiWeb = () => {
   const problems = ['Design obsoleto che danneggia la credibilità', 'Sito non ottimizzato per mobile', 'Velocità di caricamento lenta', 'Posizionamento SEO scarso', 'Difficoltà nella gestione contenuti', 'Vulnerabilità di sicurezza', 'Scarsa conversione visitatori'];
   const solutions = ['Design moderno e professionale', 'Responsive design per tutti i dispositivi', 'Miglioriamo il posizionamento SEO', 'Sicurezza avanzata e backup automatici', 'UX ottimizzata per aumentare le conversioni'];
@@ -58,6 +59,7 @@ const RestylingSitiWeb = () => {
     recommended: false
   }];
   return <div className="min-h-screen pt-16">
+      <BackButton />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4 lg:px-8">

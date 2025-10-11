@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 import { Mail, MessageCircle, MapPin, Phone, Send, Clock, Globe, Zap, CheckCircle, ArrowRight, Upload } from 'lucide-react';
+import BackButton from '@/components/BackButton';
 
 // Schema di validazione con zod
 const contactSchema = z.object({
@@ -169,6 +170,7 @@ const Contatti = () => {
     return formData.tipoServizio ? piani[formData.tipoServizio] : [];
   };
   return <div className="min-h-screen pt-16">
+      <BackButton />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4 lg:px-8 text-center">

@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Calendar, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import BackButton from '@/components/BackButton';
 
 const Portfolio = () => {
   const projects = [
@@ -72,6 +73,7 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <BackButton />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4 lg:px-8 text-center">

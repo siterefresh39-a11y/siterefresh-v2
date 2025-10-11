@@ -19,6 +19,7 @@ import {
   Eye,
   RefreshCw
 } from 'lucide-react';
+import BackButton from '@/components/BackButton';
 
 const Servizi = () => {
   const services = [
@@ -89,6 +90,7 @@ const Servizi = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <BackButton />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4 lg:px-8 text-center">

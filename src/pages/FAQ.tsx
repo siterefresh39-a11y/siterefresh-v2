@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { HelpCircle, MessageCircle } from 'lucide-react';
+import BackButton from '@/components/BackButton';
 
 const FAQ = () => {
   const faqData = [
@@ -54,6 +55,7 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <BackButton />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4 lg:px-8 text-center">
@@ -106,21 +108,12 @@ const FAQ = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Il nostro team è qui per aiutarti. Contattaci direttamente per ricevere assistenza personalizzata e risposte dettagliate alle tue domande specifiche.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button size="lg" className="btn-hero" asChild>
                 <Link to="/contatti">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Contattaci
                 </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a 
-                  href="https://wa.me/393001234567?text=Ciao,%20ho%20una%20domanda%20sui%20vostri%20servizi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Scrivi su WhatsApp
-                </a>
               </Button>
             </div>
           </div>

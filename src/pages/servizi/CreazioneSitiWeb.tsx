@@ -19,6 +19,7 @@ import {
   RefreshCw,
   Rocket
 } from 'lucide-react';
+import BackButton from '@/components/BackButton';
 
 const CreazioneSitiWeb = () => {
   const features = [
@@ -121,6 +122,7 @@ const CreazioneSitiWeb = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <BackButton />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4 lg:px-8">
