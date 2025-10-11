@@ -259,7 +259,7 @@ const OttimizzazioneSEO = () => {
                         transitionDelay: isInView ? `${index * 0.15}s` : '0s'
                       }}
                     >
-                      <Card className="card-hover ml-8">
+                      <Card className="card-hover ml-12 md:ml-8">
                         <CardContent className="p-6">
                           <div className="flex items-start space-x-4">
                             <div className="p-3 bg-primary-lighter rounded-lg">
