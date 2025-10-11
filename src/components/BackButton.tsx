@@ -9,7 +9,7 @@ const BackButton = () => {
     <Button
       variant="ghost"
       size="sm"
-      className="fixed top-20 left-4 z-40 text-sm hover:bg-accent/80 backdrop-blur-sm"
+      className="fixed top-20 left-4 z-40 text-sm bg-white/95 text-gray-900 hover:bg-white hover:shadow-lg backdrop-blur-sm border border-gray-200/50 transition-all"
       onClick={() => navigate(-1)}
       aria-label="Torna alla pagina precedente"
     >
