@@ -34,6 +34,10 @@ const FAQ = () => {
     {
       question: "Lavorate con aziende di tutte le dimensioni?",
       answer: "Siamo specializzati nel supportare piccole e medie imprese (PMI), ma lavoriamo con aziende di ogni dimensione. La nostra esperienza ci permette di adattare soluzioni scalabili e personalizzate per startup, aziende familiari e corporate consolidate."
+    },
+    {
+      question: "Cosa rende i vostri siti diversi da quelli realizzati con i classici \"builder online\"?",
+      answer: "I builder automatici creano siti generici e spesso pesanti, poco ottimizzati per velocità e SEO. Noi invece progettiamo ogni sito partendo dalle reali esigenze del cliente, curando struttura, testi e immagini per trasmettere professionalità e generare contatti. Il risultato è un sito veloce, chiaro e facilmente gestibile nel tempo."
     }
   ];
 
