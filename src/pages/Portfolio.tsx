@@ -4,11 +4,22 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Calendar, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import BackButton from '@/components/BackButton';
+import edilfastHero from '@/assets/edilfast-hero.jpeg';
 
 const Portfolio = () => {
   const projects = [
     {
       id: 1,
+      title: 'EDILFAST - Ristrutturazioni Premium',
+      description: 'Sito web elegante per azienda di ristrutturazioni edili con portfolio interattivo, slider prima/dopo e gestione progetti personalizzati.',
+      image: edilfastHero,
+      category: 'Edilizia',
+      year: '2024',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      link: '#'
+    },
+    {
+      id: 2,
       title: 'E-commerce Moda Sostenibile',
       description: 'Piattaforma e-commerce completa con sistema di pagamento integrato e gestione inventario.',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop&crop=center',
@@ -18,7 +29,7 @@ const Portfolio = () => {
       link: '#'
     },
     {
-      id: 2,
+      id: 3,
       title: 'Agenzia Immobiliare Digitale',
       description: 'Sito web moderno con ricerca avanzata proprietà e tour virtuali 360°.',
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&h=300&fit=crop&crop=center',
@@ -28,7 +39,7 @@ const Portfolio = () => {
       link: '#'
     },
     {
-      id: 3,
+      id: 4,
       title: 'Studio Medico Specialistico',
       description: 'Piattaforma per prenotazioni online con calendario integrato e gestione pazienti.',
       image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop&crop=center',
@@ -38,7 +49,7 @@ const Portfolio = () => {
       link: '#'
     },
     {
-      id: 4,
+      id: 5,
       title: 'Ristorante Gourmet',
       description: 'Sito web elegante con menu digitale, prenotazioni online e delivery integrato.',
       image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&h=300&fit=crop&crop=center',
@@ -48,7 +59,7 @@ const Portfolio = () => {
       link: '#'
     },
     {
-      id: 5,
+      id: 6,
       title: 'Startup Fintech',
       description: 'Landing page ad alta conversione per servizi finanziari innovativi.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop&crop=center',
@@ -58,7 +69,7 @@ const Portfolio = () => {
       link: '#'
     },
     {
-      id: 6,
+      id: 7,
       title: 'Consulenza Aziendale',
       description: 'Sito corporate professionale con blog e area clienti riservata.',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop&crop=center',
@@ -69,7 +80,7 @@ const Portfolio = () => {
     }
   ];
 
-  const categories = ['Tutti', 'E-commerce', 'Corporate', 'Sanità', 'Ristorazione', 'Fintech', 'Immobiliare'];
+  const categories = ['Tutti', 'Edilizia', 'E-commerce', 'Corporate', 'Sanità', 'Ristorazione', 'Fintech', 'Immobiliare'];
 
   return (
     <div className="min-h-screen pt-16">
