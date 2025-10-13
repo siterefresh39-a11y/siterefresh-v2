@@ -20,14 +20,6 @@ const FAQ = () => {
       answer: "Assolutamente sì! Tutti i nostri siti sono sviluppati con approccio mobile-first, garantendo un'esperienza ottimale su smartphone, tablet e desktop. Testiamo accuratamente su tutti i dispositivi più utilizzati per assicurare perfetta compatibilità e performance."
     },
     {
-      question: "Fornite servizi di manutenzione e aggiornamento?",
-      answer: "Sì, offriamo pacchetti di manutenzione che includono aggiornamenti di sicurezza, backup automatici, monitoraggio delle performance e supporto tecnico. Puoi scegliere tra diversi livelli di servizio in base alle tue esigenze specifiche."
-    },
-    {
-      question: "Posso gestire i contenuti del sito autonomamente?",
-      answer: "Certamente! Integriamo sistemi di gestione contenuti (CMS) user-friendly che ti permettono di aggiornare testi, immagini e pagine in modo semplice e intuitivo. Ti forniremo anche una formazione completa per utilizzare al meglio il sistema."
-    },
-    {
       question: "Il sito sarà ottimizzato per i motori di ricerca (SEO)?",
       answer: "Sì, tutti i nostri siti sono sviluppati seguendo le best practice SEO: struttura HTML semantica, velocità di caricamento ottimizzata, meta tag appropriati, contenuti strutturati e compatibilità mobile. Offriamo anche servizi SEO avanzati per massimizzare la visibilità online."
     },
@@ -38,10 +30,6 @@ const FAQ = () => {
     {
       question: "Offrite supporto dopo il lancio del sito?",
       answer: "Sì, offriamo 30 giorni di supporto gratuito post-lancio per eventuali bug o piccole modifiche. Successivamente, puoi scegliere tra pacchetti di supporto mensili o interventi puntuali. Siamo sempre disponibili per assistenza tecnica e consulenza."
-    },
-    {
-      question: "Cosa sono gli AI Agents e quando saranno disponibili?",
-      answer: "Gli AI Agents sono sistemi di intelligenza artificiale che automatizzano processi aziendali come assistenza clienti, lead qualification e supporto 24/7. Stiamo finalizzando questa tecnologia innovativa e sarà disponibile nel primo trimestre 2025. Contattaci per essere tra i primi a testare questa soluzione rivoluzionaria."
     },
     {
       question: "Lavorate con aziende di tutte le dimensioni?",
