@@ -38,6 +38,10 @@ const FAQ = () => {
     {
       question: "Cosa rende i vostri siti diversi da quelli realizzati con i classici \"builder online\"?",
       answer: "I builder automatici creano siti generici e spesso pesanti, poco ottimizzati per velocità e SEO. Noi invece progettiamo ogni sito partendo dalle reali esigenze del cliente, curando struttura, testi e immagini per trasmettere professionalità e generare contatti. Il risultato è un sito veloce, chiaro e facilmente gestibile nel tempo."
+    },
+    {
+      question: "Come fate a mantenere prezzi così competitivi senza rinunciare alla qualità?",
+      answer: "Abbiamo ottimizzato ogni fase del processo di sviluppo: usiamo strumenti moderni e flessibili che ci permettono di creare siti professionali senza costi superflui. Non risparmiamo sulla qualità, ma sull'efficienza — niente sprechi, niente intermediari. Il risultato è un sito curato nei dettagli, veloce e solido, offerto a un prezzo accessibile perché ogni euro speso va davvero nel valore del prodotto."
     }
   ];
 
