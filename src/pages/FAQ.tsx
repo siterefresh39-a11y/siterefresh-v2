@@ -16,10 +16,6 @@ const FAQ = () => {
       answer: "I tempi dipendono dalla complessità del progetto. Per un sito web standard, generalmente richiediamo 2-4 settimane, mentre per progetti più complessi come e-commerce o portali aziendali possono essere necessarie 6-8 settimane. Ti forniremo sempre una timeline dettagliata durante la consulenza iniziale."
     },
     {
-      question: "Quali sono i costi per la creazione di un sito web?",
-      answer: "I costi variano in base alle funzionalità richieste. Un sito vetrina professionale parte da €1.500, mentre progetti più complessi come e-commerce o portali aziendali hanno costi personalizzati. Offriamo sempre un preventivo gratuito e dettagliato dopo aver analizzato le tue esigenze specifiche."
-    },
-    {
       question: "Il sito sarà ottimizzato per i dispositivi mobili?",
       answer: "Assolutamente sì! Tutti i nostri siti sono sviluppati con approccio mobile-first, garantendo un'esperienza ottimale su smartphone, tablet e desktop. Testiamo accuratamente su tutti i dispositivi più utilizzati per assicurare perfetta compatibilità e performance."
     },
