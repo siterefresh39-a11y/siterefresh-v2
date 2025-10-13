@@ -1,20 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Mail, MessageCircle } from 'lucide-react';
 import logo from '@/assets/logo.png';
-
 const Footer = () => {
-  return (
-    <footer className="bg-secondary border-t border-border">
+  return <footer className="bg-secondary border-t border-border">
       <div className="container mx-auto px-4 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3">
-              <img 
-                src={logo} 
-                alt="SiteRefresh Logo" 
-                className="h-10 w-10"
-              />
+              <img src={logo} alt="SiteRefresh Logo" className="h-10 w-10" />
               <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 SiteRefresh
               </span>
@@ -47,19 +41,11 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Contattaci</h4>
             <div className="flex flex-col space-y-3">
-              <a
-                href="mailto:info@siterefresh.it"
-                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
-              >
+              <a href="mailto:info@siterefresh.it" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" />
                 <span>info@siterefresh.it</span>
               </a>
-              <a
-                href="https://wa.me/393001234567"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
-              >
+              <a href="https://wa.me/393001234567" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors">
                 <MessageCircle className="h-4 w-4" />
                 <span>WhatsApp</span>
               </a>
@@ -68,13 +54,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center">
-          <p className="text-muted-foreground text-sm">
-            © 2024 SiteRefresh. Tutti i diritti riservati.
-          </p>
+          <p className="text-muted-foreground text-sm">© 2025 SiteRefresh. Tutti i diritti riservati.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
