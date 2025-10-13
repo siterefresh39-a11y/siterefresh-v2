@@ -7,6 +7,9 @@ import BackButton from '@/components/BackButton';
 import edilfastHero from '@/assets/edilfast-hero.jpeg';
 import edilfastProjects from '@/assets/edilfast-projects.jpeg';
 import edilfastServices from '@/assets/edilfast-services.jpeg';
+import fornovivoHero from '@/assets/fornovivo-hero.jpeg';
+import fornovivoMenu from '@/assets/fornovivo-menu.jpeg';
+import fornovivoContact from '@/assets/fornovivo-contact.jpeg';
 import {
   Carousel,
   CarouselContent,
@@ -37,6 +40,16 @@ const Portfolio = () => {
     },
     {
       id: 2,
+      title: 'Forno Vivo - Pizzeria Napoletana',
+      description: 'Sito web elegante per pizzeria napoletana con menu digitale interattivo, sistema di prenotazioni WhatsApp e mappa integrata.',
+      images: [fornovivoHero, fornovivoMenu, fornovivoContact],
+      category: 'Ristorazione',
+      year: '2024',
+      technologies: ['React', 'TypeScript', 'Google Maps API', 'WhatsApp Integration'],
+      link: '#'
+    },
+    {
+      id: 3,
       title: 'E-commerce Moda Sostenibile',
       description: 'Piattaforma e-commerce completa con sistema di pagamento integrato e gestione inventario.',
       images: ['https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop&crop=center'],
@@ -46,7 +59,7 @@ const Portfolio = () => {
       link: '#'
     },
     {
-      id: 3,
+      id: 4,
       title: 'Agenzia Immobiliare Digitale',
       description: 'Sito web moderno con ricerca avanzata proprietà e tour virtuali 360°.',
       images: ['https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&h=300&fit=crop&crop=center'],
@@ -56,7 +69,7 @@ const Portfolio = () => {
       link: '#'
     },
     {
-      id: 4,
+      id: 5,
       title: 'Studio Medico Specialistico',
       description: 'Piattaforma per prenotazioni online con calendario integrato e gestione pazienti.',
       images: ['https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop&crop=center'],
@@ -66,7 +79,7 @@ const Portfolio = () => {
       link: '#'
     },
     {
-      id: 5,
+      id: 6,
       title: 'Ristorante Gourmet',
       description: 'Sito web elegante con menu digitale, prenotazioni online e delivery integrato.',
       images: ['https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&h=300&fit=crop&crop=center'],
@@ -76,7 +89,7 @@ const Portfolio = () => {
       link: '#'
     },
     {
-      id: 6,
+      id: 7,
       title: 'Startup Fintech',
       description: 'Landing page ad alta conversione per servizi finanziari innovativi.',
       images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop&crop=center'],
@@ -86,7 +99,7 @@ const Portfolio = () => {
       link: '#'
     },
     {
-      id: 7,
+      id: 8,
       title: 'Consulenza Aziendale',
       description: 'Sito corporate professionale con blog e area clienti riservata.',
       images: ['https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop&crop=center'],
