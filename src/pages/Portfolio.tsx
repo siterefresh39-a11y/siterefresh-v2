@@ -1,18 +1,35 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Calendar, Tag } from 'lucide-react';
+import { ExternalLink, Calendar, Tag, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import BackButton from '@/components/BackButton';
 import edilfastHero from '@/assets/edilfast-hero.jpeg';
+import edilfastProjects from '@/assets/edilfast-projects.jpeg';
+import edilfastServices from '@/assets/edilfast-services.jpeg';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { useState } from 'react';
 
 const Portfolio = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const projects = [
     {
       id: 1,
       title: 'EDILFAST - Ristrutturazioni Premium',
       description: 'Sito web elegante per azienda di ristrutturazioni edili con portfolio interattivo, slider prima/dopo e gestione progetti personalizzati.',
-      image: edilfastHero,
+      images: [edilfastHero, edilfastProjects, edilfastServices],
       category: 'Edilizia',
       year: '2024',
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
@@ -22,7 +39,7 @@ const Portfolio = () => {
       id: 2,
       title: 'E-commerce Moda Sostenibile',
       description: 'Piattaforma e-commerce completa con sistema di pagamento integrato e gestione inventario.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop&crop=center',
+      images: ['https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop&crop=center'],
       category: 'E-commerce',
       year: '2024',
       technologies: ['React', 'Node.js', 'Stripe', 'MongoDB'],
@@ -32,7 +49,7 @@ const Portfolio = () => {
       id: 3,
       title: 'Agenzia Immobiliare Digitale',
       description: 'Sito web moderno con ricerca avanzata proprietà e tour virtuali 360°.',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&h=300&fit=crop&crop=center',
+      images: ['https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&h=300&fit=crop&crop=center'],
       category: 'Immobiliare',
       year: '2024',
       technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
@@ -42,7 +59,7 @@ const Portfolio = () => {
       id: 4,
       title: 'Studio Medico Specialistico',
       description: 'Piattaforma per prenotazioni online con calendario integrato e gestione pazienti.',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop&crop=center',
+      images: ['https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop&crop=center'],
       category: 'Sanità',
       year: '2023',
       technologies: ['React', 'Firebase', 'Tailwind CSS'],
@@ -52,7 +69,7 @@ const Portfolio = () => {
       id: 5,
       title: 'Ristorante Gourmet',
       description: 'Sito web elegante con menu digitale, prenotazioni online e delivery integrato.',
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&h=300&fit=crop&crop=center',
+      images: ['https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&h=300&fit=crop&crop=center'],
       category: 'Ristorazione',
       year: '2023',
       technologies: ['WordPress', 'WooCommerce', 'Custom PHP'],
@@ -62,7 +79,7 @@ const Portfolio = () => {
       id: 6,
       title: 'Startup Fintech',
       description: 'Landing page ad alta conversione per servizi finanziari innovativi.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop&crop=center',
+      images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop&crop=center'],
       category: 'Fintech',
       year: '2024',
       technologies: ['React', 'Framer Motion', 'Chart.js'],
@@ -72,7 +89,7 @@ const Portfolio = () => {
       id: 7,
       title: 'Consulenza Aziendale',
       description: 'Sito corporate professionale con blog e area clienti riservata.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop&crop=center',
+      images: ['https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop&crop=center'],
       category: 'Corporate',
       year: '2023',
       technologies: ['Vue.js', 'Laravel', 'MySQL'],
@@ -125,11 +142,46 @@ const Portfolio = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                  {project.images.length > 1 ? (
+                    <Carousel className="w-full">
+                      <CarouselContent>
+                        {project.images.map((image, imgIndex) => (
+                          <CarouselItem key={imgIndex}>
+                            <div className="relative group/image">
+                              <img
+                                src={image}
+                                alt={`${project.title} - Immagine ${imgIndex + 1}`}
+                                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                              />
+                              <button
+                                onClick={() => setSelectedImage(image)}
+                                className="absolute top-2 right-2 p-2 bg-white/90 rounded-full opacity-0 group-hover/image:opacity-100 transition-opacity hover:bg-white"
+                              >
+                                <Maximize2 className="w-4 h-4 text-foreground" />
+                              </button>
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious className="left-2" />
+                      <CarouselNext className="right-2" />
+                    </Carousel>
+                  ) : (
+                    <div className="relative group/image">
+                      <img
+                        src={project.images[0]}
+                        alt={project.title}
+                        className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <button
+                        onClick={() => setSelectedImage(project.images[0])}
+                        className="absolute top-2 right-2 p-2 bg-white/90 rounded-full opacity-0 group-hover/image:opacity-100 transition-opacity hover:bg-white"
+                      >
+                        <Maximize2 className="w-4 h-4 text-foreground" />
+                      </button>
+                    </div>
+                  )}
+                  
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-primary text-white">
                       {project.category}
@@ -140,12 +192,6 @@ const Portfolio = () => {
                       <Calendar className="w-3 h-3 mr-1" />
                       {project.year}
                     </Badge>
-                  </div>
-                  <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Button variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Vedi Progetto
-                    </Button>
                   </div>
                 </div>
                 
@@ -198,6 +244,17 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
+      {/* Image Dialog */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl w-full p-0 bg-transparent border-none">
+          <img
+            src={selectedImage || ''}
+            alt="Immagine ingrandita"
+            className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+          />
+        </DialogContent>
+      </Dialog>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-hero">
