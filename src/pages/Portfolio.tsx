@@ -200,33 +200,15 @@ const Portfolio = () => {
                       {project.category}
                     </Badge>
                   </div>
-                  <div className="absolute top-4 right-4">
-                    <Badge variant="outline" className="bg-white/90 text-foreground">
-                      <Calendar className="w-3 h-3 mr-1" />
-                      {project.year}
-                    </Badge>
-                  </div>
                 </div>
                 
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                  <p className="text-muted-foreground text-sm line-clamp-3">
                     {project.description}
                   </p>
-                  
-                  <div className="flex items-center text-xs text-muted-foreground mb-4">
-                    <Tag className="w-3 h-3 mr-1" />
-                    <span>Tecnologie:</span>
-                  </div>
-                  <div className="flex flex-wrap gap-1">
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
                 </CardContent>
               </Card>
             ))}
