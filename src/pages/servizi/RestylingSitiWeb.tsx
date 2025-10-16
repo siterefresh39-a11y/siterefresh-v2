@@ -152,7 +152,7 @@ const RestylingSitiWeb = () => {
                 return <div ref={ref} key={step.step} className={`timeline-step timeline-step-animated ${isInView ? 'in-view' : ''}`} data-step={step.step} style={{
                   transitionDelay: isInView ? `${index * 0.15}s` : '0s'
                 }}>
-                      <Card className="card-hover ml-16 md:ml-8">
+                      <Card className="card-hover">
                         <CardContent className="p-6">
                           <div className="flex items-start space-x-4">
                             <div className="p-3 bg-primary-lighter rounded-lg">

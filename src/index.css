@@ -209,20 +209,20 @@
 
 /* Timeline Steps - Design Moderno con Linea di Connessione */
 .timeline-step {
-  @apply relative pl-4;
+  @apply relative pl-16;
 }
 
 /* Numero circolare */
 .timeline-step::before {
   content: attr(data-step);
-  @apply absolute -left-8 top-6 w-10 h-10 text-white rounded-full flex items-center justify-center text-base font-bold shadow-lg z-10;
+  @apply absolute left-0 top-6 w-10 h-10 text-white rounded-full flex items-center justify-center text-base font-bold shadow-lg z-10;
   background: linear-gradient(135deg, hsl(215 85% 25%) 0%, hsl(215 70% 40%) 100%);
 }
 
 /* Linea di connessione verticale tra gli step */
 .timeline-step::after {
   content: '';
-  @apply absolute -left-3 top-16 w-0.5 h-[calc(100%+1rem)] z-0;
+  @apply absolute left-5 top-16 w-0.5 h-[calc(100%+1rem)] z-0;
   background: linear-gradient(180deg, hsl(215 85% 25%) 0%, hsl(215 60% 85%) 100%);
 }
 
