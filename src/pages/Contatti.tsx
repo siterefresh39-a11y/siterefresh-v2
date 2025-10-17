@@ -12,6 +12,7 @@ import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 import { Mail, MessageCircle, MapPin, Phone, Send, Clock, Globe, Zap, CheckCircle, ArrowRight, Upload } from 'lucide-react';
 import BackButton from '@/components/BackButton';
+import emailjs from '@emailjs/browser';
 
 // Schema di validazione con zod
 const contactSchema = z.object({
@@ -90,8 +91,31 @@ const Contatti = () => {
       // Validazione con zod
       const validatedData = contactSchema.parse(formData);
 
-      // Simulazione invio form con dati validati
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Inizializza EmailJS
+      emailjs.init('IBTPm3OkxIMEmGuoV');
+
+      // Prepara i dati per EmailJS
+      const templateParams = {
+        nome: validatedData.nome,
+        cognome: validatedData.cognome,
+        email: validatedData.email,
+        telefono: validatedData.telefono,
+        azienda: validatedData.azienda || 'Non specificata',
+        tipoServizio: validatedData.tipoServizio === 'creazione' ? 'Creazione Nuovo Sito' : 'Restyling Sito Esistente',
+        piano: validatedData.piano,
+        urgenza: validatedData.urgenza === 'bassa' ? 'Entro 2-3 mesi' : validatedData.urgenza === 'media' ? 'Entro 1 mese' : 'Il prima possibile',
+        budget: validatedData.budget,
+        descrizione: validatedData.descrizione,
+        obiettivi: validatedData.obiettivi.join(', '),
+        sitoEsistente: validatedData.sitoEsistente || 'Nessun sito esistente',
+      };
+
+      // Invia email tramite EmailJS
+      await emailjs.send(
+        'service_skj8npu',
+        'template_uuvw7lo',
+        templateParams
+      );
 
       // Analytics tracking
       if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -101,6 +125,7 @@ const Contatti = () => {
           value: 1
         });
       }
+      
       toast({
         title: "Richiesta Inviata con Successo!",
         description: "Riceverai la tua proposta personalizzata entro 72 ore. Ti contatteremo presto!"
@@ -137,6 +162,7 @@ const Contatti = () => {
           variant: "destructive"
         });
       } else {
+        console.error('Errore invio EmailJS:', error);
         toast({
           title: "Errore nell'invio",
           description: "Si è verificato un errore. Riprova o contattaci direttamente.",
