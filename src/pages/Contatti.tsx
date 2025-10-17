@@ -110,7 +110,7 @@ const Contatti = () => {
       // Invia email tramite EmailJS
       await emailjs.send(
         'service_skj8npu',
-        'template_uuvw7lo',
+        'template_kcv18qn',
         templateParams
       );
 
