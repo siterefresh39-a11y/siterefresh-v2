@@ -10,35 +10,43 @@ const Navigation = () => {
   const location = useLocation();
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      let isOverHero = false;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          let isOverHero = false;
 
-      // Per la home page, controlla se siamo sopra la sezione hero con il video
-      if (location.pathname === '/') {
-        const heroSection = document.querySelector('.hero-section');
-        if (heroSection) {
-          const heroRect = heroSection.getBoundingClientRect();
-          if (heroRect.bottom > 100) {
-            isOverHero = true;
+          // Per la home page, controlla se siamo sopra la sezione hero con il video
+          if (location.pathname === '/') {
+            const heroSection = document.querySelector('.hero-section');
+            if (heroSection) {
+              const heroRect = heroSection.getBoundingClientRect();
+              if (heroRect.bottom > 100) {
+                isOverHero = true;
+              }
+            }
           }
-        }
+
+          // Per tutte le pagine, controlla le sezioni con sfondo blu
+          const heroSections = document.querySelectorAll('.bg-gradient-hero');
+          heroSections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            // Se la navbar (che è a circa 100px dall'alto) si trova sopra una sezione hero
+            if (rect.top < 100 && rect.bottom > 50) {
+              isOverHero = true;
+            }
+          });
+
+          setIsOnHero(isOverHero);
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      // Per tutte le pagine, controlla le sezioni con sfondo blu
-      const heroSections = document.querySelectorAll('.bg-gradient-hero');
-      heroSections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        // Se la navbar (che è a circa 100px dall'alto) si trova sopra una sezione hero
-        if (rect.top < 100 && rect.bottom > 50) {
-          isOverHero = true;
-        }
-      });
-
-      setIsOnHero(isOverHero);
     };
 
     handleScroll();
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 

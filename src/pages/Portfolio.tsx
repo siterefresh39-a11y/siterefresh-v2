@@ -19,7 +19,8 @@ import {
 import {
   Dialog,
   DialogContent,
-  DialogTrigger,
+  DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { useState } from 'react';
 
@@ -157,6 +158,13 @@ const Portfolio = () => {
       {/* Media Dialog */}
       <Dialog open={!!selectedMedia} onOpenChange={() => setSelectedMedia(null)}>
         <DialogContent className="max-w-4xl w-full p-0 bg-transparent border-none">
+          <DialogTitle className="sr-only">
+            {selectedMedia?.type === 'video' ? 'Video del progetto' : 'Immagine del progetto'}
+          </DialogTitle>
+          <DialogDescription className="sr-only">
+            Visualizzazione ingrandita del contenuto
+          </DialogDescription>
+          
           {selectedMedia?.type === 'video' ? (
             <video
               className="w-full h-auto max-h-[90vh] rounded-lg"

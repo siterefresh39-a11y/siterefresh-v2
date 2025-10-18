@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -10,7 +10,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
-import { Mail, MessageCircle, MapPin, Phone, Send, Clock, Globe, Zap, CheckCircle, ArrowRight, Upload } from 'lucide-react';
+import { Mail, MessageCircle, MapPin, Phone, Send, Clock, Globe, Zap, CheckCircle, ArrowRight } from 'lucide-react';
 import BackButton from '@/components/BackButton';
 import emailjs from '@emailjs/browser';
 
@@ -30,6 +30,41 @@ const contactSchema = z.object({
   consenso: z.boolean().refine(val => val === true, "Devi accettare il trattamento dati")
 });
 type FormData = z.infer<typeof contactSchema>;
+
+// Dati statici spostati fuori dal componente per evitare ri-creazione
+const PIANI = {
+  creazione: [{
+    value: 'starter',
+    label: 'Starter',
+    description: 'Sito fino a 5 pagine, ideale per professionisti'
+  }, {
+    value: 'growth',
+    label: 'Growth',
+    description: 'Sito completo con CMS e funzionalità avanzate',
+    recommended: true
+  }, {
+    value: 'scale',
+    label: 'Scale',
+    description: 'Soluzione enterprise con e-commerce e integrazioni'
+  }],
+  restyling: [{
+    value: 'refresh',
+    label: 'Refresh',
+    description: 'Aggiornamento design e ottimizzazioni base'
+  }, {
+    value: 'transform',
+    label: 'Transform',
+    description: 'Restyling completo con nuove funzionalità',
+    recommended: true
+  }, {
+    value: 'revolution',
+    label: 'Revolution',
+    description: 'Ricostruzione totale con architettura moderna'
+  }]
+};
+
+const OBIETTIVI = ['Aumentare la visibilità online', 'Generare più contatti e lead', 'Vendere prodotti online', 'Migliorare l\'immagine aziendale', 'Ottimizzare le performance', 'Integrazione con sistemi esistenti'];
+
 const Contatti = () => {
   const {
     toast
@@ -50,37 +85,6 @@ const Contatti = () => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const piani = {
-    creazione: [{
-      value: 'starter',
-      label: 'Starter',
-      description: 'Sito fino a 5 pagine, ideale per professionisti'
-    }, {
-      value: 'growth',
-      label: 'Growth',
-      description: 'Sito completo con CMS e funzionalità avanzate',
-      recommended: true
-    }, {
-      value: 'scale',
-      label: 'Scale',
-      description: 'Soluzione enterprise con e-commerce e integrazioni'
-    }],
-    restyling: [{
-      value: 'refresh',
-      label: 'Refresh',
-      description: 'Aggiornamento design e ottimizzazioni base'
-    }, {
-      value: 'transform',
-      label: 'Transform',
-      description: 'Restyling completo con nuove funzionalità',
-      recommended: true
-    }, {
-      value: 'revolution',
-      label: 'Revolution',
-      description: 'Ricostruzione totale con architettura moderna'
-    }]
-  };
-  const obiettivi = ['Aumentare la visibilità online', 'Generare più contatti e lead', 'Vendere prodotti online', 'Migliorare l\'immagine aziendale', 'Ottimizzare le performance', 'Integrazione con sistemi esistenti'];
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -188,9 +192,10 @@ const Contatti = () => {
       handleInputChange('obiettivi', currentObiettivi.filter(o => o !== obiettivo));
     }
   };
-  const getCurrentPiani = () => {
-    return formData.tipoServizio ? piani[formData.tipoServizio] : [];
-  };
+  
+  const getCurrentPiani = useMemo(() => {
+    return formData.tipoServizio ? PIANI[formData.tipoServizio] : [];
+  }, [formData.tipoServizio]);
   return <div className="min-h-screen pt-16">
       <BackButton />
       {/* Hero Section */}
@@ -370,14 +375,14 @@ const Contatti = () => {
                     <div className="space-y-4">
                       <h3 className="text-xl font-semibold border-b pb-2">🎯 Obiettivi del Progetto</h3>
                       <Label>Cosa vuoi ottenere con il tuo sito? (Seleziona tutti quelli che ti interessano) *</Label>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {obiettivi.map(obiettivo => <div key={obiettivo} className="flex items-center space-x-2">
-                            <Checkbox id={obiettivo} checked={formData.obiettivi?.includes(obiettivo) || false} onCheckedChange={checked => handleObiettiviChange(obiettivo, checked as boolean)} />
-                            <Label htmlFor={obiettivo} className="text-sm cursor-pointer">
-                              {obiettivo}
-                            </Label>
-                          </div>)}
-                      </div>
+                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                         {OBIETTIVI.map(obiettivo => <div key={obiettivo} className="flex items-center space-x-2">
+                             <Checkbox id={obiettivo} checked={formData.obiettivi?.includes(obiettivo) || false} onCheckedChange={checked => handleObiettiviChange(obiettivo, checked as boolean)} />
+                             <Label htmlFor={obiettivo} className="text-sm cursor-pointer">
+                               {obiettivo}
+                             </Label>
+                           </div>)}
+                       </div>
                       {errors.obiettivi && <p className="text-sm text-destructive">{errors.obiettivi}</p>}
                     </div>
 

@@ -7,17 +7,15 @@ import {
   Globe, 
   ArrowRight, 
   CheckCircle,
-  Palette,
-  Smartphone,
-  Search,
-  Shield,
-  Zap,
   Users,
-  Clock,
   FileText,
   Eye,
   RefreshCw,
-  Rocket
+  Rocket,
+  Smartphone,
+  Search,
+  Shield,
+  Zap
 } from 'lucide-react';
 import BackButton from '@/components/BackButton';
 

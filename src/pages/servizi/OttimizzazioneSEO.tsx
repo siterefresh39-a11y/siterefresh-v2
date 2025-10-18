@@ -11,9 +11,7 @@ import {
   Target,
   BarChart3,
   FileText,
-  Link as LinkIcon,
   Eye,
-  Globe,
   Users,
   RefreshCw,
   Rocket

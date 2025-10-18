@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useInView } from '@/hooks/use-in-view';
-import { Zap, ArrowRight, CheckCircle, RefreshCw, TrendingUp, Shield, Smartphone, Users, Clock, Search, FileText, Eye, Rocket } from 'lucide-react';
+import { Zap, ArrowRight, CheckCircle, RefreshCw, TrendingUp, FileText, Eye, Rocket, Users, Smartphone, Clock } from 'lucide-react';
 import BackButton from '@/components/BackButton';
 const RestylingSitiWeb = () => {
   const problems = ['Design obsoleto che danneggia la credibilità', 'Sito non ottimizzato per mobile', 'Velocità di caricamento lenta', 'Posizionamento SEO scarso', 'Difficoltà nella gestione contenuti', 'Vulnerabilità di sicurezza', 'Scarsa conversione visitatori'];
@@ -12,7 +12,7 @@ const RestylingSitiWeb = () => {
     step: '1',
     title: 'Conoscenza delle tue esigenze',
     description: 'Ti contattiamo per capire i tuoi obiettivi e ciò che desideri dal tuo sito: stile, funzionalità e target.',
-    icon: Users
+    icon: TrendingUp
   }, {
     step: '2',
     title: 'Preventivo personalizzato',

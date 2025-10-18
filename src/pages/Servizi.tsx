@@ -6,13 +6,10 @@ import { useInView } from '@/hooks/use-in-view';
 import { 
   Globe, 
   Zap, 
-  Search, 
   Bot, 
   ArrowRight, 
   CheckCircle,
   Clock,
-  MessageSquare,
-  Palette,
   Rocket,
   Users,
   FileText,
