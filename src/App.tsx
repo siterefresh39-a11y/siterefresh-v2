@@ -9,6 +9,7 @@ import Servizi from "./pages/Servizi";
 import Portfolio from "./pages/Portfolio";
 import Contatti from "./pages/Contatti";
 import FAQ from "./pages/FAQ";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import CreazioneSitiWeb from "./pages/servizi/CreazioneSitiWeb";
 import RestylingSitiWeb from "./pages/servizi/RestylingSitiWeb";
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contatti" element={<Contatti />} />
             <Route path="faq" element={<FAQ />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
