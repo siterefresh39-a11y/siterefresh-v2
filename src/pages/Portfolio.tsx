@@ -1,15 +1,14 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Maximize2, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import BackButton from '@/components/BackButton';
 import edilfastHero from '@/assets/edilfast-hero.jpeg';
 import edilfastProjects from '@/assets/edilfast-projects.jpeg';
 import edilfastServices from '@/assets/edilfast-services.jpeg';
 import fornovivoHero from '@/assets/fornovivo-hero.jpeg';
-import fornovivoMenu from '@/assets/fornovivo-menu.jpeg';
-import fornovivoContact from '@/assets/fornovivo-contact.jpeg';
+import videoPizza from '@/assets/VIDEO_PIZZA.mp4';
 import {
   Carousel,
   CarouselContent,
@@ -25,7 +24,7 @@ import {
 import { useState } from 'react';
 
 const Portfolio = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedMedia, setSelectedMedia] = useState<{ src: string; type: 'image' | 'video' } | null>(null);
 
   const projects = [
     {
@@ -42,7 +41,8 @@ const Portfolio = () => {
       id: 2,
       title: 'Forno Vivo - Pizzeria Napoletana',
       description: 'Sito web elegante per pizzeria napoletana con menu digitale interattivo, sistema di prenotazioni WhatsApp e mappa integrata.',
-      images: [fornovivoHero, fornovivoMenu, fornovivoContact],
+      video: videoPizza,
+      poster: fornovivoHero,
       category: 'Ristorazione',
       year: '2024',
       technologies: ['React', 'TypeScript', 'Google Maps API', 'WhatsApp Integration'],
@@ -76,7 +76,24 @@ const Portfolio = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative overflow-hidden">
-                  {project.images.length > 1 ? (
+                  {project.video ? (
+                    <div 
+                      className="relative group/image cursor-pointer"
+                      onClick={() => setSelectedMedia({ src: project.video, type: 'video' })}
+                    >
+                      <img
+                        src={project.poster}
+                        alt={project.title}
+                        className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/image:opacity-100 transition-opacity flex items-center justify-center">
+                        <div className="text-white text-center">
+                          <Play className="w-12 h-12 mx-auto mb-2" fill="white" />
+                          <span className="text-sm font-medium">Clicca per vedere il video</span>
+                        </div>
+                      </div>
+                    </div>
+                  ) : project.images.length > 1 ? (
                     <Carousel className="w-full">
                       <CarouselContent>
                         {project.images.map((image, imgIndex) => (
@@ -88,7 +105,7 @@ const Portfolio = () => {
                                 className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                               />
                               <button
-                                onClick={() => setSelectedImage(image)}
+                                onClick={() => setSelectedMedia({ src: image, type: 'image' })}
                                 className="absolute top-2 right-2 p-2 bg-white/90 rounded-full opacity-0 group-hover/image:opacity-100 transition-opacity hover:bg-white"
                               >
                                 <Maximize2 className="w-4 h-4 text-foreground" />
@@ -108,7 +125,7 @@ const Portfolio = () => {
                         className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                       <button
-                        onClick={() => setSelectedImage(project.images[0])}
+                        onClick={() => setSelectedMedia({ src: project.images[0], type: 'image' })}
                         className="absolute top-2 right-2 p-2 bg-white/90 rounded-full opacity-0 group-hover/image:opacity-100 transition-opacity hover:bg-white"
                       >
                         <Maximize2 className="w-4 h-4 text-foreground" />
@@ -137,14 +154,26 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Image Dialog */}
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+      {/* Media Dialog */}
+      <Dialog open={!!selectedMedia} onOpenChange={() => setSelectedMedia(null)}>
         <DialogContent className="max-w-4xl w-full p-0 bg-transparent border-none">
-          <img
-            src={selectedImage || ''}
-            alt="Immagine ingrandita"
-            className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
-          />
+          {selectedMedia?.type === 'video' ? (
+            <video
+              className="w-full h-auto max-h-[90vh] rounded-lg"
+              controls
+              autoPlay
+              preload="none"
+            >
+              <source src={selectedMedia.src} type="video/mp4" />
+              Il tuo browser non supporta i video HTML5.
+            </video>
+          ) : (
+            <img
+              src={selectedMedia?.src || ''}
+              alt="Immagine ingrandita"
+              className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+            />
+          )}
         </DialogContent>
       </Dialog>
 
