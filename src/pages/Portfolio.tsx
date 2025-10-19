@@ -10,6 +10,10 @@ import edilfastServices from '@/assets/edilfast-services.jpeg';
 import fornovivoHero from '@/assets/fornovivo-hero.jpeg';
 import videoPizza from '@/assets/VIDEO_PIZZA.mp4';
 import videoEdifast from '@/assets/edilfast-video.mp4';
+import lapiegagiustaHero from '@/assets/lapiegagiusta-hero.jpeg';
+import lapiegagiustaServices from '@/assets/lapiegagiusta-services.jpeg';
+import lapiegagiustaBooking from '@/assets/lapiegagiusta-booking.jpeg';
+import lapiegagiustaContact from '@/assets/lapiegagiusta-contact.jpeg';
 import {
   Carousel,
   CarouselContent,
@@ -62,6 +66,16 @@ const Portfolio = () => {
       category: 'Ristorazione',
       year: '2024',
       technologies: ['React', 'TypeScript', 'Google Maps API', 'WhatsApp Integration'],
+      link: '#'
+    },
+    {
+      id: 3,
+      title: 'La Piega Giusta - Salone di Bellezza Premium',
+      description: 'Sito web elegante per salone di bellezza luxury con sistema di prenotazione online integrato, design oro/nero premium e gestione appuntamenti.',
+      images: [lapiegagiustaHero, lapiegagiustaServices, lapiegagiustaBooking, lapiegagiustaContact],
+      category: 'Bellezza & Wellness',
+      year: '2024',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Sistema Prenotazioni'],
       link: '#'
     }
   ];
