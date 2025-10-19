@@ -9,6 +9,7 @@ import edilfastProjects from '@/assets/edilfast-projects.jpeg';
 import edilfastServices from '@/assets/edilfast-services.jpeg';
 import fornovivoHero from '@/assets/fornovivo-hero.jpeg';
 import videoPizza from '@/assets/VIDEO_PIZZA.mp4';
+import videoEdifast from '@/assets/edilfast-video.mp4';
 import {
   Carousel,
   CarouselContent,
@@ -27,12 +28,26 @@ import { useState } from 'react';
 const Portfolio = () => {
   const [selectedMedia, setSelectedMedia] = useState<{ src: string; type: 'image' | 'video' } | null>(null);
 
-  const projects = [
+  type Project = {
+    id: number;
+    title: string;
+    description: string;
+    category: string;
+    year: string;
+    technologies: string[];
+    link: string;
+  } & (
+    | { video: string; poster: string; images?: never }
+    | { images: string[]; video?: never; poster?: never }
+  );
+
+  const projects: Project[] = [
     {
       id: 1,
       title: 'EDILFAST - Ristrutturazioni Premium',
       description: 'Sito web elegante per azienda di ristrutturazioni edili con portfolio interattivo, slider prima/dopo e gestione progetti personalizzati.',
-      images: [edilfastHero, edilfastProjects, edilfastServices],
+      video: videoEdifast,
+      poster: edilfastHero,
       category: 'Edilizia',
       year: '2024',
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
@@ -94,7 +109,7 @@ const Portfolio = () => {
                         </div>
                       </div>
                     </div>
-                  ) : project.images.length > 1 ? (
+                  ) : project.images && project.images.length > 1 ? (
                     <Carousel className="w-full">
                       <CarouselContent>
                         {project.images.map((image, imgIndex) => (
@@ -118,7 +133,7 @@ const Portfolio = () => {
                       <CarouselPrevious className="left-2" />
                       <CarouselNext className="right-2" />
                     </Carousel>
-                  ) : (
+                  ) : project.images ? (
                     <div className="relative group/image">
                       <img
                         src={project.images[0]}
@@ -132,7 +147,7 @@ const Portfolio = () => {
                         <Maximize2 className="w-4 h-4 text-foreground" />
                       </button>
                     </div>
-                  )}
+                  ) : null}
                   
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-primary text-white">
