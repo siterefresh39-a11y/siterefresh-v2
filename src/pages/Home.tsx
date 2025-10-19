@@ -3,13 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Zap, Settings, Lightbulb } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mov';
-import heroImage from '@/assets/hero-image.jpg';
 const Home = () => {
   return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <video src={heroVideo} autoPlay muted loop playsInline preload="metadata" poster={heroImage} className="w-full h-full object-cover" />
+          <video src={heroVideo} autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-accent/80" />
         </div>
         
