@@ -488,6 +488,13 @@ const Contatti = () => {
                     <div className="flex gap-3">
                       <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
                       <div>
+                        <div className="font-medium">Ti contattiamo</div>
+                        <div className="text-muted-foreground">Per approfondire il progetto</div>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</div>
+                      <div>
                         <div className="font-medium">Analizziamo il progetto</div>
                         <div className="text-muted-foreground">Studiamo le tue esigenze</div>
                       </div>
