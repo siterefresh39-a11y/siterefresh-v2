@@ -317,7 +317,7 @@ const Contatti = () => {
                         <h3 className="text-xl font-semibold border-b pb-2">📦 Piano Desiderato</h3>
                         <Label>Quale piano ti interessa? *</Label>
                         <RadioGroup value={formData.piano} onValueChange={value => handleInputChange('piano', value)} className="space-y-3">
-                          {getCurrentPiani().map(piano => <div key={piano.value} className="relative">
+                          {getCurrentPiani.map(piano => <div key={piano.value} className="relative">
                               <div className="flex items-center space-x-2 p-4 border rounded-lg hover:bg-secondary cursor-pointer">
                                 <RadioGroupItem value={piano.value} id={piano.value} />
                                 <Label htmlFor={piano.value} className="cursor-pointer flex-1">
