@@ -10,7 +10,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
-import { Mail, MessageCircle, MapPin, Phone, Send, Clock, Globe, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, Send, Clock, Globe, Zap, CheckCircle, ArrowRight } from 'lucide-react';
 import BackButton from '@/components/BackButton';
 import emailjs from '@emailjs/browser';
 
@@ -446,26 +446,6 @@ const Contatti = () => {
                     <div className="text-sm">
                       <div className="font-medium">Email</div>
                       <div className="text-muted-foreground">siterefresh39@gmail.com</div>
-                    </div>
-                  </a>
-
-                  <a href={`https://wa.me/393001234567?text=${encodeURIComponent('Ciao, vorrei ricevere informazioni sui vostri servizi di creazione siti web.')}`} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors group">
-                    <div className="p-2 bg-primary-lighter rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
-                      <MessageCircle className="h-4 w-4 text-primary group-hover:text-white" />
-                    </div>
-                    <div className="text-sm">
-                      <div className="font-medium">WhatsApp</div>
-                      <div className="text-muted-foreground">+39 300 123 4567</div>
-                    </div>
-                  </a>
-
-                  <a href="tel:+393001234567" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors group">
-                    <div className="p-2 bg-primary-lighter rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
-                      <Phone className="h-4 w-4 text-primary group-hover:text-white" />
-                    </div>
-                    <div className="text-sm">
-                      <div className="font-medium">Telefono</div>
-                      <div className="text-muted-foreground">+39 300 123 4567</div>
                     </div>
                   </a>
                 </CardContent>
