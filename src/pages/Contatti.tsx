@@ -23,8 +23,7 @@ const contactSchema = z.object({
   azienda: z.string().trim().max(200, "Nome azienda troppo lungo").optional(),
   tipoServizio: z.string().refine(val => val === "creazione" || val === "restyling", "Seleziona il tipo di servizio"),
   piano: z.string().min(1, "Seleziona un piano"),
-  urgenza: z.string().refine(val => ["bassa", "media", "alta"].includes(val), "Seleziona l'urgenza"),
-  descrizione: z.string().trim().min(20, "Descrizione deve essere di almeno 20 caratteri").max(1500, "Descrizione troppo lunga"),
+  descrizione: z.string().trim().max(1500, "Descrizione troppo lunga").optional(),
   obiettivi: z.array(z.string()).min(1, "Seleziona almeno un obiettivo"),
   sitoEsistente: z.string().trim().optional(),
   consenso: z.boolean().refine(val => val === true, "Devi accettare il trattamento dati")
@@ -63,7 +62,7 @@ const PIANI = {
   }]
 };
 
-const OBIETTIVI = ['Aumentare la visibilità online', 'Generare più contatti e lead', 'Vendere prodotti online', 'Migliorare l\'immagine aziendale', 'Ottimizzare le performance', 'Integrazione con sistemi esistenti'];
+const OBIETTIVI = ['Aumentare la visibilità online', 'Generare più contatti e lead', 'Migliorare l\'immagine aziendale', 'Ottimizzare le performance'];
 
 const Contatti = () => {
   const {
@@ -77,7 +76,6 @@ const Contatti = () => {
     azienda: '',
     tipoServizio: '',
     piano: '',
-    urgenza: '',
     descrizione: '',
     obiettivi: [],
     sitoEsistente: '',
@@ -105,8 +103,7 @@ const Contatti = () => {
         azienda: validatedData.azienda || 'Non specificata',
         tipoServizio: validatedData.tipoServizio === 'creazione' ? 'Creazione Nuovo Sito' : 'Restyling Sito Esistente',
         piano: validatedData.piano,
-        urgenza: validatedData.urgenza === 'bassa' ? 'Entro 2-3 mesi' : validatedData.urgenza === 'media' ? 'Entro 1 mese' : 'Il prima possibile',
-        descrizione: validatedData.descrizione,
+        descrizione: validatedData.descrizione || 'Nessuna descrizione fornita - ti contattiamo per approfondire',
         obiettivi: validatedData.obiettivi.join(', '),
         sitoEsistente: validatedData.sitoEsistente || 'Nessun sito esistente',
       };
@@ -141,7 +138,6 @@ const Contatti = () => {
         azienda: '',
         tipoServizio: '',
         piano: '',
-        urgenza: '',
         descrizione: '',
         obiettivi: [],
         sitoEsistente: '',
@@ -350,26 +346,6 @@ const Contatti = () => {
                         </p>
                       </div>}
 
-                    {/* Urgenza e Budget */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-4">
-                        <h3 className="text-xl font-semibold border-b pb-2">⏰ Tempistiche</h3>
-                        <Label>Quando vorresti iniziare? *</Label>
-                        <Select value={formData.urgenza} onValueChange={(value: string) => handleInputChange('urgenza', value)}>
-                          <SelectTrigger className={errors.urgenza ? 'border-destructive' : ''}>
-                            <SelectValue placeholder="Seleziona urgenza" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="bassa">Entro 2-3 mesi (Non urgente)</SelectItem>
-                            <SelectItem value="media">Entro 1 mese (Normale)</SelectItem>
-                            <SelectItem value="alta">Il prima possibile (Urgente)</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        {errors.urgenza && <p className="text-sm text-destructive">{errors.urgenza}</p>}
-                      </div>
-
-                      
-                    </div>
 
                     {/* Obiettivi */}
                     <div className="space-y-4">
@@ -389,10 +365,10 @@ const Contatti = () => {
                     {/* Descrizione */}
                     <div className="space-y-4">
                       <h3 className="text-xl font-semibold border-b pb-2">📝 Descrizione del Progetto</h3>
-                      <Label htmlFor="descrizione">Raccontaci di più sul tuo progetto *</Label>
-                      <Textarea id="descrizione" placeholder="Descrivi il tuo business, il target di riferimento, le funzionalità desiderate, esempi di siti che ti piacciono, requisiti specifici..." value={formData.descrizione} onChange={e => handleInputChange('descrizione', e.target.value)} rows={6} className={`resize-none ${errors.descrizione ? 'border-destructive' : 'focus:ring-primary'}`} aria-describedby={errors.descrizione ? 'descrizione-error' : undefined} />
+                      <Label htmlFor="descrizione">Raccontaci di più sul tuo progetto (facoltativo)</Label>
+                      <Textarea id="descrizione" placeholder="Descrivi il tuo business, target, funzionalità desiderate, esempi di siti... Ti contattiamo comunque per approfondire!" value={formData.descrizione} onChange={e => handleInputChange('descrizione', e.target.value)} rows={6} className={`resize-none ${errors.descrizione ? 'border-destructive' : 'focus:ring-primary'}`} aria-describedby={errors.descrizione ? 'descrizione-error' : undefined} />
                       <div className="flex justify-between text-sm text-muted-foreground">
-                        <span>Minimo 20 caratteri per una valutazione accurata</span>
+                        <span>Facoltativo - Ti contattiamo per approfondire</span>
                         <span>{formData.descrizione?.length || 0}/1500</span>
                       </div>
                       {errors.descrizione && <p id="descrizione-error" className="text-sm text-destructive">{errors.descrizione}</p>}
