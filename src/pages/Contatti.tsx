@@ -439,13 +439,13 @@ const Contatti = () => {
                   <p className="text-sm text-muted-foreground">Preferisci parlare direttamente con noi?</p>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <a href="mailto:info@siterefresh.it" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors group">
+                  <a href="mailto:siterefresh39@gmail.com" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors group">
                     <div className="p-2 bg-primary-lighter rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
                       <Mail className="h-4 w-4 text-primary group-hover:text-white" />
                     </div>
                     <div className="text-sm">
                       <div className="font-medium">Email</div>
-                      <div className="text-muted-foreground">info@siterefresh.it</div>
+                      <div className="text-muted-foreground">siterefresh39@gmail.com</div>
                     </div>
                   </a>
 
