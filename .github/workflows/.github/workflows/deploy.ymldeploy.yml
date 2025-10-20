@@ -1,0 +1,58 @@
+# Azione per buildare e deployare un sito Vite su GitHub Pages
+name: Deploy Vite Site to Pages
+
+on:
+  # Esegui l'azione ogni volta che fai un push sul branch 'main'
+  push:
+    branches: [ "main" ] # Cambia se il tuo branch principale ha un altro nome
+
+  # Permette di eseguire l'azione manualmente dalla tab Actions
+  workflow_dispatch:
+
+# Permessi necessari all'azione per scrivere su GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permetti un solo deploy alla volta
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Visto che hai 'bun.lockb', usiamo Bun!
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build
+        # Assicurati che 'package.json' contenga uno script "build"
+        # Esempio: "build": "tsc && vite build"
+        run: bun run build 
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Carica la cartella 'dist' (output di default di Vite)
+          path: './dist' 
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
