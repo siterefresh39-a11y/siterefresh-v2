@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, MessageCircle } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import logo from '@/assets/logo.png';
 const Footer = () => {
   return <footer className="bg-secondary border-t border-border">
@@ -44,13 +44,9 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Contattaci</h4>
             <div className="flex flex-col space-y-3">
-              <a href="mailto:info@siterefresh.it" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:siterefresh39@gmail.com" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" />
-                <span>info@siterefresh.it</span>
-              </a>
-              <a href="https://wa.me/393001234567" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors">
-                <MessageCircle className="h-4 w-4" />
-                <span>WhatsApp</span>
+                <span>siterefresh39@gmail.com</span>
               </a>
             </div>
           </div>
