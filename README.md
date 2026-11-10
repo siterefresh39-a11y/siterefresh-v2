@@ -51,7 +51,7 @@ In alternativa puoi collegare il repository a Netlify o Vercel: anche lì non se
 - **Modalità 2009**: il bottone "Guarda questo sito nel 2009" (sezione Museo) e il link "Modalità 2009" nel footer trasformano tutto il sito in stile anni 2000, con scia di stelline dietro al mouse. "Riportami al 2026" torna normale.
 
 ## Come funzionano le animazioni
-
+.
 - **Computer (da 900 px di larghezza)**: la sezione Servizi scorre in orizzontale, il prima/dopo del Refresh si trasforma con lo scroll, le card dei Progetti si impilano.
 - **Telefono**: i Servizi sono card impilate, il prima/dopo si trascina col dito, i Progetti scorrono di lato e c'è un bottone fisso in basso per la consulenza.
 - Chi ha attivato "riduci movimento" nel sistema vede il sito completo e senza animazioni.
