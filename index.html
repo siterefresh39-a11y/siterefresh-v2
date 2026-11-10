@@ -1,29 +1,893 @@
 <!doctype html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SiteRefresh - Creazione Siti Web per PMI</title>
-    <meta name="description" content="SiteRefresh crea siti web moderni e ottimizzati per PMI. Servizi di creazione, restyling, SEO e AI Agents. Design professionale e soluzioni innovative." />
-    <meta name="author" content="SiteRefresh" />
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SiteRefresh | Siti web su misura per PMI</title>
+<meta name="description" content="SiteRefresh crea da zero siti web moderni, veloci e su misura per PMI, e rifà da capo quelli vecchi. SEO, prenotazioni e AI Agents. Prima consulenza gratuita.">
+<meta name="theme-color" content="#050a18">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.siterefresh.it/">
+<meta property="og:title" content="SiteRefresh | Siti web su misura per PMI">
+<meta property="og:description" content="Siti nuovi da zero per PMI, moderni e veloci, a metà prezzo di un freelancer. E se il tuo è vecchio, lo rifacciamo da capo.">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="SiteRefresh">
+<meta property="og:image" content="https://www.siterefresh.it/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SiteRefresh: siti web che si fanno trovare per la tua PMI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.siterefresh.it/og-image.png">
+<link rel="canonical" href="https://www.siterefresh.it/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "SiteRefresh",
+  "url": "https://www.siterefresh.it/",
+  "logo": "https://www.siterefresh.it/apple-touch-icon.png",
+  "image": "https://www.siterefresh.it/og-image.png",
+  "description": "Siti web moderni, veloci e su misura per piccole e medie imprese: creazione siti, restyling, SEO, AI Agents, prenotazioni e moduli online.",
+  "areaServed": "IT",
+  "inLanguage": "it",
+  "knowsAbout": ["Creazione siti web", "Restyling siti web", "SEO", "AI Agents", "Prenotazioni online"]
+}
+</script>
+<link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
 
-    <!-- Google Fonts - Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-in">
+    <span class="loader-label">Refreshing</span>
+    <span class="loader-num"><span id="loaderNum">0</span><small>%</small></span>
+  </div>
+  <div class="loader-bar"><i id="loaderBar"></i></div>
+</div>
 
-    <meta property="og:title" content="SiteRefresh - Creazione Siti Web per PMI" />
-    <meta property="og:description" content="SiteRefresh crea siti web moderni e ottimizzati per PMI. Servizi di creazione, restyling, SEO e AI Agents." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+<div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@siterefresh" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+<!-- ============ NAVIGAZIONE ============ -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="SiteRefresh, torna all'inizio">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="12" fill="#3366ff"/><path d="M27.5 15.5A8.5 8.5 0 1 0 28.5 22" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M29 10.5v6h-6" stroke="#8fe3ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>SiteRefresh</span>
+    </a>
+    <nav class="nav-links" aria-label="Sezioni">
+      <a href="#servizi">Servizi</a>
+      <a href="#refresh">Il Refresh</a>
+      <a href="#funzioni">Funzioni</a>
+      <a href="#prezzi">Prezzi</a>
+      <a href="#metodo">Metodo</a>
+      <a href="#progetti">Progetti</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary btn-sm nav-cta magnetic" href="#contatti"><span>Consulenza gratuita</span></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu"><span></span><span></span></button>
+  </div>
+</header>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu-links" aria-label="Menu">
+    <a href="#servizi"><span>Servizi</span></a>
+    <a href="#refresh"><span>Il Refresh</span></a>
+    <a href="#funzioni"><span>Funzioni</span></a>
+    <a href="#prezzi"><span>Prezzi</span></a>
+    <a href="#metodo"><span>Metodo</span></a>
+    <a href="#progetti"><span>Progetti</span></a>
+    <a href="#faq"><span>FAQ</span></a>
+  </nav>
+  <div class="menu-foot">
+    <p>Prima consulenza gratuita e senza impegno. Prezzi a metà di un freelancer.</p>
+    <a class="btn btn-light" href="#contatti"><span>Parliamone</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-grid-lines" aria-hidden="true"></div>
+  <div class="hero-noise" aria-hidden="true"></div>
+
+  <div class="chip-float c1" data-depth="1.3" aria-hidden="true"><div class="cf-in">
+    <span class="cf-ico cf-g">G</span><div><b>Nuova visita da Google</b><small>"panificio vicino a me"</small></div>
+  </div></div>
+  <div class="chip-float c2" data-depth="0.8" aria-hidden="true"><div class="cf-in">
+    <span class="cf-ico cf-m"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="15" height="12" rx="3"/><path d="m3.5 6 6.5 5 6.5-5"/></svg></span><div><b>Nuova richiesta</b><small>"Vorrei un preventivo per…"</small></div>
+  </div></div>
+  <div class="chip-float c3" data-depth="1.7" aria-hidden="true"><div class="cf-in">
+    <span class="cf-ico cf-p"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="2" width="9" height="16" rx="2.5"/><path d="M9 15h2"/></svg></span><div><b>Perfetto da smartphone</b><small>Ogni pagina, ogni schermo</small></div>
+  </div></div>
+  <div class="chip-float c5" data-depth="1.5" aria-hidden="true"><div class="cf-in cf-price">
+    <span class="cf-ico cf-s">−50%</span><div><b>Metà prezzo</b><small>rispetto a un freelancer</small></div>
+  </div></div>
+  <div class="chip-float c4" data-depth="1.1" aria-hidden="true"><div class="cf-in">
+    <span class="cf-ico cf-a">AI</span><div><b>L'assistente ha risposto</b><small>anche a negozio chiuso</small></div>
+  </div></div>
+
+  <div class="hero-inner">
+    <p class="hero-kicker" data-intro><span class="pulse"></span>Siti nuovi da zero per PMI · a metà prezzo di un freelancer</p>
+    <h1 class="hero-title">
+      <span class="line"><span class="li">Siti web che</span></span>
+      <span class="line"><span class="li"><span class="rotator" aria-hidden="true"><span class="rw">si fanno trovare</span><span class="rw">fanno colpo</span><span class="rw">portano clienti</span><span class="rw">lavorano per te</span><span class="rw">si muovono</span></span><span class="sr-only">si fanno trovare</span></span></span>
+      <span class="line"><span class="li">per la tua PMI.</span></span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-sub" data-intro>Non hai ancora un sito? Lo creiamo <strong>da zero</strong>, cucito sulla tua attività. Ce l'hai ma è vecchio? Lo rifacciamo da capo. Sempre a <strong>metà prezzo di un freelancer</strong>.</p>
+      <div class="hero-ctas" data-intro>
+        <a class="btn btn-primary magnetic" href="#contatti"><span>Prenota la consulenza gratuita</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+        <a class="btn btn-ghost magnetic" href="#refresh"><span>Guarda il Refresh</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NASTRI ============ -->
+<div class="tickers" aria-hidden="true">
+  <div class="ticker t1"><div class="ticker-track">
+    <span>Siti nuovi da zero</span><span>Refresh</span><span>SEO</span><span>AI Agents</span><span>Animazioni 3D</span><span>Su misura</span><span>Veloci</span>
+    <span>Siti nuovi da zero</span><span>Refresh</span><span>SEO</span><span>AI Agents</span><span>Animazioni 3D</span><span>Su misura</span><span>Veloci</span>
+  </div></div>
+  <div class="ticker t2"><div class="ticker-track">
+    <span>metà prezzo di un freelancer</span><span>siti che si muovono</span><span>consulenza gratuita</span><span>zero siti statici</span>
+    <span>metà prezzo di un freelancer</span><span>siti che si muovono</span><span>consulenza gratuita</span><span>zero siti statici</span>
+  </div></div>
+</div>
+
+
+<!-- ============ DA DOVE PARTI ============ -->
+<section class="start" id="da-dove-parti">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Da dove parti</p>
+        <h2 class="h-xl" data-split>Che tu abbia un sito o no, il risultato è <em>nuovo</em>.</h2>
+      </div>
+      <p data-reveal>In tutti e due i casi partiamo da un foglio bianco. Niente toppe sul vecchio sito: progettiamo e costruiamo un sito nuovo, fatto per come lavori oggi.</p>
+    </div>
+    <div class="start-grid">
+      <article class="start-card core" data-reveal>
+        <span class="start-badge">Il nostro lavoro principale</span>
+        <div class="start-vis sv-new" aria-hidden="true">
+          <div class="sv-browser"><div class="sv-bar"><i></i><i></i><i></i></div><div class="sv-page"><span class="sv-plus">+</span><i class="sv-l l1"></i><i class="sv-l l2"></i><i class="sv-l l3"></i><i class="sv-img"></i></div></div>
+        </div>
+        <p class="start-k">Non hai ancora un sito</p>
+        <h3>Lo creiamo da zero</h3>
+        <p>Dal nome del dominio alla messa online. Ti aiutiamo con struttura, testi e immagini, e costruiamo un sito su misura che ti fa trovare e contattare.</p>
+        <ul class="ticks"><li>Progetto e grafica su misura</li><li>Testi e struttura, se ti servono</li><li>Prenotazioni, moduli e gallerie</li></ul>
+        <a class="btn btn-primary magnetic" href="#contatti"><span>Voglio il mio primo sito</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+      </article>
+      <article class="start-card" data-reveal>
+        <span class="start-badge alt">Il Refresh</span>
+        <div class="start-vis sv-old" aria-hidden="true">
+          <div class="sv-split"><div class="sv-o"><b>BENVENUTI!!!</b><i></i><i></i><u>CLICCA QUI</u></div><div class="sv-n"></div><span class="sv-line"></span></div>
+        </div>
+        <p class="start-k">Hai un sito, ma è vecchio</p>
+        <h3>Lo rifacciamo da capo</h3>
+        <p>Non lo ritocchiamo: lo ricostruiamo nuovo e moderno, al posto di quello vecchio. Teniamo quello che funziona, come il dominio e i contenuti utili, e buttiamo il resto.</p>
+        <ul class="ticks"><li>Sito nuovo, stesso indirizzo</li><li>Più veloce e perfetto da smartphone</li><li>Contenuti riorganizzati e chiari</li></ul>
+        <a class="btn btn-ghost magnetic" href="#refresh"><span>Guarda un Refresh</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVIZI ============ -->
+<section class="services" id="servizi">
+  <div class="hs-track">
+    <div class="hs-intro">
+      <p class="eyebrow">Servizi</p>
+      <h2 class="h-xl" data-split>Quattro modi per far <em>crescere</em> la tua attività online.</h2>
+      <p class="hs-sub" data-reveal>Che tu parta da zero o abbia già un sito da rinnovare, costruiamo lo strumento giusto per farti trovare e scegliere.</p>
+      <p class="hs-hint" aria-hidden="true"><span>Continua a scorrere</span><i></i></p>
+    </div>
+
+    <article class="svc" style="--i:0">
+      <div class="svc-media">
+        <div class="mini ma" aria-hidden="true">
+          <div class="ma-bar pop" style="--d:0s"></div>
+          <div class="ma-row"><div class="ma-lines"><i class="pop" style="--d:.5s;--w:90%"></i><i class="pop" style="--d:.7s;--w:64%"></i><i class="pop t" style="--d:.85s;--w:76%"></i><u class="pop" style="--d:1.1s"></u></div><div class="ma-img pop" style="--d:.9s"></div></div>
+          <div class="ma-cards"><div class="pop" style="--d:1.4s"></div><div class="pop" style="--d:1.55s"></div><div class="pop" style="--d:1.7s"></div></div>
+          <span class="mini-label">Costruzione</span>
+        </div>
+      </div>
+      <div class="svc-body">
+        <p class="svc-kicker">Il nostro lavoro principale</p>
+        <h3>Siti nuovi da zero</h3>
+        <p>Dal primo schizzo alla messa online. Un sito pensato per la tua attività, i tuoi clienti e il tuo modo di lavorare.</p>
+        <ul class="ticks"><li>Design su misura, niente template</li><li>Animazioni allo scroll ed effetti 3D</li><li>Perfetto da smartphone</li><li>Prenotazioni, moduli e gallerie su misura</li></ul>
+      </div>
+    </article>
+
+    <article class="svc" style="--i:1">
+      <div class="svc-media">
+        <div class="mini mr" aria-hidden="true">
+          <div class="mr-old">
+            <div class="mro-top"><b>Forno Bianchi</b><span>&#9733; NOVITÀ &#9733;</span></div>
+            <div class="mro-marq"><span>*** BENVENUTI NEL NOSTRO SITO!!! *** OFFERTA DEL GIORNO: PANE ALLE NOCI *** TORNATE A TROVARCI ***</span></div>
+            <div class="mro-body">
+              <div class="mro-nav"><u>Home</u><u>Chi siamo</u><u>Prodotti</u><u>Contatti</u><u>Guestbook</u></div>
+              <div class="mro-main"><p class="mro-h">BENVENUTI!!!</p><p>Clicca <u>QUI</u> per i nostri prodotti</p><div class="mro-img"><i>&times;</i>foto_pane.jpg</div></div>
+            </div>
+            <div class="mro-foot">Visitatori: <b>000127</b> · Ottimizzato per Internet Explorer 6</div>
+          </div>
+          <div class="mr-new">
+            <div class="mrn-nav"><b><i></i>Forno Bianchi</b><span>Prodotti</span><span>Orari</span><em>Ordina</em></div>
+            <div class="mrn-hero">
+              <div class="mrn-txt"><small>Dal 1962 · Como</small><h4>Pane buono, <em>ogni mattina.</em></h4><span class="mrn-btn">Prenota il ritiro<i class="mr-cursor"><svg viewBox="0 0 24 24"><path d="M4 2l15 9-6.5 1.6L16 20l-3 1.4-3.4-7.2L4 19z" fill="#0a1430" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></i></span></div>
+              <div class="mrn-img"></div>
+            </div>
+            <div class="mrn-cards"><div><i style="--c:#f59e0b"></i><b>Pane</b><small>da 2,80 €</small></div><div><i style="--c:#e11d48"></i><b>Dolci</b><small>da 1,50 €</small></div><div><i style="--c:#16a34a"></i><b>Pizza</b><small>da 3,00 €</small></div></div>
+            <div class="mrn-toast"><i>&#10003;</i><span><b>Ritiro prenotato</b>domani alle 8:00</span></div>
+          </div>
+          <span class="mr-scan"></span>
+          <span class="mr-speed"><span class="o">Caricamento 6,8 s</span><span class="n">Caricamento 0,9 s</span></span>
+          <span class="mini-label mr-label"><span class="o">Il sito di prima</span><span class="n">Dopo il Refresh</span></span>
+        </div>
+      </div>
+      <div class="svc-body">
+        <p class="svc-kicker">Per chi ha un sito che non lo rappresenta più</p>
+        <h3>Refresh</h3>
+        <p>Non mettiamo toppe: rifacciamo il tuo sito da capo, nuovo e moderno, al posto di quello vecchio. Più veloce, più bello, più facile da usare.</p>
+        <ul class="ticks"><li>Da sito fermo a sito che si muove</li><li>Grafica moderna e coerente</li><li>Caricamento più rapido</li><li>Contenuti riorganizzati e chiari</li></ul>
+      </div>
+    </article>
+
+    <article class="svc" style="--i:2">
+      <div class="svc-media">
+        <div class="mini mc" aria-hidden="true">
+          <div class="mc-search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="9" r="5.5"/><path d="m13.5 13.5 3.5 3.5"/></svg><span class="mc-q">panificio vicino a me</span><i class="mc-caret"></i></div>
+          <div class="mc-list"><div class="r r-me"><span>latuaattivita.it</span><b>#1</b></div><div class="r r-a"><span>concorrente-uno.it</span></div><div class="r r-b"><span>concorrente-due.it</span></div></div>
+          <span class="mini-label">Ricerca locale</span>
+        </div>
+      </div>
+      <div class="svc-body">
+        <p class="svc-kicker">Per chi vuole farsi trovare</p>
+        <h3>SEO</h3>
+        <p>Strutturiamo il sito perché Google lo capisca e i clienti della tua zona ti trovino proprio quando ti cercano.</p>
+        <ul class="ticks"><li>Struttura e testi ottimizzati</li><li>Pagine pensate per le ricerche locali</li><li>Basi tecniche solide</li></ul>
+      </div>
+    </article>
+
+    <article class="svc" style="--i:3">
+      <div class="svc-media">
+        <div class="mini md" aria-hidden="true">
+          <div class="md-head"><span class="md-av">AI</span><div><b>Assistente</b><small>Online</small></div></div>
+          <div class="bub q">Siete aperti domenica?</div>
+          <div class="a-slot"><div class="bub a">Sì, dalle 8 alle 13. Vuoi che ti tenga da parte qualcosa?</div><div class="dots"><i></i><i></i><i></i></div></div>
+          <span class="mini-label">AI Agent</span>
+        </div>
+      </div>
+      <div class="svc-body">
+        <p class="svc-kicker">Per chi vuole risparmiare tempo</p>
+        <h3>AI Agents</h3>
+        <p>Assistenti intelligenti che rispondono ai clienti, raccolgono richieste e ti liberano dalle domande che si ripetono.</p>
+        <ul class="ticks"><li>Risposte anche fuori orario</li><li>Raccolta di contatti e richieste</li><li>Istruiti sulla tua attività</li></ul>
+      </div>
+    </article>
+  </div>
+  <div class="hs-progress" aria-hidden="true"><i id="hsBar"></i></div>
+</section>
+
+<div class="cta-band" data-reveal>
+  <div class="cta-band-in">
+    <div>
+      <p class="cb-big">Sai già cosa ti serve? O non ne hai idea?</p>
+      <p class="cb-small">In entrambi i casi la prima chiacchierata è gratis: ti diciamo noi da dove partire.</p>
+    </div>
+    <a class="btn btn-light magnetic" href="#contatti"><span>Prenota la consulenza</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+  </div>
+</div>
+
+<!-- ============ IL REFRESH (prima / dopo) ============ -->
+<section class="refresh" id="refresh">
+  <div class="refresh-inner">
+    <div class="refresh-head">
+      <p class="eyebrow">Il Refresh</p>
+      <h2 class="h-xl" data-split>Da sito <em>dimenticato</em> a biglietto da visita.</h2>
+      <p class="refresh-lead">Il Refresh è un sito nuovo da zero, costruito al posto di quello vecchio. <span class="only-desk">Scorri e guarda la differenza.</span><span class="only-mob">Trascina la linea e guarda la differenza.</span></p>
+      <ul class="rp-list" id="rpList">
+        <li><s>Lento</s><b>Veloce</b></li>
+        <li><s>Datato</s><b>Moderno</b></li>
+        <li><s>Invisibile su Google</s><b>Facile da trovare</b></li>
+        <li><s>Scomodo da telefono</s><b>Perfetto su ogni schermo</b></li>
+        <li><s>Solo una vetrina</s><b>Prenotazioni e richieste online</b></li>
+      </ul>
+    </div>
+
+    <div class="compare" id="compare" style="--p:50">
+      <div class="site site-old" aria-hidden="true">
+        <div class="old-top">
+          <div class="old-logo">FORNO BIANCHI</div>
+          <div class="old-marq"><span>*** Benvenuti nel nostro sito internet!!! *** Ultimo aggiornamento: 2009 *** Benvenuti nel nostro sito internet!!! ***</span></div>
+        </div>
+        <div class="old-body">
+          <div class="old-side">
+            <a>Home</a><a>Chi siamo</a><a>Prodotti</a><a>Dove siamo</a><a>Contatti</a>
+            <div class="old-count">Visitatori: <b>000127</b></div>
+          </div>
+          <div class="old-main">
+            <h4>Il nostro forno</h4>
+            <p>Siamo un forno a conduzione familiare. Per informazioni telefonare in orario di negozio oppure passare in negozio. Il sito è in costruzione.</p>
+            <div class="old-wip"><span>LAVORI IN CORSO</span></div>
+            <span class="old-btn">CLICCA QUI</span>
+          </div>
+        </div>
+        <div class="old-foot">Ottimizzato per Internet Explorer 6 · Risoluzione 800x600</div>
+      </div>
+
+      <div class="site site-new" aria-hidden="true">
+        <div class="new-nav"><b class="new-logo">Forno Bianchi</b><span>Prodotti</span><span>Orari</span><span>Dove siamo</span><i class="new-btn">Ordina</i></div>
+        <div class="new-hero">
+          <div class="new-copy">
+            <span class="new-chip"><i></i>Aperto oggi · 7:00–19:30</span>
+            <h4>Pane fresco, ogni mattina.</h4>
+            <p>Lievito madre, farine del territorio e la ricetta di famiglia, dal forno sotto casa.</p>
+            <div class="new-ctas"><i class="new-btn">Ordina e ritira</i><i class="new-btn ghost">Come arrivare</i></div>
+          </div>
+          <div class="new-img"></div>
+        </div>
+        <div class="new-cards"><div><b>Pane</b><span>Ogni giorno</span></div><div><b>Dolci</b><span>Su ordinazione</span></div><div><b>Pizza</b><span>Al taglio</span></div></div>
+      </div>
+
+      <span class="compare-done" aria-hidden="true">✓ Refresh completato</span>
+      <div class="compare-handle" aria-hidden="true"><em class="ch-label" id="chLabel">50%</em><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
+      <span class="ctag ctag-new">Dopo</span>
+      <span class="ctag ctag-old">Prima</span>
+      <input class="compare-range" id="compareRange" type="range" min="0" max="100" value="50" aria-label="Confronta il sito prima e dopo il Refresh">
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ MUSEO DEL 2009 ============ -->
+<section class="museum" id="museo">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Il museo degli orrori</p>
+        <h2 class="h-xl" data-split>Il tuo sito ha ancora <em>uno di questi</em>?</h2>
+      </div>
+      <div class="museum-side">
+        <p data-reveal><span class="only-desk">Passa sopra le card</span><span class="only-mob">Tocca le card</span> per vedere come si fa oggi. Se ne hai riconosciuto anche solo uno, è ora di un Refresh. E tra poco ti facciamo fare un piccolo viaggio nel tempo.</p>
+        <button class="btn btn-retro" type="button" data-y2009 data-reveal><span>Guarda questo sito nel 2009</span></button>
+      </div>
+    </div>
+
+    <div class="rc-list">
+      <button class="rc" type="button" aria-pressed="false"><span class="rc-in">
+        <span class="rc-front rf-counter"><span class="rc-tag">2009</span>
+          <span class="sc-counter"><span class="scc-t">Sei il visitatore n°</span><span class="scc-d"><i>0</i><i>0</i><i>0</i><i>1</i><i>2</i><i class="roll">7</i></span><span class="scc-s">dal 14/03/2006</span></span>
+          <span class="rc-name">Il contatore delle visite</span></span>
+        <span class="rc-back"><span class="rc-tag new">Oggi</span><b>Statistiche vere</b><span class="rc-txt">Le visite si misurano con strumenti di statistica: sai quante persone arrivano, da dove e cosa cercano.</span><span class="rc-hint">Torna indietro</span></span>
+      </span></button>
+
+      <button class="rc" type="button" aria-pressed="false"><span class="rc-in">
+        <span class="rc-front rf-wip"><span class="rc-tag">2009</span>
+          <span class="sc-wip"><span class="scw-band"></span><span class="scw-t">SITO IN<br>COSTRUZIONE</span><span class="scw-s">Torna presto!!!</span><span class="scw-band"></span></span>
+          <span class="rc-name">"Sito in costruzione"</span></span>
+        <span class="rc-back"><span class="rc-tag new">Oggi</span><b>Online, e finito</b><span class="rc-txt">Niente cartelli e pagine vuote: il sito va online quando è pronto, in tempi rapidi.</span><span class="rc-hint">Torna indietro</span></span>
+      </span></button>
+
+      <button class="rc" type="button" aria-pressed="false"><span class="rc-in">
+        <span class="rc-front rf-flash"><span class="rc-tag">2009</span>
+          <span class="sc-flash"><span class="scf-t">Caricamento intro…</span><span class="scf-bar"><i></i></span><span class="scf-p">12%</span><span class="scf-skip">Salta intro &gt;&gt;</span></span>
+          <span class="rc-name">L'intro animata da aspettare</span></span>
+        <span class="rc-back"><span class="rc-tag new">Oggi</span><b>Si apre in un lampo</b><span class="rc-txt">Nessuna attesa e nessuna intro: chi arriva vede subito quello che cerca.</span><span class="rc-hint">Torna indietro</span></span>
+      </span></button>
+
+      <button class="rc" type="button" aria-pressed="false"><span class="rc-in">
+        <span class="rc-front rf-guest"><span class="rc-tag">2009</span>
+          <span class="sc-guest"><span class="scg-h">Firma il nostro Guestbook!</span><span class="scg-m"><b>Giuseppe82</b> Ciao a tutti!!! Bel sito :-)</span><span class="scg-m"><b>xX_Marco_Xx</b> visitate anche il mio sito!!!</span><span class="scg-f"><i></i><u>Firma</u></span></span>
+          <span class="rc-name">Il libro degli ospiti</span></span>
+        <span class="rc-back"><span class="rc-tag new">Oggi</span><b>Contatti in un tocco</b><span class="rc-txt">Chiama, scrivi su WhatsApp o prenota: chi visita il sito ti contatta senza cercare.</span><span class="rc-hint">Torna indietro</span></span>
+      </span></button>
+
+      <button class="rc" type="button" aria-pressed="false"><span class="rc-in">
+        <span class="rc-front rf-midi"><span class="rc-tag">2009</span>
+          <span class="sc-midi"><span class="scm-t">&#9654; per_elisa.mid</span><span class="scm-eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="scm-s">Musica automatica: ON</span></span>
+          <span class="rc-name">La musica che parte da sola</span></span>
+        <span class="rc-back"><span class="rc-tag new">Oggi</span><b>Silenzio, grazie</b><span class="rc-txt">Nessun suono a sorpresa che fa sobbalzare chi ti visita dall'ufficio.</span><span class="rc-hint">Torna indietro</span></span>
+      </span></button>
+
+      <button class="rc" type="button" aria-pressed="false"><span class="rc-in">
+        <span class="rc-front rf-ie"><span class="rc-tag">2009</span>
+          <span class="sc-ie"><span class="sci-b b-a">Visto meglio a<br><b>800x600</b></span><span class="sci-b b-b">Ottimizzato per<br><b>Internet Explorer 6</b></span><span class="sci-b b-c">Aggiungi ai<br><b>Preferiti!</b></span><span class="sci-b b-d">Webmaster<br><b>cercasi</b></span></span>
+          <span class="rc-name">"Ottimizzato per…"</span></span>
+        <span class="rc-back"><span class="rc-tag new">Oggi</span><b>Perfetto su ogni schermo</b><span class="rc-txt">Telefono, tablet o computer: il sito si adatta da solo, su qualsiasi browser.</span><span class="rc-hint">Torna indietro</span></span>
+      </span></button>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============ FUNZIONALITÀ (demo vere) ============ -->
+<section class="features" id="funzioni">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Non solo estetica</p>
+        <h2 class="h-xl" data-split>Bello è il minimo. <em>Funzionale</em> è il punto.</h2>
+      </div>
+      <p data-reveal>Un sito deve lavorare per te: far prenotare, raccogliere richieste, mostrare i tuoi lavori e i tuoi prezzi. Creiamo moduli e strumenti su misura per piccole e medie realtà. Quelli qui sotto funzionano davvero: provali.</p>
+    </div>
+
+    <div class="ft">
+      <div class="ft-tabs" role="tablist" aria-label="Funzionalità di esempio">
+        <button class="ft-tab" type="button" role="tab" id="tab-pren" aria-controls="pan-pren" aria-selected="true" data-url="salone-aurora.it/prenota"><span class="ft-n">Calendario prenotazioni</span><span class="ft-d">I clienti scelgono giorno e orario liberi da soli, a qualsiasi ora.</span></button>
+        <button class="ft-tab" type="button" role="tab" id="tab-prev" aria-controls="pan-prev" aria-selected="false" tabindex="-1" data-url="idraulicabianchi.it/preventivo"><span class="ft-n">Moduli contatti e preventivi</span><span class="ft-d">Richieste ordinate, con tutte le informazioni che ti servono per rispondere.</span></button>
+        <button class="ft-tab" type="button" role="tab" id="tab-gal" aria-controls="pan-gal" aria-selected="false" tabindex="-1" data-url="verdi-ristrutturazioni.it/lavori"><span class="ft-n">Galleria immagini</span><span class="ft-d">I tuoi lavori in vetrina, con filtri e foto a tutto schermo.</span></button>
+        <button class="ft-tab" type="button" role="tab" id="tab-serv" aria-controls="pan-serv" aria-selected="false" tabindex="-1" data-url="officinamoretti.it/servizi"><span class="ft-n">Elenco servizi e prezzi</span><span class="ft-d">Servizi chiari, facili da cercare e da prenotare in un tocco.</span></button>
+      </div>
+
+      <div class="ft-stage">
+        <div class="ft-browser">
+          <div class="p-bar"><i></i><i></i><i></i><span id="ftUrl">salone-aurora.it/prenota</span><b class="ft-live">Demo funzionante</b></div>
+          <div class="ft-panels">
+            <div class="ft-ghost" id="ftGhost" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 2l15 9-6.5 1.6L16 20l-3 1.4-3.4-7.2L4 19z" fill="#0a1430" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><span></span></div>
+            <div class="ft-notify" id="ftNotify" role="status" hidden><span class="fn-ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="15" height="12" rx="3"/><path d="m3.5 6 6.5 5 6.5-5"/></svg></span><div><small>Così arriva a te · adesso</small><b id="fnTitle"></b><span id="fnText"></span></div></div>
+            <span class="ft-auto" id="ftAuto" aria-hidden="true">Demo automatica · tocca per provarla tu</span>
+            <div class="ft-panel" role="tabpanel" id="pan-pren" aria-labelledby="tab-pren"><div class="bk" id="demoBook"><p class="demo-fallback">Calendario di prenotazione di esempio.</p></div></div>
+            <div class="ft-panel" role="tabpanel" id="pan-prev" aria-labelledby="tab-prev" hidden><div class="qt" id="demoQuote"></div></div>
+            <div class="ft-panel" role="tabpanel" id="pan-gal" aria-labelledby="tab-gal" hidden><div class="gl" id="demoGallery"></div></div>
+            <div class="ft-panel" role="tabpanel" id="pan-serv" aria-labelledby="tab-serv" hidden><div class="sv" id="demoServices"></div></div>
+          </div>
+        </div>
+        <div class="ft-why">
+          <p class="ft-why-t">Cosa fa per la tua attività</p>
+          <ul id="ftWhyList">
+            <li><span class="fw-ico">24/7</span><div><b>Prenotazioni a qualsiasi ora</b><span>Anche di sera o a negozio chiuso, senza rispondere al telefono.</span></div></li>
+            <li><span class="fw-ico">0</span><div><b>Niente doppie prenotazioni</b><span>Ogni collaboratore ha la sua agenda: il cliente vede solo gli orari liberi.</span></div></li>
+            <li><span class="fw-ico">✓</span><div><b>Promemoria automatici</b><span>Il giorno prima parte un messaggio al cliente: meno appuntamenti dimenticati.</span></div></li>
+          </ul>
+        </div>
+        <div class="ft-more">
+          <span class="ft-more-t">E su misura per te anche:</span>
+          <ul><li>Menu digitali</li><li>Orari e mappa</li><li>Recensioni in evidenza</li><li>Preventivi online</li><li>Newsletter</li><li>Chat con assistente AI</li><li>Siti in più lingue</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-band cta-inline" data-reveal>
+      <div class="cta-band-in">
+        <div>
+          <p class="cb-big">Ti serve qualcosa che non vedi qui?</p>
+          <p class="cb-small">Raccontaci come lavori: costruiamo lo strumento che fa risparmiare tempo proprio a te.</p>
+        </div>
+        <a class="btn btn-light magnetic" href="#contatti"><span>Parliamone</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SITI VIVI (strati 3D) ============ -->
+<section class="layers" id="vivi">
+  <div class="container layers-intro">
+    <p class="eyebrow">Siti vivi</p>
+    <h2 class="h-xl" data-split>Niente siti <em>statici</em>. I nostri si muovono.</h2>
+    <p class="layers-lead" data-reveal>Un sito fermo si guarda e si chiude. Un sito che reagisce allo scroll e al tocco si ricorda. Scorri e guardaci dentro: lo costruiamo strato per strato.</p>
+  </div>
+  <div class="layers-track">
+    <div class="layers-sticky">
+      <p class="x3d-cap" id="x3dCap" data-step="1" aria-live="polite"><span class="c1">Questo è un sito.</span><span class="c2">Guardiamoci dentro.</span><span class="c3">Sette strati, curati uno per uno.</span><span class="c4">E insieme diventano il tuo sito. <em>Su ogni schermo.</em></span></p>
+      <div class="x3d-stage">
+        <div class="x3d-hud" id="x3dHud" data-i="-1">
+          <p class="hud-num"><b id="hudN">07</b><span>strati</span></p>
+          <p class="hud-t" id="hudT">Un sito vero, smontato pezzo per pezzo</p>
+          <p class="hud-d" id="hudD">Scorri: ogni strato si stacca e ti diciamo a cosa serve.</p>
+          <ol class="hud-bar" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ol>
+        </div>
+        <div class="x3d-wrap">
+          <div class="x3d" id="stack">
+            <!-- 1 · codice -->
+            <div class="xl xl-0" style="--i:0"><span class="lyr-tag">1 · Codice leggero</span>
+              <pre class="xcode" aria-hidden="true"><b>&lt;header</b> <i>class</i>=<s>"nav"</s><b>&gt;</b>
+  <b>&lt;a</b> <i>href</i>=<s>"/"</s><b>&gt;</b>Forno Bianchi<b>&lt;/a&gt;</b>
+  <b>&lt;nav&gt;</b>Prodotti · Orari · Dove siamo<b>&lt;/nav&gt;</b>
+<b>&lt;/header&gt;</b>
+<b>&lt;section</b> <i>class</i>=<s>"hero"</s> <i>data-scroll</i><b>&gt;</b>
+  <b>&lt;h1&gt;</b>Pane buono, <b>&lt;em&gt;</b>ogni mattina.<b>&lt;/em&gt;&lt;/h1&gt;</b>
+  <b>&lt;button</b> <i>class</i>=<s>"prenota"</s><b>&gt;</b>Prenota il ritiro<b>&lt;/button&gt;</b>
+  <b>&lt;img</b> <i>src</i>=<s>"pane.webp"</s> <i>loading</i>=<s>"lazy"</s><b>&gt;</b>
+<b>&lt;/section&gt;</b>
+<u>// 0,9 s per aprirsi · 100/100 velocità</u>
+<b>gsap</b>.to(<s>".hero img"</s>, { y: <em>-40</em>, scrub: <em>true</em> })</pre>
+              <span class="xc-speed">0,9 s</span>
+            </div>
+            <!-- 2 · sfondo e colori -->
+            <div class="xl xl-1" style="--i:1"><span class="lyr-tag">2 · Sfondo e colori</span>
+              <i class="xbg-blob b1"></i><i class="xbg-blob b2"></i>
+              <i class="xbg-nav"></i><i class="xbg-card" style="left:5%"></i><i class="xbg-card" style="left:36%"></i><i class="xbg-card" style="left:67%"></i>
+              <i class="xbg-sw" style="--c:#b45309;left:72%"></i><i class="xbg-sw" style="--c:#f59e0b;left:78%"></i><i class="xbg-sw" style="--c:#1f1a17;left:84%"></i><i class="xbg-sw" style="--c:#fbf6ee;left:90%"></i>
+            </div>
+            <!-- 3 · struttura -->
+            <div class="xl xl-2" style="--i:2"><span class="lyr-tag">3 · Struttura e griglia</span>
+              <i class="xg-cols"></i>
+              <i class="xw" style="left:4%;top:4%;width:92%;height:9%"></i><i class="xw" style="left:5%;top:19%;width:44%;height:48%"></i><i class="xw" style="left:53%;top:19%;width:42%;height:48%"></i>
+              <i class="xw" style="left:5%;top:73%;width:28%;height:21%"></i><i class="xw" style="left:36%;top:73%;width:28%;height:21%"></i><i class="xw" style="left:67%;top:73%;width:28%;height:21%"></i>
+              <i class="xg-m" style="left:53%;top:15%">42%</i><i class="xg-m" style="left:5%;top:69%">3 colonne</i><i class="xg-m" style="left:84%;top:15%">24 px</i>
+            </div>
+            <!-- 4 · immagini -->
+            <div class="xl xl-3" style="--i:3"><span class="lyr-tag">4 · Immagini e profondità</span>
+              <i class="xi xi-hero pz" style="--pz:1.4"></i>
+              <i class="xi xi-c c1 pz" style="--pz:1"></i><i class="xi xi-c c2 pz" style="--pz:1"></i><i class="xi xi-c c3 pz" style="--pz:1"></i>
+              <i class="xi-logo pz" style="--pz:.8"></i>
+            </div>
+            <!-- 5 · testi -->
+            <div class="xl xl-4" style="--i:4"><span class="lyr-tag">5 · Testi</span>
+              <i class="xt-brand">Forno Bianchi</i><i class="xt-links">Prodotti<span>Orari</span><span>Dove siamo</span></i>
+              <i class="xt-k">Dal 1962 · Como</i>
+              <i class="xt-h pz" style="--pz:.8">Pane buono,<em>ogni mattina.</em></i>
+              <i class="xt-p">Lievito madre, forno a legna e farine del territorio. Prenota online e passa a ritirare.</i>
+              <i class="xt-card" style="left:5%"><b>Pane</b>da 2,80 €</i><i class="xt-card" style="left:36%"><b>Dolci</b>da 1,50 €</i><i class="xt-card" style="left:67%"><b>Pizza</b>da 3,00 €</i>
+            </div>
+            <!-- 6 · bottoni e moduli -->
+            <div class="xl xl-5" style="--i:5"><span class="lyr-tag">6 · Bottoni e moduli</span>
+              <i class="xk xk-btn pz" style="--pz:1.6">Prenota il ritiro</i><i class="xk xk-ghost pz" style="--pz:1">Scopri i prodotti</i>
+              <i class="xk xk-nav pz" style="--pz:1">Ordina</i>
+              <i class="xk xk-chip pz" style="--pz:1.8">Novità · pane alle noci</i>
+              <i class="xk xk-tog"></i>
+            </div>
+            <!-- 7 · animazioni -->
+            <div class="xl xl-6" style="--i:6"><span class="lyr-tag">7 · Animazioni e interazioni</span>
+              <svg class="xm-path" viewBox="0 0 400 250" preserveAspectRatio="none" aria-hidden="true"><path id="xmPath" d="M60 205 C 130 120, 210 250, 280 130 S 360 40, 372 30" fill="none" stroke="#8fe3ff" stroke-width="2" stroke-dasharray="6 7"/><circle r="6" fill="#fff"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#xmPath"/></animateMotion></circle></svg>
+              <i class="xr"></i><i class="xr r2"></i>
+              <svg class="xm-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2l15 9-6.5 1.6L16 20l-3 1.4-3.4-7.2L4 19z" fill="#fff" stroke="#050a18" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              <i class="xm-badge pz" style="--pz:2">★ 4,9 su Google</i>
+              <i class="xs" style="left:90%;top:20%"></i><i class="xs" style="left:50%;top:70%"></i><i class="xs" style="left:44%;top:12%"></i>
+            </div>
+          </div>
+        </div>
+        <div class="x3d-phone" aria-hidden="true">
+          <div class="xph-screen">
+            <div class="xph-scroll">
+              <div class="xph-nav"><b><i></i>Forno Bianchi</b><span></span></div>
+              <div class="xph-img"></div>
+              <p class="xph-k">Dal 1962 · Como</p>
+              <p class="xph-h">Pane buono, <em>ogni mattina.</em></p>
+              <span class="xph-btn">Prenota il ritiro</span>
+              <div class="xph-card"><i style="--c:#f59e0b"></i><b>Pane</b><small>da 2,80 €</small></div>
+              <div class="xph-card"><i style="--c:#e11d48"></i><b>Dolci</b><small>da 1,50 €</small></div>
+              <div class="xph-card"><i style="--c:#16a34a"></i><b>Pizza</b><small>da 3,00 €</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container layers-outro">
+    <p class="layers-proof" data-reveal>Tutto quello che si muove su questa pagina possiamo farlo anche sul tuo sito.</p>
+    <a class="btn btn-primary magnetic" href="#contatti" data-reveal><span>Voglio un sito che si muove</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+  </div>
+</section>
+
+<!-- ============ PREZZI ============ -->
+<section class="price" id="prezzi">
+  <div class="price-giant" aria-hidden="true">−50%</div>
+  <div class="container price-grid">
+    <div class="price-head">
+      <p class="eyebrow">Prezzi</p>
+      <h2 class="h-xl" data-split>Stessa qualità. <em>Metà</em> prezzo.</h2>
+      <p class="price-lead" data-reveal>Un sito su misura da noi costa circa la metà di quello che chiederebbe un freelancer per lo stesso lavoro. Facciamo lo stesso lavoro spendendo meno, e il risparmio resta a te.</p>
+      <div class="price-ctas" data-reveal>
+        <a class="btn btn-primary magnetic" href="#contatti"><span>Chiedi il preventivo gratuito</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+    <div class="price-card" data-reveal>
+      <p class="pc-title">Quanto paghi lo stesso sito</p>
+      <div class="pc-row"><div class="pc-lab"><span>Freelancer</span><b data-count="100">100%</b></div><div class="pc-bar"><i class="pc-fill f-free"></i></div></div>
+      <div class="pc-row pc-us"><div class="pc-lab"><span>SiteRefresh</span><b data-count="50">50%</b></div><div class="pc-bar"><i class="pc-fill f-us"></i><span class="pc-save">la metà in tasca a te</span></div></div>
+      <p class="pc-sub">Perché costiamo meno</p>
+      <ul class="pc-why">
+        <li><b>Niente uffici</b> né strutture da mantenere.</li>
+        <li><b>Lavoriamo con l'intelligenza artificiale</b>: più veloci, con la stessa cura.</li>
+        <li><b>Siamo giovani</b> e vogliamo farci conoscere con lavori fatti bene.</li>
+      </ul>
+      <p class="pc-note">Confronto indicativo con le tariffe di un freelancer per un sito simile. Il prezzo esatto lo ricevi dopo la consulenza gratuita.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERCHÉ NOI ============ -->
+<section class="why" id="perche">
+  <div class="container">
+    <p class="eyebrow">Perché SiteRefresh</p>
+    <div class="why-list">
+      <div class="why-row"><h3 class="fill">Su misura.</h3><p data-reveal>Ogni sito è progettato sulle esigenze del cliente. Niente template standard, niente siti fotocopia.</p></div>
+      <div class="why-row"><h3 class="fill">Veloci.</h3><p data-reveal>Realizziamo e consegniamo in tempi rapidi, con un processo semplice e senza stress.</p></div>
+      <div class="why-row"><h3 class="fill">Al tuo fianco.</h3><p data-reveal>Non sai cosa mettere nel sito? Ti guidiamo noi con idee, testi e struttura adatte alla tua attività.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METODO ============ -->
+<section class="method" id="metodo">
+  <div class="container method-grid">
+    <div class="method-head">
+      <p class="eyebrow">Metodo</p>
+      <h2 class="h-xl" data-split>Quattro passi. <em>Zero</em> stress.</h2>
+      <p data-reveal>Ti accompagniamo dalla prima chiamata fino al sito online, e anche dopo.</p>
+      <a class="btn btn-dark magnetic" href="#contatti" data-reveal><span>Inizia dal passo 1</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+    </div>
+    <div class="m-wrap">
+      <span class="m-line" aria-hidden="true"><i id="mLine"></i></span>
+      <ol class="m-steps" id="mSteps">
+        <li class="m-step"><span class="m-num">01</span><h3>Ci conosciamo</h3><p>Una consulenza gratuita e senza impegno: ci racconti la tua attività, i tuoi clienti e cosa vuoi ottenere.</p><span class="m-tag">Gratuita</span></li>
+        <li class="m-step"><span class="m-num">02</span><h3>Progettiamo</h3><p>Struttura, stile e contenuti. Se non sai cosa scrivere, ci pensiamo noi con idee e testi su misura.</p><span class="m-tag">Testi inclusi, se servono</span></li>
+        <li class="m-step"><span class="m-num">03</span><h3>Realizziamo</h3><p>Sviluppiamo il sito unendo programmazione e intelligenza artificiale: veloce, accessibile e perfetto su smartphone.</p><span class="m-tag">Lo vedi crescere</span></li>
+        <li class="m-step"><span class="m-num">04</span><h3>Si va online</h3><p>Pubblichiamo, controlliamo che tutto funzioni e restiamo al tuo fianco per modifiche e dubbi.</p><span class="m-tag">Supporto anche dopo</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHI SIAMO ============ -->
+<section class="about" id="chi-siamo">
+  <div class="container about-grid">
+    <div class="about-text">
+      <p class="eyebrow">Chi siamo</p>
+      <p class="about-big" id="aboutBig">Siamo due ragazzi universitari con la passione per il digitale. Uniamo programmazione e intelligenza artificiale per dare alle PMI siti moderni, veloci e su misura, senza costi esagerati.</p>
+      <ul class="pills" data-reveal><li>Zero template</li><li>Metà prezzo di un freelancer</li><li>Linguaggio semplice</li></ul>
+    </div>
+    <div class="mini me" aria-hidden="true" data-reveal>
+      <div class="me-bar"><i></i><i></i><i></i><span>codice + AI = il tuo sito</span></div>
+      <div class="me-body">
+        <div class="me-code">
+          <i class="grow" style="--d:.2s;--w:58%;--c:#8fe3ff"></i><i class="grow" style="--d:.45s;--w:82%;--c:#cbd8f5"></i><i class="grow" style="--d:.7s;--w:40%;--c:#5b86ff"></i><i class="grow" style="--d:.95s;--w:70%;--c:#cbd8f5"></i><i class="grow" style="--d:1.2s;--w:52%;--c:#8fe3ff"></i><i class="grow" style="--d:1.45s;--w:76%;--c:#cbd8f5"></i><i class="grow" style="--d:1.7s;--w:34%;--c:#5b86ff"></i>
+        </div>
+        <div class="me-ai"><span>AI</span></div>
+        <div class="me-prev"><b class="pop" style="--d:2.6s"></b><i class="pop" style="--d:2.9s;width:86%"></i><i class="pop" style="--d:3.1s;width:60%"></i><div class="pop" style="--d:3.4s"><s></s><s></s></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGETTI ============ -->
+<section class="projects" id="progetti">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Progetti</p>
+        <h2 class="h-xl" data-split>Ogni attività ha la sua <em>faccia</em>.</h2>
+      </div>
+      <p data-reveal>Tre esempi di come può diventare il tuo sito: identità diverse, nessuno uguale all'altro. <span class="only-mob">Scorri le card di lato.</span></p>
+    </div>
+
+    <div class="p-list">
+      <article class="p-card" data-cursor="Guarda" style="--pb:#f6e7d8;--pi:#3b1a0a;--pc:#c2410c;--ps:#fffaf3;--pt:#3b1a0a;--pf:var(--f-serif);--pg:url(img/pasta.svg) center/cover">
+        <div class="p-inner">
+          <div class="p-info">
+            <span class="tag">Progetto di esempio</span>
+            <h3>Trattoria da Nino</h3>
+            <p>Ristorante · menu digitale, prenotazioni e mappa.</p>
+            <ul class="p-tags"><li>Prenotazioni</li><li>Menu digitale</li><li>Mappa</li></ul>
+          </div>
+          <div class="p-shot">
+            <div class="p-bar"><i></i><i></i><i></i><span>trattoriadanino.it</span></div>
+            <div class="p-screen"><div class="p-scroll">
+              <div class="ps-nav"><b>Da Nino</b><span>Menu</span><span>Dove siamo</span><span class="ps-btn">Prenota</span></div>
+              <div class="ps-hero"><div><h4>La cucina di casa, come una volta.</h4><p>Pasta fatta a mano e piatti di stagione, ogni giorno.</p><span class="ps-btn">Prenota un tavolo</span></div><div class="ps-img"></div></div>
+              <div class="ps-cards"><i></i><i></i><i></i></div>
+              <div class="ps-band">Il menu di questa settimana</div>
+              <div class="ps-cards"><i></i><i></i><i></i></div>
+              <div class="ps-foot"></div>
+            </div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cursor="Guarda" style="--pb:#dfe6f3;--pi:#0b1f3f;--pc:#1e3a6e;--ps:#ffffff;--pt:#0b1f3f;--pf:var(--f-display);--pg:url(img/studio.svg) center/cover">
+        <div class="p-inner">
+          <div class="p-info">
+            <span class="tag">Progetto di esempio</span>
+            <h3>Studio Ferri</h3>
+            <p>Studio professionale · servizi, team e appuntamenti.</p>
+            <ul class="p-tags"><li>Appuntamenti</li><li>Area servizi</li><li>Team</li></ul>
+          </div>
+          <div class="p-shot">
+            <div class="p-bar"><i></i><i></i><i></i><span>studioferri.it</span></div>
+            <div class="p-screen"><div class="p-scroll">
+              <div class="ps-nav"><b>Studio Ferri</b><span>Servizi</span><span>Team</span><span class="ps-btn">Contattaci</span></div>
+              <div class="ps-hero"><div><h4>Consulenza chiara, vicina a te.</h4><p>Fiscale, lavoro e impresa: un unico studio di riferimento.</p><span class="ps-btn">Fissa un appuntamento</span></div><div class="ps-img"></div></div>
+              <div class="ps-cards"><i></i><i></i><i></i></div>
+              <div class="ps-band">I nostri servizi</div>
+              <div class="ps-cards"><i></i><i></i><i></i></div>
+              <div class="ps-foot"></div>
+            </div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cursor="Guarda" style="--pb:#e1efe0;--pi:#0f2a14;--pc:#16a34a;--ps:#0e1411;--pt:#eafbe7;--pf:var(--f-display);--pg:url(img/palestra.svg) center/cover">
+        <div class="p-inner">
+          <div class="p-info">
+            <span class="tag">Progetto di esempio</span>
+            <h3>Palestra Kore</h3>
+            <p>Palestra · corsi, orari e prova gratuita.</p>
+            <ul class="p-tags"><li>Calendario corsi</li><li>Prova gratuita</li><li>Abbonamenti</li></ul>
+          </div>
+          <div class="p-shot">
+            <div class="p-bar"><i></i><i></i><i></i><span>palestrakore.it</span></div>
+            <div class="p-screen"><div class="p-scroll">
+              <div class="ps-nav"><b>KORE</b><span>Corsi</span><span>Orari</span><span class="ps-btn">Prova</span></div>
+              <div class="ps-hero"><div><h4>Allenati con chi ti segue davvero.</h4><p>Sala pesi, corsi e personal trainer in un unico posto.</p><span class="ps-btn">Prenota la prova</span></div><div class="ps-img"></div></div>
+              <div class="ps-cards"><i></i><i></i><i></i></div>
+              <div class="ps-band">Corsi della settimana</div>
+              <div class="ps-cards"><i></i><i></i><i></i></div>
+              <div class="ps-foot"></div>
+            </div></div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="cta-band cta-inline" data-reveal>
+      <div class="cta-band-in">
+        <div>
+          <p class="cb-big">Il prossimo progetto potrebbe essere il tuo.</p>
+          <p class="cb-small">Raccontaci la tua attività: ti mostriamo come potrebbe essere il tuo sito, gratis e senza impegno.</p>
+        </div>
+        <a class="btn btn-light magnetic" href="#contatti"><span>Voglio il mio sito</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container faq-grid">
+    <div class="faq-head">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="h-xl" data-split>Domande <em>frequenti</em>.</h2>
+      <p data-reveal>Non trovi la tua domanda? Faccela durante la consulenza gratuita.</p>
+    </div>
+    <div class="faq-list">
+      <details><summary>Quanto costa un sito?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a"><p>Circa la metà di quanto chiederebbe un freelancer per un sito simile. Il prezzo esatto dipende da cosa ti serve: una pagina vetrina è diversa da un sito con più sezioni o con un assistente AI. Dopo la consulenza gratuita ricevi un preventivo chiaro, senza sorprese.</p></div></details>
+      <details><summary>Perché costate meno di un freelancer?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a"><p>Non abbiamo uffici né strutture da mantenere, lavoriamo con l'intelligenza artificiale per essere più veloci e siamo giovani: vogliamo farci conoscere con lavori fatti bene. La cura per il tuo sito è la stessa.</p></div></details>
+      <details><summary>Quanto tempo ci vuole?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a"><p>Lavoriamo in tempi rapidi. Prima di iniziare concordiamo insieme una data di consegna, così sai sempre quando sarai online.</p></div></details>
+      <details><summary>Non so cosa scrivere sul sito. È un problema?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a"><p>Per niente. Ti guidiamo noi con idee, testi e struttura adatte alla tua attività: tu ci racconti cosa fai, noi lo trasformiamo in pagine chiare.</p></div></details>
+      <details><summary>Il sito funzionerà bene da smartphone?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a"><p>Sì. Progettiamo ogni sito per telefono, tablet e computer: la maggior parte dei tuoi clienti ti cercherà dal telefono.</p></div></details>
+      <details><summary>Le animazioni rallentano il sito?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a"><p>No. Le usiamo con misura e le ottimizziamo perché il sito resti veloce anche da telefono. Chi nel proprio dispositivo ha scelto di ridurre il movimento vede il sito completo, senza animazioni.</p></div></details>
+      <details><summary>Non ho ancora un sito. Potete crearlo da zero?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a"><p>Sì, è il nostro lavoro principale. Ti seguiamo dall'inizio: nome del dominio, struttura, testi, immagini e messa online. Tu ci racconti la tua attività, al resto pensiamo noi.</p></div></details>
+      <details><summary>Ho già un sito. Lo sistemate o lo rifate?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a"><p>Lo rifacciamo da capo: è il nostro Refresh. Un sito nuovo e moderno al posto di quello vecchio, tenendo l'indirizzo e i contenuti che funzionano. Ritoccare un sito vecchio di solito costa quasi quanto rifarlo, e il risultato è peggiore.</p></div></details>
+      <details><summary>Cos'è un AI Agent?<span class="plus" aria-hidden="true"></span></summary><div class="faq-a"><p>Un assistente automatico sul tuo sito che risponde alle domande più frequenti dei clienti e raccoglie le richieste, anche quando sei chiuso.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATTI ============ -->
+<section class="contact" id="contatti">
+  <a class="cta-marquee" href="#contactForm" aria-label="Vai al modulo per prenotare la consulenza gratuita"><span class="cm-track" aria-hidden="true">
+    <span>Parliamone</span><span>Consulenza gratuita</span><span>Metà prezzo</span><span>Parliamone</span><span>Consulenza gratuita</span><span>Metà prezzo</span>
+  </span></a>
+  <div class="container contact-grid">
+    <div class="contact-head">
+      <p class="eyebrow">Contatti</p>
+      <h2 class="h-giant" data-split>Il tuo sito merita un <em>refresh</em>.</h2>
+      <p data-reveal>Prenota una consulenza gratuita e senza impegno. Ci racconti la tua attività, noi ti diciamo come portarla online.</p>
+      <ul class="ticks perks" data-reveal>
+        <li>Gratis e senza impegno</li>
+        <li>Ti diciamo subito cosa ti serve, e cosa no</li>
+        <li>Preventivo chiaro, a metà prezzo di un freelancer</li>
+      </ul>
+      <ul class="direct">
+        <li data-contact="email" hidden><a href="#"><span class="d-k">Email</span><span class="d-v" data-contact-text></span></a></li>
+        <li data-contact="whatsapp" hidden><a href="#" target="_blank" rel="noopener"><span class="d-k">WhatsApp</span><span class="d-v">Scrivici in chat</span></a></li>
+      </ul>
+    </div>
+
+    <form class="form" id="contactForm" data-reveal>
+      <div class="row2">
+        <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" required placeholder="Mario Rossi"></div>
+        <div class="field"><label for="f-attivita">Attività</label><input id="f-attivita" name="attivita" type="text" autocomplete="organization" placeholder="Forno Bianchi"></div>
+      </div>
+      <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="mario@email.it"></div>
+      <fieldset class="field">
+        <legend>Di cosa hai bisogno?</legend>
+        <div class="choices">
+          <label><input type="radio" name="servizio" value="Sito nuovo da zero" checked><span>Sito nuovo da zero</span></label>
+          <label><input type="radio" name="servizio" value="Rifare il mio sito"><span>Rifare il mio sito</span></label>
+          <label><input type="radio" name="servizio" value="SEO"><span>SEO</span></label>
+          <label><input type="radio" name="servizio" value="AI Agent"><span>AI Agent</span></label>
+          <label><input type="radio" name="servizio" value="Non lo so ancora"><span>Non lo so ancora</span></label>
+        </div>
+      </fieldset>
+      <div class="field"><label for="f-msg">Raccontaci in breve</label><textarea id="f-msg" name="messaggio" rows="4" placeholder="Che attività hai, cosa vorresti dal sito…"></textarea></div>
+      <div class="hp" aria-hidden="true"><label for="f-sito">Non compilare questo campo</label><input id="f-sito" name="sito_web" type="text" tabindex="-1" autocomplete="off"></div>
+      <label class="consent"><input id="f-consent" type="checkbox" name="consenso" value="si" required><span>Ho letto l'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a>: i miei dati servono solo a rispondere a questa richiesta.</span></label>
+      <button class="btn btn-primary magnetic" type="submit"><span>Prenota la consulenza gratuita</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="#top"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="12" fill="#3366ff"/><path d="M27.5 15.5A8.5 8.5 0 1 0 28.5 22" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M29 10.5v6h-6" stroke="#8fe3ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>SiteRefresh</span></a>
+        <p>Creiamo siti web moderni e ottimizzati per PMI. Design su misura e soluzioni tecnologiche all'avanguardia.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Sezioni</h4>
+        <a href="#servizi">Servizi</a><a href="#refresh">Il Refresh</a><a href="#funzioni">Funzioni</a><a href="#prezzi">Prezzi</a><a href="#metodo">Metodo</a><a href="#progetti">Progetti</a><a href="#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contatti</h4>
+        <a href="#contatti">Consulenza gratuita</a>
+        <a href="#" data-contact="email" hidden><span data-contact-text></span></a>
+        <a href="#" data-contact="whatsapp" target="_blank" rel="noopener" hidden>WhatsApp</a>
+      </div>
+    </div>
+    <div class="foot-word" aria-hidden="true">
+      <svg viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="fwg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#3366ff"/><stop offset=".55" stop-color="#8fe3ff"/><stop offset="1" stop-color="#eef2ff"/></linearGradient></defs><text x="0" y="128" textLength="1000" lengthAdjust="spacingAndGlyphs" fill="url(#fwg)">SiteRefresh</text></svg>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> SiteRefresh</span>
+      <span>Fatto a mano (e con un po' di AI) da due universitari.</span>
+      <a href="privacy.html">Privacy</a>
+      <button type="button" class="foot-y2k" data-y2009>Modalità 2009</button>
+      <a href="#top" class="to-top">Torna su ↑</a>
+    </div>
+  </div>
+</footer>
+
+<a class="mobile-cta" id="mobileCta" href="#contatti">Consulenza gratuita<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+<a class="cta-badge" id="ctaBadge" href="#contatti" aria-label="Prenota la consulenza gratuita">
+  <svg class="cb-ring" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="cbPath" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs><text><textPath href="#cbPath" textLength="282">CONSULENZA GRATUITA ✦ METÀ PREZZO ✦ </textPath></text></svg>
+  <span class="cb-dot"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
+</a>
+
+
+<div class="tw-modal tw-mini" id="twModal" role="status" aria-labelledby="twTitle" hidden>
+  <div class="xp-bar"><span id="twTitle">Macchina del tempo</span><button class="xp-x" type="button" aria-label="Salta il viaggio nel tempo" data-tw-skip>×</button></div>
+  <div class="tw-body">
+    <span class="tw-count" id="twCount" aria-hidden="true">3</span>
+    <p id="twText"><b>Viaggio nel tempo!</b> Tra pochi secondi vedrai questo sito com'era nel 2009. Continua a scorrere per tornare al 2026.</p>
+  </div>
+</div>
+<div class="tw-banner" id="twBanner" role="status" hidden>
+  <span class="twb-t">Benvenuto nel 2009! Continua a scorrere per tornare al 2026</span>
+  <span class="twb-bar"><i id="twBar"></i></span>
+  <button type="button" class="twb-x" data-tw-back>Torna subito al 2026</button>
+</div>
+<div class="tw-hero" id="twHero" role="dialog" aria-labelledby="twhTitle" hidden>
+  <div class="twh-in">
+    <p class="twh-k">Bentornato nel 2026</p>
+    <p class="twh-t" id="twhTitle"><span class="twh-l">Questo è</span> <span class="twh-l">un <em>Refresh</em>.</span></p>
+    <div class="twh-cols">
+      <p><b>Prima</b> un sito fermo, lento e scomodo da telefono.</p>
+      <p><b>Dopo</b> un sito vivo, veloce e soprattutto utile: prenotazioni, moduli, gallerie e servizi che lavorano per te.</p>
+    </div>
+    <p class="twh-s">Non solo estetica. Soprattutto funzionalità.</p>
+    <div class="twh-btns"><a class="btn btn-primary" href="#contatti" data-twh-close><span>Fallo al mio sito</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a><a class="btn btn-ghost" href="#funzioni" data-twh-close><span>Guarda cosa può fare</span></a></div>
+    <button type="button" class="twh-x" data-twh-close aria-label="Chiudi">×</button>
+  </div>
+</div>
+<div class="tw-fx" id="twFx" aria-hidden="true"></div>
+
+<div class="y2k-bar" aria-hidden="true"><span>*** Benvenuti nel sito di SiteRefresh!!! *** Sei il visitatore n° 000128 *** Questo sito è ottimizzato per Internet Explorer 6 *** Firma il nostro Guestbook!!! ***</span></div>
+<button class="y2k-exit" type="button" data-y2009>Riportami al 2026</button>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursorText"></span></div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="main.js"></script>
+</body>
 </html>

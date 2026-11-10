@@ -1,0 +1,7 @@
+/* Font ospitati nel sito (nessuna richiesta a Google). Licenze in LICENZE-FONT.txt */
+@font-face { font-family: "Archivo"; font-style: normal; font-display: swap; font-weight: 100 900; font-stretch: 62% 125%; src: url("archivo.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-style: normal; font-display: swap; font-weight: 100 900; src: url("geist.woff2") format("woff2"); }
+@font-face { font-family: "Geist Mono"; font-style: normal; font-display: swap; font-weight: 400; src: url("geist-mono-400.woff2") format("woff2"); }
+@font-face { font-family: "Geist Mono"; font-style: normal; font-display: swap; font-weight: 500; src: url("geist-mono-500.woff2") format("woff2"); }
+@font-face { font-family: "Instrument Serif"; font-style: normal; font-display: swap; font-weight: 400; src: url("instrument-serif.woff2") format("woff2"); }
+@font-face { font-family: "Instrument Serif"; font-style: italic; font-display: swap; font-weight: 400; src: url("instrument-serif-italic.woff2") format("woff2"); }
